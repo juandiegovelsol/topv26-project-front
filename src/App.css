@@ -1,4 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  overflow: hidden;
+}
+.headerWrapper,
+.mainWrapper,
+.articleTitle,
+.h2LowerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerWrapper {
+  height: 7.5vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.headerTextWrapper {
+  height: 7.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerText {
+  height: fit-content;
+}
+.navBarWrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: absolute;
+  top: 7.5vh;
+  z-index: 2;
+}
+.teslaText {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.productIndex {
+  grid-area: 1 / 6 / 2 / 12;
+}
+.optionsIndex {
+  grid-area: 1 / 14 / 2 / 17;
+}
+.teslaText,
+.productIndex,
+.optionsIndex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.teslaText button,
+.productIndex button,
+.optionsIndex button {
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+}
+.mainWrapper {
+  height: 92.5vh;
+  width: 100vw;
+  flex-direction: column;
+}
+.articleWrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  /* object-fit: contain; */
+}
+.articleTitle {
+  grid-area: 4 / 8 / 5 / 14;
+  z-index: 2;
+}
+.h2LowerText {
+  grid-area: 5 / 8 / 6 / 14;
+  z-index: 2;
+}
+.mainBackgroundImageWrapper {
+  height: 100%;
+  width: 100%;
+  grid-area: 1 / 1 / 21 / 21;
+  z-index: 1;
+}
+.mainBackgroundImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.articleButtons {
+  grid-area: 17 / 7 / 18 / 15;
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.customOrderButton {
+  background-color: #3e4145;
+  color: #fafafb;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+}
+.demoDriveButton {
+  background-color: #e7e8e6;
+  color: #393c41;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+}
+/* .footerWrapper {
+  height: 10vh;
+  width: 100vw;
+} */
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +166,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
