@@ -1,6 +1,15 @@
 /* import model_s_image from "./Model-S.jfif"; */
 import model_3_image from "./resources/images/model-3.jfif";
 import "./App.css";
+import { TeslaArticle } from "./TeslaArticle";
+import React, { useState } from "react";
+const data = [
+  {
+    articleTitle: "Model 3",
+    text: "Leasing starting at $399/mo",
+    source: model_3_image,
+  },
+];
 
 function App() {
   return (
@@ -32,7 +41,15 @@ function App() {
         </section>
       </header>
       <main className="mainWrapper">
-        <section className="articleWrapper">
+        {data.map((item, index) => (
+          <TeslaArticle
+            keys={index}
+            titleText={item.articleTitle}
+            additionalText={item.text}
+            source={item.source}
+          />
+        ))}
+        {/* <section className="articleWrapper">
           <h2 className="articleTitle">Model 3</h2>
           <p className="h2LowerText">Leasing starting at $399/mo</p>
           <article className="mainBackgroundImageWrapper">
@@ -47,23 +64,9 @@ function App() {
             <button className="customOrderButton">Custom Order</button>
             <button className="demoDriveButton">Demo Drive</button>
           </article>
-        </section>
+        </section> */}
       </main>
       <footer className="footerWrapper"></footer>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }
