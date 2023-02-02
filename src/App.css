@@ -116,6 +116,7 @@
 }
 .customOrderButton {
   background-color: #3e4145;
+  opacity: 0.8;
   color: #fafafb;
   width: 250px;
   height: 35px;
@@ -123,8 +124,8 @@
   border: none;
 }
 .demoDriveButton {
-  display: block;
   background-color: #e7e8e6;
+  opacity: 0.8;
   color: #393c41;
   width: 250px;
   height: 35px;

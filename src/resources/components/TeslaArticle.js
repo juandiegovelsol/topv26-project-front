@@ -2,10 +2,13 @@ import React, { useState } from "react";
 
 export function TeslaArticle(props) {
   const { keys, titleText, additionalText, source, button1, button2 } = props;
-  const [buttonClass, setButtonClass] = useState("demoDriveButton");
-  if (button2 === "") {
-    setButtonClass("demoDriveButtonHidden");
-  }
+  const setClassFn = (button) => {
+    if (button === "") {
+      return "demoDriveButtonHidden";
+    } else {
+      return "demoDriveButton";
+    }
+  };
   return (
     <section className="articleWrapper" key={keys}>
       <h2 className="articleTitle">{titleText}</h2>
@@ -16,7 +19,7 @@ export function TeslaArticle(props) {
 
       <article className="articleButtons">
         <button className="customOrderButton">{button1}</button>
-        <button className={buttonClass}>{button2}</button>
+        <button className={setClassFn(button2)}>{button2}</button>
       </article>
     </section>
   );

@@ -10,6 +10,7 @@ import { TeslaArticle } from "./resources/components/TeslaArticle.js";
 import React, { useState } from "react";
 const data = [
   {
+    key: 1,
     articleTitle: "Model 3",
     text: "Leasing starting at $399/mo",
     source: model_3_image,
@@ -17,6 +18,7 @@ const data = [
     button2: "Demo Drive",
   },
   {
+    key: 2,
     articleTitle: "Model Y",
     text: "",
     source: model_y_image,
@@ -24,6 +26,7 @@ const data = [
     button2: "Demo Drive",
   },
   {
+    key: 3,
     articleTitle: "Model S",
     text: "",
     source: model_s_image,
@@ -31,6 +34,7 @@ const data = [
     button2: "Demo Drive",
   },
   {
+    key: 4,
     articleTitle: "Model X",
     text: "",
     source: model_x_image,
@@ -38,6 +42,7 @@ const data = [
     button2: "Demo Drive",
   },
   {
+    key: 5,
     articleTitle: "Solar Panels",
     text: "Lowest Cost Solar Panels in America",
     source: solar_panels_image,
@@ -45,6 +50,7 @@ const data = [
     button2: "Learn More",
   },
   {
+    key: 6,
     articleTitle: "Solar Roof",
     text: "Produce Clean Energy From Your Roof",
     source: solar_roof_image,
@@ -52,11 +58,12 @@ const data = [
     button2: "Learn More",
   },
   {
+    key: 7,
     articleTitle: "Accessories",
     text: "",
     source: accessories_image,
     button1: "Shop Now",
-    button2: "Learn More",
+    button2: "",
   },
 ];
 
@@ -90,10 +97,11 @@ function App() {
         </section>
       </header>
       <main className="mainWrapper">
-        {data.map((item, index) => {
+        {data.map((item) => {
+          console.log(item.key);
           return (
             <TeslaArticle
-              keys={index}
+              keys={item.key}
               titleText={item.articleTitle}
               additionalText={item.text}
               source={item.source}
