@@ -6,43 +6,57 @@ import solar_panels_image from "./resources/images/solar-panels.jfif";
 import solar_roof_image from "./resources/images/solar-roof.webp";
 import accessories_image from "./resources/images/accessories.jfif";
 import "./App.css";
-import { TeslaArticle } from "./TeslaArticle";
+import { TeslaArticle } from "./resources/components/TeslaArticle.js";
 import React, { useState } from "react";
 const data = [
   {
     articleTitle: "Model 3",
     text: "Leasing starting at $399/mo",
     source: model_3_image,
+    button1: "Custom Order",
+    button2: "Demo Drive",
   },
   {
     articleTitle: "Model Y",
     text: "",
     source: model_y_image,
+    button1: "Custom Order",
+    button2: "Demo Drive",
   },
   {
     articleTitle: "Model S",
     text: "",
     source: model_s_image,
+    button1: "Custom Order",
+    button2: "Demo Drive",
   },
   {
     articleTitle: "Model X",
     text: "",
     source: model_x_image,
+    button1: "Custom Order",
+    button2: "Demo Drive",
   },
   {
     articleTitle: "Solar Panels",
     text: "Lowest Cost Solar Panels in America",
     source: solar_panels_image,
+    button1: "Order Now",
+    button2: "Learn More",
   },
   {
     articleTitle: "Solar Roof",
     text: "Produce Clean Energy From Your Roof",
     source: solar_roof_image,
+    button1: "Order Now",
+    button2: "Learn More",
   },
   {
     articleTitle: "Accessories",
     text: "",
     source: accessories_image,
+    button1: "Shop Now",
+    button2: "Learn More",
   },
 ];
 
@@ -83,6 +97,8 @@ function App() {
               titleText={item.articleTitle}
               additionalText={item.text}
               source={item.source}
+              button1={item.button1}
+              button2={item.button2}
             />
           );
         })}
