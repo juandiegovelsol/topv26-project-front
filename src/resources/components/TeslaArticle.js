@@ -6,9 +6,6 @@ export function TeslaArticle(props) {
   if (button2 === "") {
     setButtonClass("demoDriveButtonHidden");
   }
-  /* button2 === ""
-    ? setButtonClass("demoDriveButtonHidden")
-    : setButtonClass("demoDriveButton"); */
   return (
     <section className="articleWrapper" key={keys}>
       <h2 className="articleTitle">{titleText}</h2>
