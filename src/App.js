@@ -1,5 +1,10 @@
-/* import model_s_image from "./Model-S.jfif"; */
 import model_3_image from "./resources/images/model-3.jfif";
+import model_y_image from "./resources/images/model-y.jfif";
+import model_s_image from "./resources/images/model-s.jfif";
+import model_x_image from "./resources/images/model-x.jfif";
+import solar_panels_image from "./resources/images/solar-panels.jfif";
+import solar_roof_image from "./resources/images/solar-roof.webp";
+import accessories_image from "./resources/images/accessories.jfif";
 import "./App.css";
 import { TeslaArticle } from "./TeslaArticle";
 import React, { useState } from "react";
@@ -8,6 +13,36 @@ const data = [
     articleTitle: "Model 3",
     text: "Leasing starting at $399/mo",
     source: model_3_image,
+  },
+  {
+    articleTitle: "Model Y",
+    text: "",
+    source: model_y_image,
+  },
+  {
+    articleTitle: "Model S",
+    text: "",
+    source: model_s_image,
+  },
+  {
+    articleTitle: "Model X",
+    text: "",
+    source: model_x_image,
+  },
+  {
+    articleTitle: "Solar Panels",
+    text: "Lowest Cost Solar Panels in America",
+    source: solar_panels_image,
+  },
+  {
+    articleTitle: "Solar Roof",
+    text: "Produce Clean Energy From Your Roof",
+    source: solar_roof_image,
+  },
+  {
+    articleTitle: "Accessories",
+    text: "",
+    source: accessories_image,
   },
 ];
 
@@ -41,30 +76,16 @@ function App() {
         </section>
       </header>
       <main className="mainWrapper">
-        {data.map((item, index) => (
-          <TeslaArticle
-            keys={index}
-            titleText={item.articleTitle}
-            additionalText={item.text}
-            source={item.source}
-          />
-        ))}
-        {/* <section className="articleWrapper">
-          <h2 className="articleTitle">Model 3</h2>
-          <p className="h2LowerText">Leasing starting at $399/mo</p>
-          <article className="mainBackgroundImageWrapper">
-            <img
-              src={model_3_image}
-              className="mainBackgroundImage"
-              alt="Model 3"
+        {data.map((item, index) => {
+          return (
+            <TeslaArticle
+              keys={index}
+              titleText={item.articleTitle}
+              additionalText={item.text}
+              source={item.source}
             />
-          </article>
-
-          <article className="articleButtons">
-            <button className="customOrderButton">Custom Order</button>
-            <button className="demoDriveButton">Demo Drive</button>
-          </article>
-        </section> */}
+          );
+        })}
       </main>
       <footer className="footerWrapper"></footer>
     </div>

@@ -1,5 +1,5 @@
-import model_3_image from "./resources/images/model-3.jfif";
 import React, { useState } from "react";
+
 export function TeslaArticle(props) {
   const { keys, titleText, additionalText, source } = props;
   return (
