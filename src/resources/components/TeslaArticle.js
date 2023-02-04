@@ -9,8 +9,15 @@ export function TeslaArticle(props) {
       return "demoDriveButton";
     }
   };
+  const setScrollSnapFeature = (index) => {
+    if (index % 2 === 1) {
+      return "articleWrapper";
+    } else {
+      return "articleWrapper scrollSnapAlways";
+    }
+  };
   return (
-    <section className="articleWrapper" key={keys}>
+    <section className={setScrollSnapFeature(keys)} key={keys}>
       <h2 className="articleTitle">{titleText}</h2>
       <p className="h2LowerText">{additionalText}</p>
       <article className="mainBackgroundImageWrapper">

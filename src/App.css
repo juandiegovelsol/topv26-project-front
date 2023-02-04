@@ -22,6 +22,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  border-bottom: 0.5px solid rgba(91, 91, 91, 0.07cd);
 }
 .headerTextWrapper {
   height: 7.5vh;
@@ -51,6 +52,7 @@
   grid-area: 1 / 6 / 2 / 12;
 }
 .optionsIndex {
+  padding-right: 15px;
   grid-area: 1 / 14 / 2 / 17;
 }
 .teslaText,
@@ -67,6 +69,29 @@
   background-color: transparent;
   font-size: 15px;
 }
+button:hover,
+button:focus {
+  cursor: pointer;
+}
+.productIndex button,
+.productIndex button {
+  height: 60%;
+  width: 16%;
+  border-radius: 3px;
+}
+.optionsIndex button,
+.optionsIndex button {
+  height: 60%;
+  width: 30%;
+  border-radius: 3px;
+}
+.productIndex button:hover,
+.productIndex button:focus,
+.optionsIndex button:hover,
+.optionsIndex button:focus {
+  background-color: #c9c9c94a; /* need to modify */
+  backdrop-filter: blur(4px);
+}
 .mainWrapper {
   z-index: 1;
   height: 92.5vh;
@@ -77,6 +102,7 @@
   align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
 }
 .articleWrapper {
   height: 100%;
@@ -86,7 +112,11 @@
   grid-template-rows: repeat(20, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  /* object-fit: contain; */
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+.scrollSnapAlways {
+  scroll-snap-stop: always;
 }
 .articleTitle {
   grid-area: 4 / 8 / 5 / 14;
