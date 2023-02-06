@@ -4,7 +4,7 @@ import { TeslaArticle } from "./resources/components/TeslaArticle.js";
 import { Menu } from "./resources/components/Menu.js";
 import { NavBar } from "./resources/components/NavBar.js";
 
-import { teslaArticleData } from "./resources/data/TeslaArticleData";
+import { teslaArticleData } from "./resources/data/TeslaArticleData.js";
 
 import React, { useState } from "react";
 
