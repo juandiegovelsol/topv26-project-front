@@ -8,6 +8,8 @@ import accessories_image from "./resources/images/accessories.jfif";
 import "./App.css";
 import { TeslaArticle } from "./resources/components/TeslaArticle.js";
 import { Menu } from "./resources/components/Menu.js";
+import { NavBar } from "./resources/components/NavBar.js";
+
 import React, { useState } from "react";
 const data = [
   {
@@ -72,15 +74,6 @@ function App() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
-  function showFunc() {
-    let auxCoverClass = menuCoverClass;
-    if (auxCoverClass === "menuCoverPage displayNone") {
-      auxCoverClass = "menuCoverPage";
-    } else {
-      auxCoverClass = "menuCoverPage displayNone";
-    }
-    setMenuCoverClass(auxCoverClass);
-  }
 
   return (
     <div className="App">
@@ -91,29 +84,7 @@ function App() {
             for a $7,500 federal tax credit for eligible buyers. Learn More
           </span>
         </section>
-        <section className="navBarWrapper">
-          <article className="teslaText">
-            <button className="teslaButton">T E S L A</button>
-          </article>
-          <article className="productIndex">
-            <button className="modelSButton">Model S</button>
-            <button className="model3Button">Model 3</button>
-            <button className="modelXButton">Model X</button>
-            <button className="modelYButton">Model Y</button>
-            <button className="solarRoofButton">Solar Roof</button>
-            <button className="solarPanelButton">Solar Panel</button>
-          </article>
-          <article className="optionsIndex">
-            <button className="shopButton">Shop</button>
-            <button className="accountButton">Account</button>
-            <button
-              className="menuButton"
-              onClick={() => setMenuCoverClass("menuCoverPage")}
-            >
-              Menu
-            </button>
-          </article>
-        </section>
+        <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main className="mainWrapper">
         <section className="articleContentWrapper">
