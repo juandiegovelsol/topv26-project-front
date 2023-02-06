@@ -1,74 +1,12 @@
-import model_3_image from "./resources/images/model-3.jfif";
-import model_y_image from "./resources/images/model-y.jfif";
-import model_s_image from "./resources/images/model-s.jfif";
-import model_x_image from "./resources/images/model-x.jfif";
-import solar_panels_image from "./resources/images/solar-panels.jfif";
-import solar_roof_image from "./resources/images/solar-roof.webp";
-import accessories_image from "./resources/images/accessories.jfif";
 import "./App.css";
+
 import { TeslaArticle } from "./resources/components/TeslaArticle.js";
 import { Menu } from "./resources/components/Menu.js";
 import { NavBar } from "./resources/components/NavBar.js";
 
+import { teslaArticleData } from "./resources/data/TeslaArticleData";
+
 import React, { useState } from "react";
-const data = [
-  {
-    key: 1,
-    articleTitle: "Model 3",
-    text: "Leasing starting at $399/mo",
-    source: model_3_image,
-    button1: "Custom Order",
-    button2: "Demo Drive",
-  },
-  {
-    key: 2,
-    articleTitle: "Model Y",
-    text: "",
-    source: model_y_image,
-    button1: "Custom Order",
-    button2: "Demo Drive",
-  },
-  {
-    key: 3,
-    articleTitle: "Model S",
-    text: "",
-    source: model_s_image,
-    button1: "Custom Order",
-    button2: "Demo Drive",
-  },
-  {
-    key: 4,
-    articleTitle: "Model X",
-    text: "",
-    source: model_x_image,
-    button1: "Custom Order",
-    button2: "Demo Drive",
-  },
-  {
-    key: 5,
-    articleTitle: "Solar Panels",
-    text: "Lowest Cost Solar Panels in America",
-    source: solar_panels_image,
-    button1: "Order Now",
-    button2: "Learn More",
-  },
-  {
-    key: 6,
-    articleTitle: "Solar Roof",
-    text: "Produce Clean Energy From Your Roof",
-    source: solar_roof_image,
-    button1: "Order Now",
-    button2: "Learn More",
-  },
-  {
-    key: 7,
-    articleTitle: "Accessories",
-    text: "",
-    source: accessories_image,
-    button1: "Shop Now",
-    button2: "",
-  },
-];
 
 function App() {
   const [menuCoverClass, setMenuCoverClass] = useState(
@@ -88,7 +26,7 @@ function App() {
       </header>
       <main className="mainWrapper">
         <section className="articleContentWrapper">
-          {data.map((item) => {
+          {teslaArticleData.map((item) => {
             console.log(item.key);
             return (
               <TeslaArticle
