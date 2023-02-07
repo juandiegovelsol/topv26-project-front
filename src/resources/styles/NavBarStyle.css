@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "TeslaFont";
+  src: url("../fonts/TESLA.ttf");
+}
 .navBarWrapper {
   min-height: 7.5vh;
   width: 100%;
@@ -24,13 +28,20 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.teslaText button,
+.teslaText button {
+  padding-left: 10px;
+  font-family: "TeslaFont";
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+}
 .productIndex button,
 .optionsIndex button {
   border: none;
   background-color: transparent;
   font-size: 15px;
 }
+
 button:hover,
 button:focus {
   cursor: pointer;
