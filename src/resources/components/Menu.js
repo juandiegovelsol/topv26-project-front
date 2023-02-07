@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { menuData } from "../data/MenuData.js";
+import "../styles/MenuStyle.css";
 
 export function Menu(props) {
   const { menuCoverClasss, setMenuCoverClasss } = props;

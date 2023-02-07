@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/TeslaArticleStyle.css";
 
 export function TeslaArticle(props) {
   const { keys, titleText, additionalText, source, button1, button2 } = props;

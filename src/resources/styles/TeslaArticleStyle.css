@@ -1,0 +1,61 @@
+.articleWrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+.scrollSnapAlways {
+  scroll-snap-stop: always;
+}
+.articleTitle {
+  grid-area: 4 / 8 / 5 / 14;
+  z-index: 2;
+}
+.h2LowerText {
+  grid-area: 5 / 8 / 6 / 14;
+  z-index: 2;
+}
+.mainBackgroundImageWrapper {
+  height: 100%;
+  width: 100%;
+  grid-area: 1 / 1 / 21 / 21;
+  z-index: 1;
+}
+.mainBackgroundImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.articleButtons {
+  grid-area: 17 / 7 / 18 / 15;
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.customOrderButton {
+  background-color: #3e4145;
+  opacity: 0.8;
+  color: #fafafb;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+}
+.demoDriveButton {
+  background-color: #e7e8e6;
+  opacity: 0.8;
+  color: #393c41;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+}
+.demoDriveButtonHidden {
+  display: none;
+}
