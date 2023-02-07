@@ -1,0 +1,56 @@
+.navBarWrapper {
+  min-height: 7.5vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.teslaText {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.productIndex {
+  grid-area: 1 / 6 / 2 / 12;
+}
+.optionsIndex {
+  padding-right: 15px;
+  grid-area: 1 / 14 / 2 / 17;
+}
+.teslaText,
+.productIndex,
+.optionsIndex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.teslaText button,
+.productIndex button,
+.optionsIndex button {
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+}
+button:hover,
+button:focus {
+  cursor: pointer;
+}
+.productIndex button,
+.productIndex button {
+  height: 60%;
+  width: 16%;
+  border-radius: 3px;
+}
+.optionsIndex button,
+.optionsIndex button {
+  height: 60%;
+  width: 30%;
+  border-radius: 3px;
+}
+.productIndex button:hover,
+.productIndex button:focus,
+.optionsIndex button:hover,
+.optionsIndex button:focus {
+  background-color: #c9c9c94a; /* need to modify */
+  backdrop-filter: blur(4px);
+}

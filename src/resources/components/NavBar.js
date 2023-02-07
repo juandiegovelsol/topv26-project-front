@@ -1,3 +1,4 @@
+import "../styles/NavBarStyle.css";
 export function NavBar(props) {
   const { setMenuCoverClasss } = props;
 

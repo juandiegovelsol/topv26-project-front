@@ -34,7 +34,7 @@
 .headerText {
   height: fit-content;
 }
-.navBarWrapper {
+/* .navBarWrapper {
   min-height: 7.5vh;
   width: 100%;
   display: grid;
@@ -42,8 +42,8 @@
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-}
-.teslaText {
+} 
+ .teslaText {
   grid-area: 1 / 1 / 2 / 3;
 }
 .productIndex {
@@ -67,10 +67,7 @@
   background-color: transparent;
   font-size: 15px;
 }
-button:hover,
-button:focus {
-  cursor: pointer;
-}
+
 .productIndex button,
 .productIndex button {
   height: 60%;
@@ -87,8 +84,12 @@ button:focus {
 .productIndex button:focus,
 .optionsIndex button:hover,
 .optionsIndex button:focus {
-  background-color: #c9c9c94a; /* need to modify */
+  background-color: #c9c9c94a;
   backdrop-filter: blur(4px);
+} */
+button:hover,
+button:focus {
+  cursor: pointer;
 }
 .mainWrapper {
   z-index: 1;
