@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { Menu } from "./Menu.js";
 import { NavBar } from "./NavBar.js";
 
-export function ModelS() {
+export function Model3() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   return (
-    <div className="ModelS">
+    <div className="Model3">
       <header>
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main>
-        Model S
+        Model 3
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

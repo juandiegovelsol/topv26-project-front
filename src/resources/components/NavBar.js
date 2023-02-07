@@ -19,12 +19,54 @@ export function NavBar(props) {
         </button>
       </article>
       <article className="productIndex">
-        <button className="modelSButton">Model S</button>
-        <button className="model3Button">Model 3</button>
-        <button className="modelXButton">Model X</button>
-        <button className="modelYButton">Model Y</button>
-        <button className="solarRoofButton">Solar Roof</button>
-        <button className="solarPanelButton">Solar Panel</button>
+        <button
+          className="modelSButton"
+          onClick={() => {
+            navigate("/ModelS");
+          }}
+        >
+          Model S
+        </button>
+        <button
+          className="model3Button"
+          onClick={() => {
+            navigate("/Model3");
+          }}
+        >
+          Model 3
+        </button>
+        <button
+          className="modelXButton"
+          onClick={() => {
+            navigate("/ModelX");
+          }}
+        >
+          Model X
+        </button>
+        <button
+          className="modelYButton"
+          onClick={() => {
+            navigate("/ModelY");
+          }}
+        >
+          Model Y
+        </button>
+        <button
+          className="solarRoofButton"
+          onClick={() => {
+            navigate("/SolarRoof");
+          }}
+        >
+          Solar Roof
+        </button>
+        <button
+          className="solarPanelButton"
+          onClick={() => {
+            navigate("/SolarPanel");
+          }}
+        >
+          Solar Panel
+        </button>
       </article>
       <article className="optionsIndex">
         <button className="shopButton">Shop</button>
