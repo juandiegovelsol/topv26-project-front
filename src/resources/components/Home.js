@@ -11,6 +11,7 @@ export function Home() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+
   return (
     <div className="App">
       <header className="headerWrapper">

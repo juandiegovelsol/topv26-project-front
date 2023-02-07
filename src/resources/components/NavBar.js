@@ -4,16 +4,16 @@ import "../styles/NavBarStyle.css";
 
 export function NavBar(props) {
   const { setMenuCoverClasss } = props;
-  /* const navigate = useNavigate(); */
+  const navigate = useNavigate();
 
   return (
     <section className="navBarWrapper">
       <article className="teslaText">
         <button
           className="teslaButton"
-          /* onClick={() => {
-            navigate("../App.js");
-          }} */
+          onClick={() => {
+            navigate("/");
+          }}
         >
           T E S L A
         </button>
