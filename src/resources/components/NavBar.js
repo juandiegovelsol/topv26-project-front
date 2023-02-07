@@ -1,11 +1,22 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/NavBarStyle.css";
+
 export function NavBar(props) {
   const { setMenuCoverClasss } = props;
+  /* const navigate = useNavigate(); */
 
   return (
     <section className="navBarWrapper">
       <article className="teslaText">
-        <button className="teslaButton">T E S L A</button>
+        <button
+          className="teslaButton"
+          /* onClick={() => {
+            navigate("../App.js");
+          }} */
+        >
+          T E S L A
+        </button>
       </article>
       <article className="productIndex">
         <button className="modelSButton">Model S</button>
