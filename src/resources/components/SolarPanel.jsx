@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Menu } from "./Menu.js";
-import { NavBar } from "./NavBar.js";
+import { Menu } from "./Menu";
+import { NavBar } from "./NavBar";
 
 export function SolarPanel() {
   const [menuCoverClass, setMenuCoverClass] = useState(

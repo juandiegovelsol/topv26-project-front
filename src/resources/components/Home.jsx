@@ -1,10 +1,10 @@
 import "../styles/Home.css";
 
-import { TeslaArticle } from "./TeslaArticle.js";
-import { Menu } from "./Menu.js";
-import { NavBar } from "./NavBar.js";
+import { TeslaArticle } from "./TeslaArticle";
+import { Menu } from "./Menu";
+import { NavBar } from "./NavBar";
 
-import { teslaArticleData } from "../data/TeslaArticleData.js";
+import { teslaArticleData } from "../data/TeslaArticleData";
 
 import React, { useState } from "react";
 export function Home() {

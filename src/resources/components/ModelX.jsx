@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Menu } from "./Menu.js";
-import { NavBar } from "./NavBar.js";
+import { Menu } from "./Menu";
+import { NavBar } from "./NavBar";
 
-export function Model3() {
+export function ModelX() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   return (
-    <div className="Model3">
+    <div className="ModelX">
       <header>
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main>
-        Model 3
+        Model X
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

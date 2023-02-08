@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { Menu } from "./Menu.js";
-import { NavBar } from "./NavBar.js";
+import { Menu } from "./Menu";
+import { NavBar } from "./NavBar";
 
-export function Shop() {
+export function SolarRoof() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   return (
-    <div className="Shop">
+    <div className="ModelY">
       <header>
-        {/* This navbar must change for this component */}
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main>
-        Shop
-        {/*  This menu must change for this component */}
+        Solar Roof
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

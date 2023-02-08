@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Menu } from "./Menu.js";
-import { NavBar } from "./NavBar.js";
+import { Menu } from "./Menu";
+import { NavBar } from "./NavBar";
 
-export function Account() {
+export function Shop() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
@@ -13,7 +13,7 @@ export function Account() {
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main>
-        Account
+        Shop
         {/*  This menu must change for this component */}
         <Menu
           menuCoverClasss={menuCoverClass}
