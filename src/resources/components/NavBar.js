@@ -69,8 +69,22 @@ export function NavBar(props) {
         </button>
       </article>
       <article className="optionsIndex">
-        <button className="shopButton">Shop</button>
-        <button className="accountButton">Account</button>
+        <button
+          className="shopButton"
+          onClick={() => {
+            navigate("/Shop");
+          }}
+        >
+          Shop
+        </button>
+        <button
+          className="accountButton"
+          onClick={() => {
+            navigate("/Account");
+          }}
+        >
+          Account
+        </button>
         <button
           className="menuButton"
           onClick={() => setMenuCoverClasss("menuCoverPage")}

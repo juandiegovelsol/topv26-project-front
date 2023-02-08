@@ -7,6 +7,8 @@ import { ModelX } from "./resources/components/ModelX";
 import { ModelY } from "./resources/components/ModelY";
 import { SolarRoof } from "./resources/components/SolarRoof";
 import { SolarPanel } from "./resources/components/SolarPanel";
+import { Shop } from "./resources/components/Shop";
+import { Account } from "./resources/components/Account";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route exact path="/ModelY" element={<ModelY />} />
           <Route exact path="/SolarRoof" element={<SolarRoof />} />
           <Route exact path="/SolarPanel" element={<SolarPanel />} />
+          <Route exact path="/Shop" element={<Shop />} />
+          <Route exact path="/Account" element={<Account />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -62,6 +62,6 @@ button:focus {
 .productIndex button:focus,
 .optionsIndex button:hover,
 .optionsIndex button:focus {
-  background-color: #c9c9c94a; /* need to modify */
+  background-color: #00000017;
   backdrop-filter: blur(4px);
 }
