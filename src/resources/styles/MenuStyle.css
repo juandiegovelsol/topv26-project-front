@@ -12,9 +12,17 @@
 .displayNone {
   display: none;
 }
+.blurredPage {
+  height: 100vh;
+  width: 79vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .menuWrapper {
   height: 100vh;
-  width: 310px;
+  width: 21vw;
+  /* width: 310px; equivalent width */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

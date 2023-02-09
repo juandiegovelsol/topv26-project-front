@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
+import { SigleItemFirstView } from "./SingleItemFirstView";
+import { SolarPanelData } from "../data/SolarPanelData";
+import "../styles/SolarPanel.css";
 
 export function SolarPanel() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   return (
-    <div className="ModelY">
-      <header>
+    <div className="solarPanel">
+      <header className="solarPanelHeader">
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
-      <main>
-        Solar Panel
+      <main className="solarPanelMain">
+        <SigleItemFirstView ItemFirstData={SolarPanelData} />
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

@@ -6,13 +6,13 @@ export function Menu(props) {
   const { menuCoverClasss, setMenuCoverClasss } = props;
 
   return (
-    <section
-      className={menuCoverClasss}
-      onClick={() => {
-        setMenuCoverClasss("menuCoverPage displayNone");
-      }}
-    >
-      <aside className="blurredPage"></aside>
+    <section className={menuCoverClasss}>
+      <aside
+        className="blurredPage"
+        onClick={() => {
+          setMenuCoverClasss("menuCoverPage displayNone");
+        }}
+      ></aside>
       <aside className="menuWrapper">
         <button
           className="returnButton"

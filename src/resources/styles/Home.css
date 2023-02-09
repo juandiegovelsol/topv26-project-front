@@ -6,7 +6,6 @@
 .App {
   overflow: hidden;
 }
-.headerWrapper,
 .articleTitle,
 .h2LowerText {
   display: flex;

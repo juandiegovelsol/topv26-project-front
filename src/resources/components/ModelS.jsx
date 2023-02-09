@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
+import { SigleItemFirstView } from "./SingleItemFirstView";
+import { ModelSData } from "../data/ModelSData";
+import "../styles/ModelS.css";
 
 export function ModelS() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   return (
-    <div className="ModelS">
-      <header>
+    <div className="modelS">
+      <header className="modelSHeader">
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
-      <main>
-        Model S
+      <main className="modelSMain">
+        <SigleItemFirstView ItemFirstData={ModelSData} />
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

@@ -1,0 +1,71 @@
+.singleItem {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.singleItem .articleTitle {
+  font-size: 35px;
+  grid-area: 4 / 5 / 5 / 8;
+}
+.singleItem .h2LowerText {
+  grid-area: 5 / 5 / 6 / 8;
+}
+.singleItem .mainBackgroundImageWrapper {
+  height: 100vh;
+  width: 100vw;
+  grid-area: 1 / 1 / 21 / 12;
+}
+.singleItem .mainBackgroundImageWrapper img {
+  box-shadow: inset 100px -100px 0px 13px rgba(0, 0, 0, 0.75);
+}
+.singleItem .articleInfo {
+  grid-area: 18 / 2 / 20 / 11;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.singleItem .articleInfo span {
+  width: auto;
+  height: auto;
+  margin: 0px 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.articleInfoP1 {
+  font-size: 27px;
+  font-weight: 700;
+}
+.articleInfoP2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.articleInfoButton {
+  margin-left: 10px;
+  height: 40px;
+  width: 200px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 4px;
+}
+.articleInfoButton:hover,
+.articleInfoButton:focus {
+  background-color: white;
+  font-weight: 500;
+  color: black;
+}
+.hidden {
+  display: none;
+}
