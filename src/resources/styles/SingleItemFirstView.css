@@ -1,6 +1,7 @@
 .singleItem {
   height: 100vh;
   width: 100vw;
+  position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
@@ -15,23 +16,25 @@
 .singleItem .h2LowerText {
   grid-area: 5 / 5 / 6 / 8;
 }
-.singleItem .mainBackgroundImageWrapper {
+.singleItem .backgroundImageWrapper {
   height: 100vh;
   width: 100vw;
   grid-area: 1 / 1 / 21 / 12;
 }
-.singleItem .mainBackgroundImageWrapper img {
-  box-shadow: inset 100px -100px 0px 13px rgba(0, 0, 0, 0.75);
+.backgroundImageWrapper::after {
+  box-shadow: inset 0px 0px 79px 99px rgb(0 0 0);
 }
+
 .singleItem .articleInfo {
   grid-area: 18 / 2 / 20 / 11;
+  position: relative;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
 }
-.singleItem .articleInfo span {
+.singleItem .articleInfo .articleInfoSpan {
   width: auto;
   height: auto;
   margin: 0px 40px;
@@ -40,6 +43,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .articleInfoP1 {
   font-size: 27px;

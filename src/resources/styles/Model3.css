@@ -1,5 +1,6 @@
 .model3 {
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .model3Header {
   height: 0vh;
@@ -10,7 +11,6 @@
   align-items: center;
   position: relative;
   z-index: 2;
-  border-bottom: 0.5px solid rgba(91, 91, 91, 0.07cd);
 }
 .model3Main {
   z-index: 1;
@@ -20,17 +20,4 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-.modelSInterior {
-  height: 100vh;
-  width: 100vw;
-}
-.modelSInterior article {
-  width: 100vw;
-  height: 100vh;
-}
-.modelSInterior article img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }

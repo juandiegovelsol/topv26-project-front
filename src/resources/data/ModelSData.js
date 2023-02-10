@@ -1,4 +1,5 @@
 import model_s_image from "../images/model-s.jfif";
+import model_s_interior from "../images/Model-S-Interior.jfif";
 export const ModelSData = {
   title: "Model S",
   lowerText: "Plaid",
@@ -30,4 +31,8 @@ export const ModelSData = {
       button: "Order Now",
     },
   ],
+};
+export const ModelSInterior = {
+  title: "Interior of the future",
+  imgSrc: model_s_interior,
 };

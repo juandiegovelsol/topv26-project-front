@@ -7,7 +7,7 @@
   left: 0;
   backdrop-filter: blur(4px);
   background-color: #00000046;
-  z-index: 3;
+  z-index: 5;
 }
 .displayNone {
   display: none;
@@ -29,7 +29,8 @@
   align-items: center;
   overflow-y: scroll;
   background-color: white;
-  z-index: 4;
+
+  z-index: 10;
   border-left: 1px solid rgb(204, 204, 204);
   position: absolute;
   top: 0;

@@ -16,7 +16,7 @@ export function SigleItemFirstView(props) {
     <section className="singleItem">
       <h3 className="articleTitle">{ItemFirstData.title}</h3>
       <p className="h2LowerText">{ItemFirstData.lowerText}</p>
-      <span className="mainBackgroundImageWrapper">
+      <span className="backgroundImageWrapper">
         <img
           src={ItemFirstData.imageSrc}
           className="mainBackgroundImage"

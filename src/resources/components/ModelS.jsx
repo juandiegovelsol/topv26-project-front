@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
 import { SigleItemFirstView } from "./SingleItemFirstView";
-import { ModelSData } from "../data/ModelSData";
+import { ModelSData, ModelSInterior } from "../data/ModelSData";
+import { ArticleInterior } from "./ArticleInterior";
 import "../styles/ModelS.css";
 
 export function ModelS() {
@@ -16,6 +17,10 @@ export function ModelS() {
       </header>
       <main className="modelSMain">
         <SigleItemFirstView ItemFirstData={ModelSData} />
+        <ArticleInterior
+          h4Text={ModelSInterior.title}
+          imgSrc={ModelSInterior.imgSrc}
+        />
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

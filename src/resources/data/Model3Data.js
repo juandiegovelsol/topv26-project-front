@@ -1,4 +1,5 @@
 import model_3_image from "../images/Model-3-Sigle-First-View.jfif";
+import model_s_interior from "../images/Model-S-Interior.jfif";
 export const Model3Data = {
   title: "Model 3",
   lowerText: "Schedule a Demo Drive",
@@ -26,4 +27,8 @@ export const Model3Data = {
       button: "Order Now",
     },
   ],
+};
+export const Model3Interior = {
+  title: "Interior of the future",
+  imgSrc: model_s_interior,
 };
