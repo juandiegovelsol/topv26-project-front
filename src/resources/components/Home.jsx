@@ -1,5 +1,7 @@
 import "../styles/Home.css";
 
+import { CustomHeader } from "./CustomHeader";
+import { HeaderFederalTaxInfo } from "./HeaderFederalTaxInfo";
 import { TeslaArticle } from "./TeslaArticle";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
@@ -14,15 +16,15 @@ export function Home() {
 
   return (
     <div className="App">
-      <header className="headerWrapper">
-        <section className="headerTextWrapper">
+      <CustomHeader heightt={true}>
+        <HeaderFederalTaxInfo>
           <span className="headerText">
             Until March 2023, certain new Model 3 and Model Y vehicles qualify
             for a $7,500 federal tax credit for eligible buyers. Learn More
           </span>
-        </section>
+        </HeaderFederalTaxInfo>
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
-      </header>
+      </CustomHeader>
       <main className="mainWrapper">
         <section className="articleContentWrapper">
           {teslaArticleData.map((item) => {

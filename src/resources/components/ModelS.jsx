@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+
+import { CustomHeader } from "./CustomHeader";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
 import { SigleItemFirstView } from "./SingleItemFirstView";
+import { ArticleInfo } from "./ArticleInfo";
 import { ModelSData, ModelSInterior } from "../data/ModelSData";
 import { ArticleInterior } from "./ArticleInterior";
+
 import "../styles/ModelS.css";
 
 export function ModelS() {
@@ -12,11 +16,12 @@ export function ModelS() {
   );
   return (
     <div className="modelS">
-      <header className="modelSHeader">
+      <CustomHeader heightt={false}>
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
-      </header>
+      </CustomHeader>
       <main className="modelSMain">
         <SigleItemFirstView ItemFirstData={ModelSData} />
+        <ArticleInfo info={ModelSData.info} />
         <ArticleInterior
           h4Text={ModelSInterior.title}
           imgSrc={ModelSInterior.imgSrc}

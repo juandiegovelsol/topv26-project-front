@@ -1,0 +1,7 @@
+.headerTextWrapper {
+  min-height: 7.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+
+import { CustomHeader } from "./CustomHeader";
+import { HeaderFederalTaxInfo } from "./HeaderFederalTaxInfo";
 import { Menu } from "./Menu";
 import { NavBar } from "./NavBar";
 import { SigleItemFirstView } from "./SingleItemFirstView";
+import { ArticleInfo } from "./ArticleInfo";
 import { ModelXData } from "../data/ModelXData";
 import "../styles/ModelX.css";
 
@@ -11,11 +15,12 @@ export function ModelX() {
   );
   return (
     <div className="modelX">
-      <header className="modelXHeader">
+      <CustomHeader heightt={false}>
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
-      </header>
+      </CustomHeader>
       <main className="modelXMain">
         <SigleItemFirstView ItemFirstData={ModelXData} />
+        <ArticleInfo info={ModelXData.info} />
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}

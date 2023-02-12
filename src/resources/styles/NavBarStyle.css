@@ -40,6 +40,7 @@
   border: none;
   background-color: transparent;
   font-size: 15px;
+  font-weight: 500;
 }
 
 button:hover,
@@ -49,7 +50,9 @@ button:focus {
 .productIndex button,
 .productIndex button {
   height: 60%;
-  width: 16%;
+  width: auto;
+  margin: 0px 2%;
+  /*   width: 16%; */
   border-radius: 3px;
 }
 .optionsIndex button,
