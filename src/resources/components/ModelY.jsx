@@ -13,6 +13,7 @@ export function ModelY() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+  const [isWhite, setIsWhite] = useState(true);
   return (
     <div className="modelY">
       <CustomHeader heightt={true}>
@@ -22,11 +23,8 @@ export function ModelY() {
             tax credit for eligible buyers.
           </span>
         </HeaderFederalTaxInfo>
-        <NavBar setMenuCoverClasss={setMenuCoverClass} />
+        <NavBar colorWhitee={isWhite} setMenuCoverClasss={setMenuCoverClass} />
       </CustomHeader>
-      {/* <header className="modelYHeader">
-        <NavBar setMenuCoverClasss={setMenuCoverClass} />
-      </header> */}
       <main className="modelYMain">
         <SigleItemFirstView ItemFirstData={ModelYData} />
         <ArticleInfo info={ModelYData.info} />

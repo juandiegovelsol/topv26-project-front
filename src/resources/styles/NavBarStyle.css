@@ -68,3 +68,6 @@ button:focus {
   background-color: #00000017;
   backdrop-filter: blur(4px);
 }
+button.white {
+  color: white;
+}

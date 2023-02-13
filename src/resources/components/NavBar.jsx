@@ -3,14 +3,22 @@ import { useNavigate } from "react-router-dom";
 import "../styles/NavBarStyle.css";
 
 export function NavBar(props) {
-  const { setMenuCoverClasss } = props;
+  const { colorWhitee = false, setMenuCoverClasss } = props;
+  console.log(props);
   const navigate = useNavigate();
+  const setWhite = (colorWhite) => {
+    if (colorWhite) {
+      return "white";
+    } else {
+      return "";
+    }
+  };
 
   return (
     <section className="navBarWrapper">
       <article className="teslaText">
         <button
-          className="teslaButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/");
           }}
@@ -20,7 +28,7 @@ export function NavBar(props) {
       </article>
       <article className="productIndex">
         <button
-          className="modelSButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/ModelS");
           }}
@@ -28,7 +36,7 @@ export function NavBar(props) {
           Model S
         </button>
         <button
-          className="model3Button"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/Model3");
           }}
@@ -36,7 +44,7 @@ export function NavBar(props) {
           Model 3
         </button>
         <button
-          className="modelXButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/ModelX");
           }}
@@ -44,7 +52,7 @@ export function NavBar(props) {
           Model X
         </button>
         <button
-          className="modelYButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/ModelY");
           }}
@@ -52,7 +60,7 @@ export function NavBar(props) {
           Model Y
         </button>
         <button
-          className="solarRoofButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/SolarRoof");
           }}
@@ -60,7 +68,7 @@ export function NavBar(props) {
           Solar Roof
         </button>
         <button
-          className="solarPanelButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/SolarPanel");
           }}
@@ -70,7 +78,7 @@ export function NavBar(props) {
       </article>
       <article className="optionsIndex">
         <button
-          className="shopButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/Shop");
           }}
@@ -78,7 +86,7 @@ export function NavBar(props) {
           Shop
         </button>
         <button
-          className="accountButton"
+          className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/Account");
           }}
@@ -86,7 +94,7 @@ export function NavBar(props) {
           Account
         </button>
         <button
-          className="menuButton"
+          className={setWhite(colorWhitee)}
           onClick={() => setMenuCoverClasss("menuCoverPage")}
         >
           Menu

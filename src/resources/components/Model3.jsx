@@ -13,6 +13,7 @@ export function Model3() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+  const [isWhite, setIsWhite] = useState(true);
   return (
     <div className="model3">
       <CustomHeader heightt={true}>
@@ -22,7 +23,7 @@ export function Model3() {
             tax credit for eligible buyers.
           </span>
         </HeaderFederalTaxInfo>
-        <NavBar setMenuCoverClasss={setMenuCoverClass} />
+        <NavBar colorWhitee={isWhite} setMenuCoverClasss={setMenuCoverClass} />
       </CustomHeader>
       <main className="model3Main">
         <SigleItemFirstView ItemFirstData={Model3Data} />

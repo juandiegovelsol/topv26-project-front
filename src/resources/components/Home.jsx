@@ -13,7 +13,8 @@ export function Home() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
-
+  const [isWhite, setIsWhite] = useState(true);
+  console.log(isWhite);
   return (
     <div className="App">
       <CustomHeader heightt={true}>
@@ -28,7 +29,6 @@ export function Home() {
       <main className="mainWrapper">
         <section className="articleContentWrapper">
           {teslaArticleData.map((item) => {
-            console.log(item.key);
             return (
               <TeslaArticle
                 keys={item.key}

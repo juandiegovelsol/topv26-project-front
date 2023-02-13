@@ -10,10 +10,11 @@ export function SolarRoof() {
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+  const [isWhite, setIsWhite] = useState(true);
   return (
     <div className="solarRoof">
       <header className="solarRoofHeader">
-        <NavBar setMenuCoverClasss={setMenuCoverClass} />
+        <NavBar colorWhitee={isWhite} setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main className="solarRoofMain">
         <SigleItemFirstView ItemFirstData={SolarRoofData} />
