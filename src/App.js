@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./resources/components/Home";
-import { ModelS } from "./resources/components/ModelS";
-import { Model3 } from "./resources/components/Model3";
-import { ModelX } from "./resources/components/ModelX";
-import { ModelY } from "./resources/components/ModelY";
-import { SolarRoof } from "./resources/components/SolarRoof";
-import { SolarPanel } from "./resources/components/SolarPanel";
-import { Shop } from "./resources/components/Shop";
-import { Account } from "./resources/components/Account";
+import { Home } from "./resources/pages/home";
+import { ModelS } from "./resources/pages/modelS";
+import { Model3 } from "./resources/pages/model3";
+import { ModelX } from "./resources/pages/modelX";
+import { ModelY } from "./resources/pages/modelY";
+import { SolarRoof } from "./resources/pages/solarRoof";
+import { SolarPanel } from "./resources/pages/solarPanel";
+import { Shop } from "./resources/pages/shop";
+import { Account } from "./resources/pages/account";
 
 function App() {
   return (
