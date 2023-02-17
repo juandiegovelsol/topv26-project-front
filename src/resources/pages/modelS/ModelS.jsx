@@ -8,7 +8,7 @@ import { ArticleInfo } from "../../components/articleInfo";
 import { ModelSData, ModelSInterior } from "../../data/ModelSData";
 import { ArticleInterior } from "../../components/articleInterior";
 
-import "./ModelS.css";
+import "./ModelS.scss";
 
 const ModelS = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(

@@ -7,7 +7,7 @@ import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
 import { teslaArticleData } from "../../data/TeslaArticleData";
 
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(

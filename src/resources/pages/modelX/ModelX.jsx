@@ -7,7 +7,7 @@ import { NavBar } from "../../components/navBar";
 import { SingleItemFirstView } from "../../components/singleItemFirstView";
 import { ArticleInfo } from "../../components/articleInfo";
 import { ModelXData } from "../../data/ModelXData";
-import "./ModelX.css";
+import "./ModelX.scss";
 
 const ModelX = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(

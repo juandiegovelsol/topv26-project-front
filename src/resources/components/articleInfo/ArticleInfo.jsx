@@ -1,5 +1,5 @@
 import React from "react";
-import "./ArticleInfo.css";
+import "./ArticleInfo.scss";
 const ArticleInfo = (props) => {
   const { info } = props;
   const showOrHide = (ActualClass, content) => {

@@ -8,7 +8,7 @@ import { SingleItemFirstView } from "../../components/singleItemFirstView";
 import { ArticleInfo } from "../../components/articleInfo";
 import { Model3Data } from "../../data/Model3Data";
 
-import "./Model3.css";
+import "./Model3.scss";
 
 const Model3 = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(

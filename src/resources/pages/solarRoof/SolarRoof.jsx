@@ -6,7 +6,7 @@ import { SingleItemFirstView } from "../../components/singleItemFirstView";
 import { ArticleInfo } from "../../components/articleInfo";
 import { SolarRoofData } from "../../data/SolarRoofData";
 
-import "./SolarRoof.css";
+import "./SolarRoof.scss";
 
 const SolarRoof = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(

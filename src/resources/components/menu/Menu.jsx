@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { menuData } from "../../data/MenuData";
-import "./Menu.css";
+import "./Menu.scss";
 
 const Menu = (props) => {
   const { menuCoverClasss, setMenuCoverClasss } = props;

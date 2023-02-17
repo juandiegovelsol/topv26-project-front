@@ -1,5 +1,5 @@
 import React from "react";
-import "./CustomHeader.css";
+import "./CustomHeader.scss";
 
 const CustomHeader = (props) => {
   const { heightt, children } = props;

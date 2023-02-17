@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./NavBar.css";
+import "./NavBar.scss";
 
 const NavBar = (props) => {
   const { colorWhitee = false, setMenuCoverClasss } = props;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./ArticleInterior.css";
+import "./ArticleInterior.scss";
 
 const ArticleInterior = (props) => {
   const { h4Text, imgSrc } = props;

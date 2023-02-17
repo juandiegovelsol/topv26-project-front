@@ -1,5 +1,5 @@
 import React from "react";
-import "./SingleItemFirstView.css";
+import "./SingleItemFirstView.scss";
 
 const SingleItemFirstView = (props) => {
   const { ItemFirstData } = props;
