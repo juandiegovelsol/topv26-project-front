@@ -6,8 +6,8 @@ import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
 import { SingleItemFirstView } from "../../components/singleItemFirstView";
 import { ArticleInfo } from "../../components/articleInfo";
-import { Model3Data } from "../../data/Model3Data";
 
+import { Model3Data } from "../../data/Model3Data";
 import "./Model3.scss";
 
 const Model3 = () => {
@@ -27,14 +27,13 @@ const Model3 = () => {
         <NavBar colorWhitee={isWhite} setMenuCoverClasss={setMenuCoverClass} />
       </CustomHeader>
       <main className="model3Main">
-        <SingleItemFirstView ItemFirstData={Model3Data} />
-
-        <ArticleInfo info={Model3Data.info} />
-
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}
         />
+        <SingleItemFirstView ItemFirstData={Model3Data} />
+
+        <ArticleInfo info={Model3Data.info} />
       </main>
       <footer></footer>
     </div>
