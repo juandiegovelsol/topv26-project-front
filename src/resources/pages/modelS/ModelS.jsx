@@ -8,7 +8,11 @@ import { ArticleInfo } from "../../components/articleInfo";
 import { ArticleInterior } from "../../components/articleInterior";
 import { VideoCarrousel } from "../../components/videoCarrousel";
 
-import { ModelSData, ModelSInterior } from "../../data/ModelSData";
+import {
+  ModelSData,
+  ModelSInterior,
+  VideoArticles,
+} from "../../data/ModelSData";
 import "./ModelS.scss";
 
 const ModelS = () => {
@@ -31,7 +35,7 @@ const ModelS = () => {
           h4Text={ModelSInterior.title}
           imgSrc={ModelSInterior.imgSrc}
         />
-        <VideoCarrousel />
+        <VideoCarrousel videoArticles={VideoArticles} />
       </main>
       <footer></footer>
     </div>
