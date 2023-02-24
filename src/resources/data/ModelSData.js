@@ -7,6 +7,10 @@ import videoSrc3 from "../video/perfectEnviroment.mp4";
 import videoSrc4 from "../video/redesignedSecondRow.mp4";
 import videoSrc5 from "../video/consoleGradeGaming.mp4";
 
+import AlternateImage1 from "../images/AI-stay-conected.jfif";
+import AlternateImage2 from "../images/AI-room-everything.jfif";
+import AlternateImageVD from "../video/AI-inmersive-sound.mp4";
+
 export const ModelSData = {
   title: "Model S",
   lowerText: "Plaid",
@@ -74,5 +78,32 @@ export const VideoArticles = [
     video: videoSrc5,
     title: "Console-Grade Gaming",
     text: "Up to 10 teraflops of processing power unlock in-car gaming on-par with today’s newest consoles. Play from any seat with wireless controller and headset compatibility.",
+  },
+];
+
+export const AlternateImagesData = [
+  {
+    key: 0,
+    media: AlternateImage1,
+    image: true,
+    oriented: false,
+    title: "Stay Connected",
+    text: "Instantly connect with multi-device Bluetooth, or fast charge devices with wireless and 36-watt USB-C charging.",
+  },
+  {
+    key: 1,
+    media: AlternateImageVD,
+    image: false,
+    oriented: true,
+    title: "Immersive Sound",
+    text: "A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
+  },
+  {
+    key: 1,
+    media: AlternateImage2,
+    image: true,
+    oriented: false,
+    title: "Room for Everything",
+    text: "With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
   },
 ];

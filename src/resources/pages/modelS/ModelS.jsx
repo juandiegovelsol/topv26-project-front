@@ -7,11 +7,13 @@ import { SingleItemFirstView } from "../../components/singleItemFirstView";
 import { ArticleInfo } from "../../components/articleInfo";
 import { ArticleInterior } from "../../components/articleInterior";
 import { VideoCarrousel } from "../../components/videoCarrousel";
+import { AlternateImages } from "../../components/alternateImages";
 
 import {
   ModelSData,
   ModelSInterior,
   VideoArticles,
+  AlternateImagesData,
 } from "../../data/ModelSData";
 import "./ModelS.scss";
 
@@ -36,6 +38,7 @@ const ModelS = () => {
           imgSrc={ModelSInterior.imgSrc}
         />
         <VideoCarrousel videoArticles={VideoArticles} />
+        <AlternateImages alternateImages={AlternateImagesData} />
       </main>
       <footer></footer>
     </div>
