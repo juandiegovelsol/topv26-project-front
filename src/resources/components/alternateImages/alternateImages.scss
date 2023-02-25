@@ -10,13 +10,13 @@
   align-items: center;
 
   &__each {
-    min-height: 30%;
-    min-width: 70%;
+    height: 30%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    span {
-      width: 50%;
+    .media {
+      max-width: 49%;
       height: 100%;
       img,
       video {
@@ -24,6 +24,25 @@
         width: 100%;
         height: 100%;
       }
+    }
+    .text {
+      max-width: 51%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      h3,
+      p {
+        width: 70%;
+        color: white;
+      }
+    }
+  }
+  &__each:nth-child(even) {
+    flex-direction: row-reverse;
+    .text {
+      align-items: flex-start;
     }
   }
 }

@@ -39,6 +39,8 @@ const ModelS = () => {
         />
         <VideoCarrousel videoArticles={VideoArticles} />
         <AlternateImages alternateImages={AlternateImagesData} />
+        <SingleItemFirstView ItemFirstData={ModelSData} />
+        <ArticleInfo info={ModelSData.info} />
       </main>
       <footer></footer>
     </div>
