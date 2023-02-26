@@ -2,6 +2,7 @@ import solar_panel_image from "../images/solar-panels.jfif";
 export const SolarPanelData = {
   title: "Solar for Existing Roofs",
   lowerText: "Schedule a Virtual Consultation",
+  fullHeigth: true,
   imageSrc: solar_panel_image,
   info: [
     {

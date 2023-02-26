@@ -5,7 +5,7 @@ import "./NavBar.scss";
 
 const NavBar = (props) => {
   const { colorWhitee = false, setMenuCoverClasss } = props;
-  console.log(props);
+  /* console.log(props); */
   const navigate = useNavigate();
   const setWhite = (colorWhite) => {
     if (colorWhite) {

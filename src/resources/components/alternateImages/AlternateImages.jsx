@@ -2,11 +2,16 @@ import React from "react";
 
 import "./alternateImages.scss";
 
-const AlternateImages = ({ alternateImages }) => {
+const AlternateImages = ({ alternateImages, inverted = false }) => {
+  const handleInvert = (isInverted) => {
+    return isInverted
+      ? "alternateImages__each inverted"
+      : "alternateImages__each";
+  };
   return (
     <section className="alternateImages">
       {alternateImages.map(({ key, media, image, title, text }) => (
-        <article className="alternateImages__each" key={key}>
+        <article className={handleInvert(inverted)} key={key}>
           <span className="media">
             {image && <img src={media} alt={media} />}
             {!image && (

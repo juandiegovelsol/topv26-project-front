@@ -3,6 +3,7 @@ import model_s_interior from "../images/Model-S-Interior.jfif";
 export const Model3Data = {
   title: "Model 3",
   lowerText: "Schedule a Demo Drive",
+  fullHeigth: true,
   imageSrc: model_3_image,
   info: [
     {

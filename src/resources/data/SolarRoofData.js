@@ -2,6 +2,7 @@ import solar_roof_image from "../images/Solar-Roof-Single-First-View.webp";
 export const SolarRoofData = {
   title: "Solar for Existing Roofs",
   lowerText: "Schedule a Virtual Consultation",
+  fullHeigth: true,
   imageSrc: solar_roof_image,
   info: [
     {

@@ -2,6 +2,7 @@ import model_x_image from "../images/Model-X-Single-First-View.jfif";
 export const ModelXData = {
   title: "Model X",
   lowerText: "Plaid",
+  fullHeigth: true,
   imageSrc: model_x_image,
   info: [
     {

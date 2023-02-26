@@ -11,9 +11,18 @@ import AlternateImage1 from "../images/AI-stay-conected.jfif";
 import AlternateImage2 from "../images/AI-room-everything.jfif";
 import AlternateImageVD from "../video/AI-inmersive-sound.mp4";
 
+import ModelSMoreInfoImg from "../images/model-s-more-info.jfif";
+
+import ModelSMoreInfoImg2 from "../images/model-s-more-info2.jfif";
+
+import AlternateImage4 from "../images/AI-rentless-performance.jfif";
+import AlternateImage5 from "../images/AI-optimized-aerodynamics.jfif";
+import AlternateImage6 from "../images/AI-refined-styling.jfif";
+
 export const ModelSData = {
   title: "Model S",
   lowerText: "Plaid",
+  fullHeigth: true,
   imageSrc: model_s_image,
   info: [
     {
@@ -97,10 +106,80 @@ export const AlternateImagesData = [
     text: "A 22-speaker, 960-watt audio system with Active Road Noise Reduction offers immersive listening and studio-grade sound quality.",
   },
   {
-    key: 1,
+    key: 2,
     media: AlternateImage2,
     image: true,
     title: "Room for Everything",
     text: "With front and rear trunks and fold-flat seats you can fit your bike without taking the wheel off—and your luggage too.",
+  },
+];
+export const ModelSMoreInfo = {
+  title: "",
+  lowerText: "",
+  fullHeigth: false,
+  imageSrc: ModelSMoreInfoImg,
+  info: [
+    {
+      p1: "1020 hp",
+      p2: "Peak power",
+      button: "",
+    },
+    {
+      p1: "9.23 s",
+      p2: "@155 mph 1/4 mile",
+      button: "",
+    },
+    {
+      p1: "1.99 s",
+      p2: "0-60 mph*",
+      button: "",
+    },
+  ],
+  moreInfo: {
+    text: "Plaid",
+    title: "Beyond Ludicrous",
+    orderButton: true,
+    viewInventoryButton: true,
+    description:
+      "Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+  },
+};
+export const ModelSMoreInfo2 = {
+  title: "",
+  lowerText: "",
+  fullHeigth: false,
+  imageSrc: ModelSMoreInfoImg2,
+  info: [],
+  moreInfo: {
+    text: "Exterior",
+    title: "Designed for Efficiency",
+    orderButton: true,
+    viewInventoryButton: true,
+    description:
+      "With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is built for speed, endurance and range. Improved aerodynamics and a wider chassis offer more responsive performance so you can take corners quicker and with more confidence.",
+  },
+};
+
+export const AlternateImagesData2 = [
+  {
+    key: 0,
+    media: AlternateImage4,
+    image: true,
+    title: "Relentless Performance",
+    text: "Staggered, performance wheels and tires keep the car planted and help transfer maximum power down to the road.",
+  },
+  {
+    key: 1,
+    media: AlternateImage5,
+    image: true,
+    title: "Optimized Aerodynamics",
+    text: "Attention to detail on all exterior surfaces makes Model S the most aerodynamic production car on Earth.",
+  },
+  {
+    key: 2,
+    media: AlternateImage6,
+    image: true,
+    title: "Refined Styling",
+    text: "An iconic silhouette meets refreshed, elegant proportions.",
   },
 ];

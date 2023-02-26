@@ -8,12 +8,16 @@ import { ArticleInfo } from "../../components/articleInfo";
 import { ArticleInterior } from "../../components/articleInterior";
 import { VideoCarrousel } from "../../components/videoCarrousel";
 import { AlternateImages } from "../../components/alternateImages";
+import { MoreInfo } from "../../components/moreInfo";
 
 import {
   ModelSData,
   ModelSInterior,
   VideoArticles,
   AlternateImagesData,
+  ModelSMoreInfo,
+  ModelSMoreInfo2,
+  AlternateImagesData2,
 } from "../../data/ModelSData";
 import "./ModelS.scss";
 
@@ -38,9 +42,20 @@ const ModelS = () => {
           imgSrc={ModelSInterior.imgSrc}
         />
         <VideoCarrousel videoArticles={VideoArticles} />
+
         <AlternateImages alternateImages={AlternateImagesData} />
-        <SingleItemFirstView ItemFirstData={ModelSData} />
-        <ArticleInfo info={ModelSData.info} />
+
+        <SingleItemFirstView ItemFirstData={ModelSMoreInfo} />
+        <ArticleInfo info={ModelSMoreInfo.info} />
+        <MoreInfo moreInfo={ModelSMoreInfo.moreInfo} backgroundBlack={false} />
+
+        <SingleItemFirstView ItemFirstData={ModelSMoreInfo2} />
+        <MoreInfo moreInfo={ModelSMoreInfo2.moreInfo} backgroundBlack={true} />
+
+        <AlternateImages
+          alternateImages={AlternateImagesData2}
+          inverted={true}
+        />
       </main>
       <footer></footer>
     </div>
