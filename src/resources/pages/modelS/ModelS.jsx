@@ -20,7 +20,10 @@ import {
   SelectorWithImageData,
   ModelSMoreInfo2,
   AlternateImagesData2,
+  SelectorWithImage2Data,
+  SelectorWithVideoData,
 } from "../../data/ModelSData";
+
 import "./ModelS.scss";
 
 const ModelS = () => {
@@ -55,8 +58,8 @@ const ModelS = () => {
           title={SelectorWithImageData.title}
           text={SelectorWithImageData.text}
           footer={SelectorWithImageData.footer}
-          option1={SelectorWithImageData.option1}
-          option2={SelectorWithImageData.option2}
+          options={SelectorWithImageData.options}
+          isWhite={false}
         />
 
         <SingleItemFirstView ItemFirstData={ModelSMoreInfo2} />
@@ -65,6 +68,20 @@ const ModelS = () => {
         <AlternateImages
           alternateImages={AlternateImagesData2}
           inverted={true}
+        />
+        <SelectorWithImage
+          title={SelectorWithImage2Data.title}
+          text={SelectorWithImage2Data.text}
+          footer={SelectorWithImage2Data.footer}
+          options={SelectorWithImage2Data.options}
+          isWhite={true}
+        />
+        <SelectorWithImage
+          title={SelectorWithVideoData.title}
+          text={SelectorWithVideoData.text}
+          footer={SelectorWithVideoData.footer}
+          options={SelectorWithVideoData.options}
+          isWhite={true}
         />
       </main>
       <footer></footer>

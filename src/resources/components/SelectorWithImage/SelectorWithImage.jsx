@@ -1,61 +1,68 @@
 import React, { useState } from "react";
 
+import { Video } from "../videoCarrousel/Video";
+
 import "./selectorWithImage.scss";
 
-const SelectorWithImage = ({ title, text, footer, option1, option2 }) => {
-  const [selector, setSelector] = useState(option1);
-  const [opacity1, setOpacity1] = useState("opac");
-  const [opacity2, setOpacity2] = useState("");
+const SelectorWithImage = ({
+  title,
+  text,
+  footer = "",
+  options,
+  isWhite = true,
+}) => {
+  const [selector, setSelector] = useState(0);
+  const handleOpacity = (selected, index) => {
+    if (selected === index) {
+      return "opac";
+    } else {
+      return "";
+    }
+  };
+  const handleBackgroundColor = (isWhite) => {
+    return isWhite ? "selector-with-image white" : "selector-with-image";
+  };
   return (
-    <section className="selector-with-image">
+    <section className={handleBackgroundColor(isWhite)}>
       <article className="selector-with-image__title">
         <h3>{title}</h3>
-        <p>{text}</p>
+        {text && <p>{text}</p>}
       </article>
       <article className="selector-with-image__image">
-        <img src={selector.imgSrc} alt={selector.title} />
+        {options[selector].isImage && (
+          <img src={options[selector].imgSrc} alt={options[selector].title} />
+        )}
+        {!options[selector].isImage && (
+          <video key={options[selector].key} autoPlay muted loop>
+            <source src={options[selector].imgSrc} type="video/mp4" />
+          </video>
+        )}
       </article>
+
       <article className="selector-with-image__selectors">
-        <span
-          className={opacity1}
-          onClick={() => {
-            setSelector(option1);
-            setOpacity1("opac");
-            setOpacity2("");
-          }}
-        >
-          <button></button>
-          <h4>{option1.title}</h4>
-          <p>{option1.text}</p>
-          <div className="info">
-            {option1.info.map((item, index) => (
-              <div className="info__items">
-                <h5>{item.first}</h5>
-                <p>{item.second}</p>
+        {options.map((item, index) => (
+          <span
+            onClick={() => {
+              setSelector(index);
+            }}
+            className={handleOpacity(selector, index)}
+            key={item.key}
+          >
+            <button></button>
+            <h4>{item.title}</h4>
+            {item.text && <p>{item.text}</p>}
+            {item.info && (
+              <div className="info">
+                {item.info.map((element, index) => (
+                  <div className="info__items" key={index}>
+                    <h5>{element.first}</h5>
+                    <p>{element.second}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </span>
-        <span
-          className={opacity2}
-          onClick={() => {
-            setSelector(option2);
-            setOpacity1("");
-            setOpacity2("opac");
-          }}
-        >
-          <button></button>
-          <h4>{option2.title}</h4>
-          <p>{option2.text}</p>
-          <div className="info">
-            {option2.info.map((item, index) => (
-              <div className="info__items">
-                <h5>{item.first}</h5>
-                <p>{item.second}</p>
-              </div>
-            ))}
-          </div>
-        </span>
+            )}
+          </span>
+        ))}
       </article>
       {footer && (
         <article className="selector-with-image__footer">

@@ -7,6 +7,10 @@
   align-items: center;
   background-color: #f4f4f4;
 
+  &.white {
+    background-color: white;
+  }
+
   &__title {
     height: 23%;
     width: 73%;
@@ -32,7 +36,8 @@
     border: none;
     border-radius: 20px;
     overflow: hidden;
-    img {
+    img,
+    video {
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -48,7 +53,8 @@
     span {
       height: 100%;
       padding: 5% 0% 5% 0%;
-      flex-grow: 1;
+      flex: 1 1 0;
+      width: 0;
       margin: 10px;
       color: black;
       opacity: 0.5;

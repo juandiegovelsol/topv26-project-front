@@ -15,7 +15,7 @@ const AlternateImages = ({ alternateImages, inverted = false }) => {
           <span className="media">
             {image && <img src={media} alt={media} />}
             {!image && (
-              <video key={title} autoplay="true" muted loop>
+              <video key={title} autoPlay muted loop>
                 <source src={media} />
               </video>
             )}

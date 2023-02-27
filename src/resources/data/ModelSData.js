@@ -22,6 +22,16 @@ import AlternateImage4 from "../images/AI-rentless-performance.jfif";
 import AlternateImage5 from "../images/AI-optimized-aerodynamics.jfif";
 import AlternateImage6 from "../images/AI-refined-styling.jfif";
 
+import SFtoLA from "../images/SFtoLA.jfif";
+import BKtoLT from "../images/BKtoLT.jfif";
+import MHtoBT from "../images/MHtoBT.jfif";
+import FLtoOR from "../images/FLtoOR.jfif";
+
+import NavigateAutopilot from "../video/navigate-autopilot.mp4";
+import AutolaneChange from "../video/autolane-change.mp4";
+import Summon from "../video/summon.mp4";
+import Autopark from "../video/autopark.mp4";
+
 export const ModelSData = {
   title: "Model S",
   lowerText: "Plaid",
@@ -152,44 +162,50 @@ export const SelectorWithImageData = {
   title: "Electric Powertrain",
   text: "Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.",
   footer: "* With rollout subtracted",
-  option1: {
-    imgSrc: ModelSPowerOption1,
-    title: "Model S",
-    text: "Dual Motor All-Wheel Drive unlocks more range than any other vehicle in our current lineup, with insane power and maximum control.",
-    info: [
-      {
-        first: "3.1 s",
-        second: "0-60 mph",
-      },
-      {
-        first: "405 mi",
-        second: "Range (EPA est.)",
-      },
-      {
-        first: "670 hp",
-        second: "Peak Power",
-      },
-    ],
-  },
-  option2: {
-    imgSrc: ModelSPowerOption2,
-    title: "Model S Plaid",
-    text: "Mantain 1.000+ horsepower all the way to 200 mph with Tri-Motor All-Wheel Drive, featuring torque vectoring and three independent carbon-sleeved rotos.",
-    info: [
-      {
-        first: "1.99 s*",
-        second: "0-60 mph",
-      },
-      {
-        first: "396 mi",
-        second: "Range (EPA est.)",
-      },
-      {
-        first: "1,020 hp",
-        second: "Peak Power",
-      },
-    ],
-  },
+  options: [
+    {
+      key: 0,
+      isImage: true,
+      imgSrc: ModelSPowerOption1,
+      title: "Model S",
+      text: "Dual Motor All-Wheel Drive unlocks more range than any other vehicle in our current lineup, with insane power and maximum control.",
+      info: [
+        {
+          first: "3.1 s",
+          second: "0-60 mph",
+        },
+        {
+          first: "405 mi",
+          second: "Range (EPA est.)",
+        },
+        {
+          first: "670 hp",
+          second: "Peak Power",
+        },
+      ],
+    },
+    {
+      key: 1,
+      isImage: true,
+      imgSrc: ModelSPowerOption2,
+      title: "Model S Plaid",
+      text: "Mantain 1.000+ horsepower all the way to 200 mph with Tri-Motor All-Wheel Drive, featuring torque vectoring and three independent carbon-sleeved rotos.",
+      info: [
+        {
+          first: "1.99 s*",
+          second: "0-60 mph",
+        },
+        {
+          first: "396 mi",
+          second: "Range (EPA est.)",
+        },
+        {
+          first: "1,020 hp",
+          second: "Peak Power",
+        },
+      ],
+    },
+  ],
 };
 
 export const ModelSMoreInfo2 = {
@@ -231,3 +247,103 @@ export const AlternateImagesData2 = [
     text: "An iconic silhouette meets refreshed, elegant proportions.",
   },
 ];
+
+export const SelectorWithImage2Data = {
+  title: "Freedom to Travel",
+  text: "Enter a destination on your touchscreen and Trip Planner will automatically calculate your route with Superchargers along the way.",
+  footer: "Learn More button",
+  options: [
+    {
+      key: 0,
+      isImage: true,
+      imgSrc: SFtoLA,
+      title: "San Francisco to Los Angeles",
+      text: "",
+      info: [
+        {
+          first: "383 miles",
+          second: "",
+        },
+      ],
+    },
+    {
+      key: 1,
+      isImage: true,
+      imgSrc: BKtoLT,
+      title: "Berkeley to Lake Tahoe",
+      text: "",
+      info: [
+        {
+          first: "178 miles",
+          second: "",
+        },
+      ],
+    },
+    {
+      key: 2,
+      isImage: true,
+      imgSrc: MHtoBT,
+      title: "Manhattan to Boston",
+      text: "",
+      info: [
+        {
+          first: "211 miles",
+          second: "",
+        },
+      ],
+    },
+    {
+      key: 3,
+      isImage: true,
+      imgSrc: FLtoOR,
+      title: "Fort Lauderdale to Orlando",
+      text: "",
+      info: [
+        {
+          first: "195 miles",
+          second: "",
+        },
+      ],
+    },
+  ],
+};
+
+export const SelectorWithVideoData = {
+  title: "Features",
+  text: "Enhanced Autopilot and Full Self-Driving capability introduce additional features and improve existing functionality to make your car more capable over time, including:",
+  footer: "",
+  options: [
+    {
+      key: 0,
+      isImage: false,
+      imgSrc: NavigateAutopilot,
+      title: "Navigate on Autopilot",
+      text: "Active guidance from on-ramp to off-ramp",
+      info: [],
+    },
+    {
+      key: 1,
+      isImage: false,
+      imgSrc: AutolaneChange,
+      title: "Auto Lane Change",
+      text: "Automatically change lanes while driving on the highway",
+      info: [],
+    },
+    {
+      key: 2,
+      isImage: false,
+      imgSrc: Summon,
+      title: "Summon",
+      text: "Automatically retrieve your car",
+      info: [],
+    },
+    {
+      key: 3,
+      isImage: false,
+      imgSrc: Autopark,
+      title: "Autopark",
+      text: "Parallel and perpendicular parking with a single touch",
+      info: [],
+    },
+  ],
+};
