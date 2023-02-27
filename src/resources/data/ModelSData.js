@@ -13,6 +13,9 @@ import AlternateImageVD from "../video/AI-inmersive-sound.mp4";
 
 import ModelSMoreInfoImg from "../images/model-s-more-info.jfif";
 
+import ModelSPowerOption1 from "../images/model-s-power-option1.jfif";
+import ModelSPowerOption2 from "../images/model-s-power-option2.jfif";
+
 import ModelSMoreInfoImg2 from "../images/model-s-more-info2.jfif";
 
 import AlternateImage4 from "../images/AI-rentless-performance.jfif";
@@ -144,6 +147,51 @@ export const ModelSMoreInfo = {
       "Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
   },
 };
+
+export const SelectorWithImageData = {
+  title: "Electric Powertrain",
+  text: "Model S platforms unite powertrain and battery technologies for unrivaled performance, range and efficiency. New module and pack thermal architecture allows faster charging and gives you more power and endurance in all conditions.",
+  footer: "* With rollout subtracted",
+  option1: {
+    imgSrc: ModelSPowerOption1,
+    title: "Model S",
+    text: "Dual Motor All-Wheel Drive unlocks more range than any other vehicle in our current lineup, with insane power and maximum control.",
+    info: [
+      {
+        first: "3.1 s",
+        second: "0-60 mph",
+      },
+      {
+        first: "405 mi",
+        second: "Range (EPA est.)",
+      },
+      {
+        first: "670 hp",
+        second: "Peak Power",
+      },
+    ],
+  },
+  option2: {
+    imgSrc: ModelSPowerOption2,
+    title: "Model S Plaid",
+    text: "Mantain 1.000+ horsepower all the way to 200 mph with Tri-Motor All-Wheel Drive, featuring torque vectoring and three independent carbon-sleeved rotos.",
+    info: [
+      {
+        first: "1.99 s*",
+        second: "0-60 mph",
+      },
+      {
+        first: "396 mi",
+        second: "Range (EPA est.)",
+      },
+      {
+        first: "1,020 hp",
+        second: "Peak Power",
+      },
+    ],
+  },
+};
+
 export const ModelSMoreInfo2 = {
   title: "",
   lowerText: "",

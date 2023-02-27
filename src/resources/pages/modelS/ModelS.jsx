@@ -8,6 +8,7 @@ import { ArticleInfo } from "../../components/articleInfo";
 import { ArticleInterior } from "../../components/articleInterior";
 import { VideoCarrousel } from "../../components/videoCarrousel";
 import { AlternateImages } from "../../components/alternateImages";
+import { SelectorWithImage } from "../../components/SelectorWithImage";
 import { MoreInfo } from "../../components/moreInfo";
 
 import {
@@ -16,6 +17,7 @@ import {
   VideoArticles,
   AlternateImagesData,
   ModelSMoreInfo,
+  SelectorWithImageData,
   ModelSMoreInfo2,
   AlternateImagesData2,
 } from "../../data/ModelSData";
@@ -48,6 +50,14 @@ const ModelS = () => {
         <SingleItemFirstView ItemFirstData={ModelSMoreInfo} />
         <ArticleInfo info={ModelSMoreInfo.info} />
         <MoreInfo moreInfo={ModelSMoreInfo.moreInfo} backgroundBlack={false} />
+
+        <SelectorWithImage
+          title={SelectorWithImageData.title}
+          text={SelectorWithImageData.text}
+          footer={SelectorWithImageData.footer}
+          option1={SelectorWithImageData.option1}
+          option2={SelectorWithImageData.option2}
+        />
 
         <SingleItemFirstView ItemFirstData={ModelSMoreInfo2} />
         <MoreInfo moreInfo={ModelSMoreInfo2.moreInfo} backgroundBlack={true} />
