@@ -1,0 +1,12 @@
+.video-with-info {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  &.inverted {
+    flex-direction: row-reverse;
+  }
+}

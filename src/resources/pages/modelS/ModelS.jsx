@@ -10,6 +10,9 @@ import { VideoCarrousel } from "../../components/videoCarrousel";
 import { AlternateImages } from "../../components/alternateImages";
 import { SelectorWithImage } from "../../components/SelectorWithImage";
 import { MoreInfo } from "../../components/moreInfo";
+import { VideoWithInfo } from "../../components/videoWithInfo";
+import { VideoFullHeigth } from "../../components/videoWithInfo/videoFullHeight";
+import { ImageFullHeigth } from "../../components/videoWithInfo/imageFullHeigth";
 
 import {
   ModelSData,
@@ -20,7 +23,10 @@ import {
   SelectorWithImageData,
   ModelSMoreInfo2,
   AlternateImagesData2,
+  VideoWithInfoData,
   SelectorWithImage2Data,
+  ImageWithInfoData,
+  ModelSMoreInfo3,
   SelectorWithVideoData,
 } from "../../data/ModelSData";
 
@@ -69,6 +75,20 @@ const ModelS = () => {
           alternateImages={AlternateImagesData2}
           inverted={true}
         />
+
+        <VideoWithInfo
+          preTitle={VideoWithInfoData.preTitle}
+          title={VideoWithInfoData.title}
+          text={VideoWithInfoData.text}
+          button1={VideoWithInfoData.button1}
+          button2={VideoWithInfoData.button2}
+          isInverted={false}
+        >
+          <VideoFullHeigth videoSrc={VideoWithInfoData.videoSrc}>
+            <ArticleInfo info={VideoWithInfoData.info} />
+          </VideoFullHeigth>
+        </VideoWithInfo>
+
         <SelectorWithImage
           title={SelectorWithImage2Data.title}
           text={SelectorWithImage2Data.text}
@@ -76,6 +96,21 @@ const ModelS = () => {
           options={SelectorWithImage2Data.options}
           isWhite={true}
         />
+
+        <VideoWithInfo
+          preTitle={ImageWithInfoData.preTitle}
+          title={ImageWithInfoData.title}
+          text={ImageWithInfoData.text}
+          button1={ImageWithInfoData.button1}
+          button2={ImageWithInfoData.button2}
+          isInverted={true}
+        >
+          <ImageFullHeigth imgSrc={ImageWithInfoData.videoSrc} />
+        </VideoWithInfo>
+
+        <SingleItemFirstView ItemFirstData={ModelSMoreInfo3} />
+        <MoreInfo moreInfo={ModelSMoreInfo3.moreInfo} backgroundBlack={false} />
+
         <SelectorWithImage
           title={SelectorWithVideoData.title}
           text={SelectorWithVideoData.text}

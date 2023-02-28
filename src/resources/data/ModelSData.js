@@ -22,15 +22,21 @@ import AlternateImage4 from "../images/AI-rentless-performance.jfif";
 import AlternateImage5 from "../images/AI-optimized-aerodynamics.jfif";
 import AlternateImage6 from "../images/AI-refined-styling.jfif";
 
+import GoAnywhere from "../video/go-anywhere.mp4";
+
 import SFtoLA from "../images/SFtoLA.jfif";
 import BKtoLT from "../images/BKtoLT.jfif";
 import MHtoBT from "../images/MHtoBT.jfif";
 import FLtoOR from "../images/FLtoOR.jfif";
 
+import HighProtectionImg from "../images/model-s-high-protection.jfif";
+
 import NavigateAutopilot from "../video/navigate-autopilot.mp4";
 import AutolaneChange from "../video/autolane-change.mp4";
 import Summon from "../video/summon.mp4";
 import Autopark from "../video/autopark.mp4";
+
+import ModelSMoreInfoImg3 from "../images/model-s-more-info3.jfif";
 
 export const ModelSData = {
   title: "Model S",
@@ -248,6 +254,29 @@ export const AlternateImagesData2 = [
   },
 ];
 
+export const VideoWithInfoData = {
+  preTitle: "Range",
+  title: "Go Anywhere",
+  text: "With up to 405 miles of estimated range and access to the world’s largest and most powerful fast charging network, you’ll spend less time plugged in and more time on the road. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+  button1: "Order Now",
+  button2: "Find My Route",
+  videoSrc: GoAnywhere,
+  info: [
+    {
+      p1: "405 mi",
+      p2: "Go anywhere with up to 405 miles of estimated range on a single charge",
+    },
+    {
+      p1: "15 min",
+      p2: "Recharge up to 200 miles in 15 minutes at Supercharger locations",
+    },
+    {
+      p1: "40,000+",
+      p2: "Superchargers placed along popular routes",
+    },
+  ],
+};
+
 export const SelectorWithImage2Data = {
   title: "Freedom to Travel",
   text: "Enter a destination on your touchscreen and Trip Planner will automatically calculate your route with Superchargers along the way.",
@@ -306,6 +335,32 @@ export const SelectorWithImage2Data = {
       ],
     },
   ],
+};
+
+export const ImageWithInfoData = {
+  preTitle: "Safety",
+  title: "High Impact Protection",
+  text: "Model S is built from the ground up as an electric vehicle, with a high-strength architecture and floor-mounted battery pack for incredible occupant protection and low rollover risk. Every new Model S includes Tesla’s latest active safety features, such as Automatic Emergency Braking, at no extra cost.",
+  button1: "Order Now",
+  button2: "View Inventory",
+  videoSrc: HighProtectionImg,
+  info: [],
+};
+
+export const ModelSMoreInfo3 = {
+  title: "",
+  lowerText: "",
+  fullHeigth: false,
+  imageSrc: ModelSMoreInfoImg3,
+  info: [],
+  moreInfo: {
+    text: "Autopilot",
+    title: "Future of Driving",
+    orderButton: true,
+    viewInventoryButton: true,
+    description:
+      "Autopilot enables your car to steer, accelerate and brake automatically within its lane under your active supervision, assisting with the most burdensome parts of driving. With over-the-air software updates, the latest enhancements are available instantly. Chat with a Tesla Advisor to learn more about Model S or schedule a demo drive today.",
+  },
 };
 
 export const SelectorWithVideoData = {
