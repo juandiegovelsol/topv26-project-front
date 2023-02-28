@@ -112,6 +112,7 @@ const ModelS = () => {
             text={ImageWithInfoData.text}
             button1={ImageWithInfoData.button1}
             button2={ImageWithInfoData.button2}
+            isWhite={false}
           />
         </VideoWithInfo>
 
