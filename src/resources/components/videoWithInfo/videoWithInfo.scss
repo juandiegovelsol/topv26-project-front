@@ -2,11 +2,16 @@
   min-height: 100vh;
   min-width: 100vw;
   background-color: white;
+  color: black;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   &.inverted {
     flex-direction: row-reverse;
+  }
+  &.black {
+    background-color: black;
+    color: white;
   }
 }

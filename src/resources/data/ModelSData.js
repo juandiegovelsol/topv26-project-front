@@ -38,6 +38,10 @@ import Autopark from "../video/autopark.mp4";
 
 import ModelSMoreInfoImg3 from "../images/model-s-more-info3.jfif";
 
+import ModelSSpecs from "../images/model-s-specs.jfif";
+
+import ModelSLateral from "../images/model-s-lateral-view.jfif";
+
 export const ModelSData = {
   title: "Model S",
   lowerText: "Plaid",
@@ -401,4 +405,106 @@ export const SelectorWithVideoData = {
       info: [],
     },
   ],
+};
+
+export const ModelSSpecsData = {
+  imgSrc: ModelSSpecs,
+  titleStrong: "Model S",
+  title: "Specs",
+  button1: "Model S Plaid",
+  button2: "Model S",
+  info: [
+    [
+      {
+        p1: "Range (EPA est.)",
+        p2: "396 mi",
+      },
+      {
+        p1: "1/4 Mile",
+        p2: "9.23@155 mph trap speed",
+      },
+      {
+        p1: "Peak Power",
+        p2: "1,020 hp",
+      },
+      {
+        p1: "Wheels",
+        p2: '19" or 21"',
+      },
+      {
+        p1: "Cargo",
+        p2: "28 cu ft",
+      },
+      {
+        p1: "Weight",
+        p2: "4,766 lbs",
+      },
+      {
+        p1: "*Acceleration",
+        p2: "1.99 s 0-60 mph with rollout subtracted",
+      },
+      {
+        p1: "+Top Speed",
+        p2: "200 mph when equipped with paid hardware upgrades",
+      },
+      {
+        p1: "Drag Coefficient",
+        p2: "0.208 Cd",
+      },
+      {
+        p1: "Powertrain",
+        p2: "Tri Motor",
+      },
+      {
+        p1: "Supercharging Max",
+        p2: "250 kW",
+      },
+    ],
+    [
+      {
+        p1: "Range (EPA est.)",
+        p2: "405 mi",
+      },
+      {
+        p1: "Peak Power",
+        p2: "670 hp",
+      },
+      {
+        p1: "Wheels",
+        p2: '19" or 21"',
+      },
+      {
+        p1: "Cargo",
+        p2: "28 cu ft",
+      },
+      {
+        p1: "*Acceleration",
+        p2: "3.1 s 0-60 mph",
+      },
+      {
+        p1: "Top Speed",
+        p2: "149 mph",
+      },
+      {
+        p1: "Drag Coefficient",
+        p2: "0.208 Cd",
+      },
+      {
+        p1: "Weight",
+        p2: "4,561 lbs",
+      },
+      {
+        p1: "Powertrain",
+        p2: "Dual Motor",
+      },
+      {
+        p1: "Supercharging Max",
+        p2: "250 kW",
+      },
+    ],
+  ],
+};
+
+export const ModelSLateralData = {
+  imgSrc: ModelSLateral,
 };

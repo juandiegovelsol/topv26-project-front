@@ -2,9 +2,12 @@ import React from "react";
 
 import "./videoFullHeigth.scss";
 
-const VideoFullHeigth = ({ videoSrc, children }) => {
+const VideoFullHeigth = ({ videoSrc, isHalf = false, children }) => {
+  const handleWidth = (IsHalf) => {
+    return IsHalf ? "video-full-heigth half" : "video-full-heigth";
+  };
   return (
-    <article className="video-full-heigth">
+    <article className={handleWidth(isHalf)}>
       <video autoPlay muted loop>
         <source src={videoSrc} type="video/mp4" />
       </video>
