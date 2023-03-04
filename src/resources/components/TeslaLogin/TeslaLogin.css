@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.tesla-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  border-style:groove;
+  border-color:#fff;
+}
+
+.tesla-logo {
+  height: 15rem;
+  margin-bottom: 0.5rem;
+}
+
+.tesla-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.tesla-login-label {
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+}
+
+.tesla-login-input {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+}
+
+.tesla-login-input:focus {
+  outline: none;
+  border-bottom: 2px solid #1d8cfa;
+}
+
+.tesla-login-button {
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  background-color: #3e6ae1;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.tesla-login-button:hover {
+  background-color: #3e6ae1;
+}
+
+.tesla-login-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.tesla-login-link {
+  font-size: 1.2rem;
+  color: #85868a;
+  text-decoration: none;
+}
+
+.tesla-login-link:hover {
+  text-decoration: underline;
+}
+
+.tesla-login-link-divider {
+  margin: 0 1rem;
+  color: #ccc;
+}
+
+.tesla-signin{
+  font-family:'Dancing Script', cursive;
+}
+
+/* 
+Este archivo CSS define estilos para el componente TeslaLogin, incluido el posicionamiento y el tamaño del contenedor, el formulario y el logotipo, así como el estilo de los campos de entrada, el botón y los enlaces. Estos estilos se asemejan mucho al diseño de la página de inicio de sesión empresarial de Tesla que proporcionó anteriormente. */

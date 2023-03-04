@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
+import { TeslaLogin } from "../../components/TeslaLogin";
 
 const Account = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(
@@ -13,7 +14,7 @@ const Account = () => {
         <NavBar setMenuCoverClasss={setMenuCoverClass} />
       </header>
       <main>
-        Account
+        <TeslaLogin/>
         {/*  This menu must change for this component */}
         <Menu
           menuCoverClasss={menuCoverClass}
