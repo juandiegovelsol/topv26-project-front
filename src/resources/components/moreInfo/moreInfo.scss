@@ -1,0 +1,43 @@
+.moreInfo {
+  min-height: 30vh;
+  min-width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.white {
+    background-color: white;
+    color: black;
+  }
+
+  &__left {
+    height: 100%;
+    width: 30%;
+    padding: 0.5% 1% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    p {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 35px;
+      font-weight: 500;
+    }
+    span {
+      width: 100%;
+      margin: 20px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__rigth {
+    height: 100%;
+    width: 50%;
+    padding: 3% 1%;
+  }
+}

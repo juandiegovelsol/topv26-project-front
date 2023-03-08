@@ -2,6 +2,7 @@ import model_y_image from "../images/Model-Y-Single-First-View.jfif";
 export const ModelYData = {
   title: "Model Y",
   lowerText: "Schedule a Demo Drive",
+  fullHeigth: true,
   imageSrc: model_y_image,
   info: [
     {

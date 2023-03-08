@@ -1,0 +1,14 @@
+.videoContainer {
+  margin: 10vh 0px;
+  height: 82vh;
+  width: 87vw;
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+
+  video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
