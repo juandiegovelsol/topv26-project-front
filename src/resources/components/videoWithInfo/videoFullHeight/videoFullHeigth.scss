@@ -1,0 +1,12 @@
+.video-full-heigth {
+  height: 100%;
+  width: 73%;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &.half {
+    width: 50%;
+  }
+}

@@ -1,0 +1,22 @@
+.headerWrapperHeight {
+  height: 7.5vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  /*   border-bottom: 0.5px solid rgba(91, 91, 91, 0.07cd); */
+}
+.headerWrapperNoHeight {
+  height: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  /*   border-bottom: 0.5px solid rgba(91, 91, 91, 0.07cd); */
+}
