@@ -20,9 +20,9 @@ const Menu = (props) => {
         >
           X
         </button>
-        {menuData.map((item) => {
+        {menuData.map((item, index) => {
           return (
-            <button className="menuButton" key={item.text}>
+            <button className="menuButton" key={index}>
               {item.text}
             </button>
           );

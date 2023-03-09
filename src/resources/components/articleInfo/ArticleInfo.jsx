@@ -6,9 +6,9 @@ const ArticleInfo = (props) => {
   return (
     <section className="articleInfo">
       {info &&
-        info.map((item) => {
+        info.map((item, index) => {
           return (
-            <span className="articleInfoSpan">
+            <span className="articleInfoSpan" key={index}>
               {item.p1 && <p className="articleInfoP1">{item.p1}</p>}
               {item.p2 && <p className="articleInfoP2">{item.p2}</p>}
               {item.button && (
