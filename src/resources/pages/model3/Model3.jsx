@@ -10,6 +10,7 @@ import { VideoWithInfo } from "../../components/videoWithInfo";
 import { ImageFullHeigth } from "../../components/videoWithInfo/imageFullHeigth";
 import { SideInfo } from "../../components/videoWithInfo/SideInfo";
 import { MoreInfo } from "../../components/moreInfo";
+import { SideInfoCompare } from "../../components/videoWithInfo/sideInfoCompare";
 
 import {
   Model3Data,
@@ -17,9 +18,15 @@ import {
   Model3MoreInfo,
   Model3MoreInfo2,
   ImageWithInfoData2,
+  Model3MoreInfo3,
+  Model3MoreInfo4,
+  Model3SpecsData,
+  Model3LateralData,
 } from "../../data/Model3Data";
 
 import "./Model3.scss";
+import { SideTitleWithButtons } from "../../components/videoWithInfo/SideTitleWithButtons";
+import { CustomFooter } from "../../components/CustomFooter";
 
 const Model3 = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(
@@ -83,6 +90,34 @@ const Model3 = () => {
             />
           </SideInfo>
         </VideoWithInfo>
+
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo3} />
+        <ArticleInfo info={Model3MoreInfo3.info} />
+        <MoreInfo moreInfo={Model3MoreInfo3.moreInfo} backgroundBlack={false} />
+
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo4} />
+        <ArticleInfo info={Model3MoreInfo4.info} />
+        <MoreInfo moreInfo={Model3MoreInfo4.moreInfo} backgroundBlack={false} />
+
+        <VideoWithInfo isInverted={false} isBlack={true}>
+          <ImageFullHeigth imgSrc={Model3SpecsData.imgSrc} isHalf={true} />
+          <SideInfoCompare
+            titleStrong={Model3SpecsData.titleStrong}
+            title={Model3SpecsData.title}
+            button1={Model3SpecsData.button1}
+            button2={Model3SpecsData.button2}
+            info={Model3SpecsData.info}
+          />
+        </VideoWithInfo>
+
+        <VideoWithInfo isInverted={true} isBlack={false}>
+          <ImageFullHeigth imgSrc={Model3LateralData.imgSrc} isHalf={true} />
+          <SideTitleWithButtons
+            title={Model3LateralData.title}
+            text={Model3LateralData.text}
+          />
+        </VideoWithInfo>
+        <CustomFooter />
       </main>
       <footer></footer>
     </div>

@@ -4,6 +4,10 @@ import model_3_moreinfo from "../images/model3/Model3moreInfo.jpg";
 import model_3_moreinfo2 from "../images/model3/Model3moreInfo2.jpg";
 import model_3_image_with_info from "../images/model3/Model3ImageWithInfo.jpg";
 import model_3_mini_image from "../images/model3/model-3-range-map.png";
+import model3_autopilot from "../images/model-s-more-info3.jfif";
+import model3_interior from "../images/model3/Model3Interior.jpg";
+import model3_specs from "../images/model3/Model3Specs.jpg";
+import model3_lateral from "../images/model3/Model3lateral.jpg";
 
 export const Model3Data = {
   title: "Model 3",
@@ -200,4 +204,137 @@ export const ImageWithInfoData2 = {
       ),
     },
   ],
+};
+export const Model3MoreInfo3 = {
+  title: "",
+  lowerText: "",
+  fullHeigth: false,
+  imageSrc: model3_autopilot,
+  info: [],
+  moreInfo: {
+    text: "Autopilot",
+    title: "Future of Driving",
+    orderButton: true,
+    viewInventoryButton: true,
+    description:
+      "Autopilot's advanced safety and convenience features are designed to assist you with the most burdensome parts of driving. Chat with a Tesla Advisor to learn more about Model 3 or schedule a demo drive today.",
+  },
+};
+export const Model3MoreInfo4 = {
+  title: "",
+  lowerText: "",
+  fullHeigth: false,
+  imageSrc: model3_interior,
+  info: [],
+  moreInfo: {
+    text: "Interior",
+    title: "Built around the driver",
+    orderButton: true,
+    viewInventoryButton: true,
+    description:
+      "The inside of Model 3 is unlike any other car. You can use your smartphone as a key, and access all driver controls in the central 15-inch touchscreen. The all-glass roof extends from front to back, creating a sense of openness from every seat.",
+  },
+};
+export const Model3SpecsData = {
+  imgSrc: model3_specs,
+  titleStrong: "Model 3",
+  title: "Specs",
+  button1: "Performance",
+  button2: "Long Range AWD",
+  info: [
+    [
+      {
+        p1: "Battery",
+        p2: "Long Range",
+      },
+      {
+        p1: "*Acceletation",
+        p2: "3.1 s 0-60 mph with rollout subtracted",
+      },
+      {
+        p1: "Range",
+        p2: "315 miles (EPA est.)",
+      },
+      {
+        p1: "Drive",
+        p2: "Dual Motor All-Wheel Drive",
+      },
+      {
+        p1: "Seating",
+        p2: "5 Adults",
+      },
+      {
+        p1: "Wheels",
+        p2: '20"',
+      },
+      {
+        p1: "Weight",
+        p2: "4,048 lbs",
+      },
+      {
+        p1: "Cargo",
+        p2: "23 cu ft",
+      },
+      {
+        p1: "Displays",
+        p2: '15" Center Touchscreen',
+      },
+      {
+        p1: "Supercharging Max/Payment Type",
+        p2: "250 kW Max; Pay Per Use",
+      },
+    ],
+    [
+      {
+        p1: "Battery",
+        p2: "Long Range",
+      },
+      {
+        p1: "Acceletation",
+        p2: "4.2 s 0-60 mph",
+      },
+      {
+        p1: "Range",
+        p2: "358 miles (EPA est.)",
+      },
+      {
+        p1: "Drive",
+        p2: "Dual Motor All-Wheel Drive",
+      },
+      {
+        p1: "Seating",
+        p2: "5 Adults",
+      },
+      {
+        p1: "Wheels",
+        p2: '18" or 19"',
+      },
+      {
+        p1: "Weight",
+        p2: "4,034 lbs",
+      },
+      {
+        p1: "Cargo",
+        p2: "23 cu ft",
+      },
+      {
+        p1: "Displays",
+        p2: '15" Center Touchscreen',
+      },
+      {
+        p1: "Supercharging Max/Payment Type",
+        p2: "250 kW Max; Pay Per Use",
+      },
+      {
+        p1: "Onboard Charger Max",
+        p2: "11.5 kW max (48A)",
+      },
+    ],
+  ],
+};
+
+export const Model3LateralData = {
+  title: "Experience Model 3",
+  text: "Leasing starting at $349/mo",
+  imgSrc: model3_lateral,
 };
