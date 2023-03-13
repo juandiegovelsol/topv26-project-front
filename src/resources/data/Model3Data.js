@@ -210,7 +210,20 @@ export const Model3MoreInfo3 = {
   lowerText: "",
   fullHeigth: false,
   imageSrc: model3_autopilot,
-  info: [],
+  info: [
+    {
+      p1: "360°",
+      p2: "Rear, side and forward-facing cameras provide maximum visibility",
+    },
+    {
+      p1: "250 m",
+      p2: "Powerful visual processing at up to 250 meters of range",
+    },
+    {
+      p1: "360°",
+      p2: "Tesla Vision detects nearby cars, helps prevent potential collisions and assists with parking",
+    },
+  ],
   moreInfo: {
     text: "Autopilot",
     title: "Future of Driving",
@@ -225,7 +238,20 @@ export const Model3MoreInfo4 = {
   lowerText: "",
   fullHeigth: false,
   imageSrc: model3_interior,
-  info: [],
+  info: [
+    {
+      p1: "15 inch",
+      p2: "A touchscreen display designed to improve over time",
+    },
+    {
+      p1: "Update",
+      p2: "Over-the-air software updates introduce new features, functionality and performance",
+    },
+    {
+      p1: "Sunroof",
+      p2: "An expansive Glass Roof provides more headroom and UV protection",
+    },
+  ],
   moreInfo: {
     text: "Interior",
     title: "Built around the driver",

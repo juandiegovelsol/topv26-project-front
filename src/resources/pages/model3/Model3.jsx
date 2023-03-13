@@ -49,9 +49,9 @@ const Model3 = () => {
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}
         />
-        <SingleItemFirstView ItemFirstData={Model3Data} />
-
-        <ArticleInfo info={Model3Data.info} />
+        <SingleItemFirstView ItemFirstData={Model3Data}>
+          <ArticleInfo info={Model3Data.info} />
+        </SingleItemFirstView>
 
         <VideoWithInfo isInverted={false}>
           <ImageFullHeigth imgSrc={ImageWithInfoData.videoSrc} />
@@ -64,17 +64,20 @@ const Model3 = () => {
             isWhite={false}
           />
         </VideoWithInfo>
-        <SingleItemFirstView ItemFirstData={Model3MoreInfo} />
-        <ArticleInfo info={Model3MoreInfo.info} />
+
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo}>
+          <ArticleInfo info={Model3MoreInfo.info} />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={Model3MoreInfo.moreInfo} backgroundBlack={false} />
 
-        <SingleItemFirstView ItemFirstData={Model3MoreInfo2} />
-        <ArticleInfo info={Model3MoreInfo2.info} />
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo2}>
+          <ArticleInfo info={Model3MoreInfo2.info} />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={Model3MoreInfo2.moreInfo} backgroundBlack={false} />
 
         <VideoWithInfo isInverted={false}>
           <ImageFullHeigth imgSrc={ImageWithInfoData2.videoSrc}>
-            <ArticleInfo info={ImageWithInfoData2.info} />
+            <ArticleInfo info={ImageWithInfoData2.info} heigth={true} />
           </ImageFullHeigth>
           <SideInfo
             preTitle={ImageWithInfoData2.preTitle}
@@ -91,12 +94,18 @@ const Model3 = () => {
           </SideInfo>
         </VideoWithInfo>
 
-        <SingleItemFirstView ItemFirstData={Model3MoreInfo3} />
-        <ArticleInfo info={Model3MoreInfo3.info} />
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo3}>
+          <ArticleInfo
+            info={Model3MoreInfo3.info}
+            textBlack={true}
+            isRigth={true}
+          />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={Model3MoreInfo3.moreInfo} backgroundBlack={false} />
 
-        <SingleItemFirstView ItemFirstData={Model3MoreInfo4} />
-        <ArticleInfo info={Model3MoreInfo4.info} />
+        <SingleItemFirstView ItemFirstData={Model3MoreInfo4}>
+          <ArticleInfo info={Model3MoreInfo4.info} isLeft={true} />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={Model3MoreInfo4.moreInfo} backgroundBlack={false} />
 
         <VideoWithInfo isInverted={false} isBlack={true}>

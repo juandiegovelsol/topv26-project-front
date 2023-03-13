@@ -356,7 +356,20 @@ export const ModelSMoreInfo3 = {
   lowerText: "",
   fullHeigth: false,
   imageSrc: ModelSMoreInfoImg3,
-  info: [],
+  info: [
+    {
+      p1: "360°",
+      p2: "Rear, side and forward-facing cameras provide maximum visibility",
+    },
+    {
+      p1: "250 m",
+      p2: "Powerful visual processing at up to 250 meters of range",
+    },
+    {
+      p1: "360°",
+      p2: "Tesla Vision detects nearby cars, helps prevent potential collisions and assists with parking",
+    },
+  ],
   moreInfo: {
     text: "Autopilot",
     title: "Future of Driving",
