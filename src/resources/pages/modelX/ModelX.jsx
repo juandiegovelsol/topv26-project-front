@@ -1,5 +1,23 @@
 import React, { useState } from "react";
 
+import { CustomHeader } from "../../components/customHeader";
+import { HeaderFederalTaxInfo } from "../../components/headerFederalTaxInfo/HeaderFederalTaxInfo";
+import { Menu } from "../../components/menu";
+import { NavBar } from "../../components/navBar";
+import { SingleItemFirstView } from "../../components/singleItemFirstView";
+import { ArticleInfo } from "../../components/articleInfo";
+import { ArticleInterior } from "../../components/articleInterior";
+import { VideoCarrousel } from "../../components/videoCarrousel";
+import { AlternateImages } from "../../components/alternateImages";
+import { MoreInfo } from "../../components/moreInfo";
+import { SelectorWithImage } from "../../components/SelectorWithImage";
+import { VideoWithInfo } from "../../components/videoWithInfo";
+import { ImageFullHeigth } from "../../components/videoWithInfo/imageFullHeigth";
+import { SideInfo } from "../../components/videoWithInfo/SideInfo";
+import { SideInfoCompare } from "../../components/videoWithInfo/sideInfoCompare";
+import { SideTitleWithButtons } from "../../components/videoWithInfo/SideTitleWithButtons";
+import { CustomFooter } from "../../components/CustomFooter";
+
 import {
   ModelXData,
   ModelXInterior,
@@ -19,24 +37,6 @@ import {
   ModelXLateralData,
 } from "../../data/ModelXData";
 import "./ModelX.scss";
-
-import { CustomHeader } from "../../components/customHeader";
-import { HeaderFederalTaxInfo } from "../../components/headerFederalTaxInfo/HeaderFederalTaxInfo";
-import { Menu } from "../../components/menu";
-import { NavBar } from "../../components/navBar";
-import { SingleItemFirstView } from "../../components/singleItemFirstView";
-import { ArticleInfo } from "../../components/articleInfo";
-import { ArticleInterior } from "../../components/articleInterior";
-import { VideoCarrousel } from "../../components/videoCarrousel";
-import { AlternateImages } from "../../components/alternateImages";
-import { MoreInfo } from "../../components/moreInfo";
-import { SelectorWithImage } from "../../components/SelectorWithImage";
-import { VideoWithInfo } from "../../components/videoWithInfo";
-import { ImageFullHeigth } from "../../components/videoWithInfo/imageFullHeigth";
-import { SideInfo } from "../../components/videoWithInfo/SideInfo";
-import { SideInfoCompare } from "../../components/videoWithInfo/sideInfoCompare";
-import { SideTitleWithButtons } from "../../components/videoWithInfo/SideTitleWithButtons";
-import { CustomFooter } from "../../components/CustomFooter";
 
 const ModelX = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(
