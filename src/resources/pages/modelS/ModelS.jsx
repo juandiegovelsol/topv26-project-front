@@ -53,7 +53,7 @@ const ModelS = () => {
           setMenuCoverClasss={setMenuCoverClass}
         />
         <SingleItemFirstView ItemFirstData={ModelSData} />
-        <ArticleInfo info={ModelSData.info} />
+        <ArticleInfo info={ModelSData.info} heigth={true} />
         <ArticleInterior
           h4Text={ModelSInterior.title}
           imgSrc={ModelSInterior.imgSrc}
@@ -62,8 +62,9 @@ const ModelS = () => {
 
         <AlternateImages alternateImages={AlternateImagesData} />
 
-        <SingleItemFirstView ItemFirstData={ModelSMoreInfo} />
-        <ArticleInfo info={ModelSMoreInfo.info} />
+        <SingleItemFirstView ItemFirstData={ModelSMoreInfo}>
+          <ArticleInfo info={ModelSMoreInfo.info} />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={ModelSMoreInfo.moreInfo} backgroundBlack={false} />
 
         <SelectorWithImage
@@ -84,7 +85,7 @@ const ModelS = () => {
 
         <VideoWithInfo isInverted={false} isBlack={false}>
           <VideoFullHeigth videoSrc={VideoWithInfoData.videoSrc}>
-            <ArticleInfo info={VideoWithInfoData.info} />
+            <ArticleInfo info={VideoWithInfoData.info} heigth={true} />
           </VideoFullHeigth>
           <SideInfo
             preTitle={VideoWithInfoData.preTitle}
@@ -116,7 +117,13 @@ const ModelS = () => {
           />
         </VideoWithInfo>
 
-        <SingleItemFirstView ItemFirstData={ModelSMoreInfo3} />
+        <SingleItemFirstView ItemFirstData={ModelSMoreInfo3}>
+          <ArticleInfo
+            info={ModelSMoreInfo3.info}
+            textBlack={true}
+            isRigth={true}
+          />
+        </SingleItemFirstView>
         <MoreInfo moreInfo={ModelSMoreInfo3.moreInfo} backgroundBlack={false} />
 
         <SelectorWithImage
