@@ -1,8 +1,7 @@
 import React from "react";
 import "./SingleItemFirstView.scss";
 
-const SingleItemFirstView = (props) => {
-  const { ItemFirstData } = props;
+const SingleItemFirstView = ({ ItemFirstData, children }) => {
   const setHeigth = (heigth) => {
     return heigth ? "singleItem" : "singleItem halfSize";
   };
@@ -23,6 +22,7 @@ const SingleItemFirstView = (props) => {
           alt="Model3"
         />
       </span>
+      {children}
     </section>
   );
 };
