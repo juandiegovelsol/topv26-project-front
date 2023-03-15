@@ -43,7 +43,7 @@ export const ImageWithInfoData = {
   preTitle: "Safety",
   title: "Built for Safety",
   text: (
-    <div>
+    <span>
       Safety is the most important part of every Tesla. We design our vehicles
       to exceed safety standards.
       <br />
@@ -56,7 +56,7 @@ export const ImageWithInfoData = {
       <strong>Top Safety Pick+</strong> <br />
       Model 3 received the IIHS Top Safety Pick+ award, with top ratings in all
       crashworthiness and front crash prevention categories.
-    </div>
+    </span>
   ),
   button1: "Order Now",
   button2: "View Inventory",
@@ -73,35 +73,35 @@ export const Model3MoreInfo = {
     {
       p1: "3.1 s",
       p2: (
-        <div>
+        <span>
           Quickest acceleration—from zero to 60
           <br />
           mph* in as little as 3.1 seconds
-        </div>
+        </span>
       ),
       button: "",
     },
     {
       p1: "162 mph",
       p2: (
-        <div>
+        <span>
           Improved handling and aerodynamics
           <br />
           allow for a top speed of 162 mph
-        </div>
+        </span>
       ),
       button: "",
     },
     {
       p1: "AWD",
       p2: (
-        <div>
+        <span>
           Dual Motor All-Wheel Drive instantly
           <br />
           controls traction and torque, in all weather
           <br />
           conditions
-        </div>
+        </span>
       ),
       button: "",
     },
@@ -124,33 +124,33 @@ export const Model3MoreInfo2 = {
     {
       p1: "2",
       p2: (
-        <div>
+        <span>
           Independent motors digitally control
           <br />
           torque to the front and rear wheels
-        </div>
+        </span>
       ),
       button: "",
     },
     {
       p1: "10 ms",
       p2: (
-        <div>
+        <span>
           Dual motors respond to changing
           <br />
           conditions in as little as 10 milliseconds
-        </div>
+        </span>
       ),
       button: "",
     },
     {
       p1: "Rain",
       p2: (
-        <div>
+        <span>
           Unparalleled traction and control, in all
           <br />
           weather conditions
-        </div>
+        </span>
       ),
       button: "",
     },
@@ -176,31 +176,31 @@ export const ImageWithInfoData2 = {
     {
       p1: "358 mi",
       p2: (
-        <div>
+        <span>
           Go anywhere with up to 358 mi of
           <br />
           estimated range on a single charge
-        </div>
+        </span>
       ),
     },
     {
       p1: "15 min",
       p2: (
-        <div>
+        <span>
           Recharge up to 175 mi in 15 minutes at
           <br />
           Supercharger locations
-        </div>
+        </span>
       ),
     },
     {
       p1: "40.000+",
       p2: (
-        <div>
+        <span>
           Superchargers placed along well-traveled
           <br />
           routes around the world
-        </div>
+        </span>
       ),
     },
   ],
