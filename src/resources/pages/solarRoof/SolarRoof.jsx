@@ -1,16 +1,4 @@
 import React, { useState } from "react";
-import "./SolarRoof.scss";
-import {
-  SolarRoofData,
-  RoofMoreInfo,
-  RoofImageInfo,
-  RoofVideoInfo,
-  RoofVideoSelector,
-  RoofImageInfo2,
-  RoofMoreInfo2,
-  RoofSpecsData,
-} from "../../data/SolarRoofData";
-
 import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
 import { SingleItemFirstView } from "../../components/singleItemFirstView";
@@ -23,6 +11,18 @@ import { VideoFullHeigth } from "../../components/videoWithInfo/videoFullHeight"
 import { SelectorWithImage } from "../../components/SelectorWithImage";
 import { SideInfoCompare } from "../../components/videoWithInfo/sideInfoCompare";
 import { CustomFooter } from "../../components/CustomFooter";
+
+import {
+  SolarRoofData,
+  RoofMoreInfo,
+  RoofImageInfo,
+  RoofVideoInfo,
+  RoofVideoSelector,
+  RoofImageInfo2,
+  RoofMoreInfo2,
+  RoofSpecsData,
+} from "../../data/SolarRoofData";
+import "./SolarRoof.scss";
 
 const SolarRoof = () => {
   const [menuCoverClass, setMenuCoverClass] = useState(
