@@ -25,4 +25,9 @@
   object-fit: cover;
   overflow: hidden;
   grid-area: 1 / 1 / 21 / 12;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
