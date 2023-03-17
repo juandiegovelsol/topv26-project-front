@@ -5,11 +5,12 @@ import { Video } from "../videoCarrousel/Video";
 import "./selectorWithImage.scss";
 
 const SelectorWithImage = ({
-  title,
-  text,
+  title = "",
+  text = "",
   footer = "",
   options,
   isWhite = true,
+  children,
 }) => {
   const [selector, setSelector] = useState(0);
   const handleOpacity = (selected, index) => {
@@ -24,10 +25,13 @@ const SelectorWithImage = ({
   };
   return (
     <section className={handleBackgroundColor(isWhite)}>
-      <article className="selector-with-image__title">
-        <h3>{title}</h3>
-        {text && <p>{text}</p>}
-      </article>
+      {children}
+      {title && (
+        <article className="selector-with-image__title">
+          <h3>{title}</h3>
+          {text && <p>{text}</p>}
+        </article>
+      )}
       <article className="selector-with-image__image">
         {options[selector].isImage && (
           <img src={options[selector].imgSrc} alt={options[selector].title} />

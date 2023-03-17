@@ -2,9 +2,9 @@ import React from "react";
 
 import "./customFooter.scss";
 
-const CustomFooter = () => {
+const CustomFooter = ({ isBlack = false }) => {
   return (
-    <footer>
+    <footer className={`custom-footer ${isBlack && "black"}`}>
       <button>Tesla 2023</button>
       <button>Privacy & Legal</button>
       <button>Vehicle Recalls</button>
