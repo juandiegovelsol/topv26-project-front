@@ -6,6 +6,7 @@ function TeslaRegistrationForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confpassword, setConfPassword] = useState("");
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -22,11 +23,14 @@ function TeslaRegistrationForm() {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
+   const handleConfPasswordChange = (event) => {
+     setConfPassword(event.target.value);
+   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Do something with the form data, like submitting it to a server
-    console.log(firstName, lastName, email, password);
+    console.log(firstName, lastName, email, password,confpassword);
   };
 
   return (
@@ -73,8 +77,8 @@ function TeslaRegistrationForm() {
           Confirm Password:
           <input
             type="password"
-            value={password}
-            onChange={handlePasswordChange}
+            value={confpassword}
+            onChange={handleConfPasswordChange}
             required
           />
         </label>

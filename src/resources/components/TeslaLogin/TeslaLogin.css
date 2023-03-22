@@ -5,6 +5,8 @@
 
 .tesla-login-container {
   display: flex;
+  position: relative;
+  top: 10%;
   font-family: "TeslaFont";
   flex-direction: column;
   align-items: center;
@@ -19,8 +21,9 @@
 }
 
 .tesla-logo {
-  height: 15rem;
-  margin-bottom: 0.5rem;
+  height: 8rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .tesla-login-form {
@@ -28,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: -200px;
   width: 30rem;
   padding: 2rem;
   border-radius: 0.5rem;
