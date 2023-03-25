@@ -23,7 +23,7 @@ const TransparentButton = ({
     <button
       className={handleColor(isWhite, isGrey)}
       onClick={() => {
-        navigate("/");
+        navigate(`${link}`);
       }}
     >
       {text}

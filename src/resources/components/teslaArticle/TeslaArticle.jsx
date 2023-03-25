@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TeslaArticleStyle.scss";
 
 const TeslaArticle = (props) => {
-  const { keys, titleText, additionalText, source, button1, button2 } = props;
+  const navigate = useNavigate();
+  const {
+    keys,
+    titleText,
+    additionalText,
+    source,
+    button1,
+    button2,
+    link1 = "/Order",
+    link2 = "/notFound",
+  } = props;
   const setClassFn = (button) => {
     if (button === "") {
       return "demoDriveButtonHidden";
@@ -17,6 +28,9 @@ const TeslaArticle = (props) => {
       return "articleWrapper scrollSnapAlways";
     }
   };
+  const redirect = (route) => {
+    navigate(`${route}`);
+  };
   return (
     <article className={setScrollSnapFeature(keys)} key={keys}>
       <h2 className="articleTitle">{titleText}</h2>
@@ -26,8 +40,22 @@ const TeslaArticle = (props) => {
       </span>
 
       <span className="articleButtons">
-        <button className="customOrderButton">{button1}</button>
-        <button className={setClassFn(button2)}>{button2}</button>
+        <button
+          className="customOrderButton"
+          onClick={() => {
+            redirect(link1);
+          }}
+        >
+          {button1}
+        </button>
+        <button
+          className={setClassFn(button2)}
+          onClick={() => {
+            redirect(link2);
+          }}
+        >
+          {button2}
+        </button>
       </span>
     </article>
   );

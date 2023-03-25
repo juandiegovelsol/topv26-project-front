@@ -17,14 +17,14 @@ const MoreInfo = ({ moreInfo, backgroundBlack = false }) => {
           {moreInfo.orderButton && (
             <TransparentButton
               text={"Order Now"}
-              link={""}
+              link={"/Order"}
               isWhite={backgroundBlack}
             />
           )}
           {moreInfo.viewInventoryButton && (
             <TransparentButton
               text={"View Inventory"}
-              link={""}
+              link={"/notFound"}
               isWhite={false}
               isGrey={true}
             />
