@@ -9,6 +9,7 @@ import { SolarRoof } from "../pages/solarRoof";
 import { SolarPanel } from "../pages/solarPanel";
 import { Shop } from "../pages/shop";
 import { Account } from "../pages/account";
+import { TeslaRegistrationForm } from "../pages/TeslaRegistrationForm";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/Account",
     element: <Account />,
+  },
+  {
+    path: "/TeslaRegistrationForm",
+    element: <TeslaRegistrationForm/>,
   },
 ]);
 const CustomRouter = () => <RouterProvider router={router}></RouterProvider>;
