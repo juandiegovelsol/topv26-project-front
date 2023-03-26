@@ -9,10 +9,10 @@ const SideTitleWithButtons = ({ title = "Model S", text = "" }) => {
       <h3>{title}</h3>
       {text && <p>{text}</p>}
       <span>
-        <TransparentButton text={"Order Now"} link={""} isWhite={false} />
+        <TransparentButton text={"Order Now"} link={"/Order"} isWhite={false} />
         <TransparentButton
           text={"View Inventory"}
-          link={""}
+          link={"/notFound"}
           isWhite={false}
           isGrey={true}
         />

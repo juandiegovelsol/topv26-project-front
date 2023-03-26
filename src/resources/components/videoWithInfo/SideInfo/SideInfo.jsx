@@ -27,8 +27,8 @@ const SideInfo = ({
       </span>
       <span className="side-info__children">{children}</span>
       <span className="side-info__bottom">
-        <TransparentButton text={button1} isWhite={isWhite} />
-        <TransparentButton text={button2} isGrey={true} />
+        <TransparentButton text={button1} isWhite={isWhite} link={"/Order"} />
+        <TransparentButton text={button2} isGrey={true} link={"/notFound"} />
       </span>
     </article>
   );

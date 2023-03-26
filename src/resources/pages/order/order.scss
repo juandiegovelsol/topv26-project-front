@@ -1,4 +1,165 @@
 .order {
   height: 100vh;
   width: 100vw;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  &__images {
+    min-height: 90vh;
+    width: 76%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &__menu {
+    height: 92vh;
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+    h3 {
+      margin-top: 25%;
+      margin-bottom: 5%;
+      font-size: 35px;
+    }
+    .info {
+      margin: 10% 0%;
+      width: 90%;
+      max-height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      div {
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        h4 {
+          span {
+            font-size: 20px;
+          }
+        }
+        p {
+          text-align: center;
+        }
+      }
+    }
+    .model {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 5%;
+      margin-bottom: 15%;
+      p {
+        margin: 5% 0%;
+      }
+      button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border: 3px solid grey;
+        border-radius: 3px;
+        &:hover,
+        &:focus {
+          border: 3px solid blue;
+        }
+        p {
+          margin: 5% 7%;
+          font-size: 15px;
+        }
+      }
+      .footer {
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+    .paint {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20% 0px;
+      h4 {
+        font-size: 35px;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button {
+          height: 50px;
+          width: 50px;
+          border: 1px solid grey;
+          border-radius: 50%;
+          background-color: transparent;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 5px;
+          &:hover,
+          &:focus {
+            border: 3px solid blue;
+          }
+          span {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            &.white {
+              background-color: whitesmoke;
+            }
+            &.black {
+              background-color: black;
+            }
+            &.grey {
+              background-color: grey;
+            }
+            &.blue {
+              background-color: blue;
+            }
+            &.red {
+              background-color: red;
+            }
+          }
+        }
+      }
+    }
+    .order {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 60% 0%;
+      h4 {
+        font-size: 30px;
+      }
+      p {
+        margin: 5% 0% 8% 0%;
+      }
+      button {
+        height: 5vh;
+        width: 100%;
+        background-color: #3e6ae1;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        &:hover,
+        &:focus {
+          background-color: #3357b8;
+        }
+      }
+    }
+  }
 }
