@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ArticleInfo.scss";
 const ArticleInfo = ({
   info,
@@ -7,6 +8,11 @@ const ArticleInfo = ({
   heigth = false,
   textBlack = false,
 }) => {
+  const navigate = useNavigate();
+  const redirect = (route) => {
+    navigate(`${route}`);
+  };
+
   const handleClass = (isRigth, isLeft, heigth, classname) => {
     const heigthReturn = heigth ? "heigth" : "";
     if (isRigth) {
@@ -33,7 +39,14 @@ const ArticleInfo = ({
               {item.p1 && <p className="articleInfoP1">{item.p1}</p>}
               {item.p2 && <p className="articleInfoP2">{item.p2}</p>}
               {item.button && (
-                <button className="articleInfoButton">{item.button}</button>
+                <button
+                  className="articleInfoButton"
+                  onClick={() => {
+                    redirect("/Order");
+                  }}
+                >
+                  {item.button}
+                </button>
               )}
             </span>
           );

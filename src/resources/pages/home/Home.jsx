@@ -38,6 +38,8 @@ const Home = () => {
                   source={item.source}
                   button1={item.button1}
                   button2={item.button2}
+                  link1={item.link1}
+                  link2={item.link2}
                 />
               </div>
             );
