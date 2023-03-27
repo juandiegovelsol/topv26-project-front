@@ -16,6 +16,21 @@
       width: 100%;
       object-fit: contain;
     }
+    .price-resume {
+      height: 10vh;
+      width: 34vw;
+      position: fixed;
+      bottom: 0px;
+      left: 21vw;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px 15px 0px 0px;
+      p {
+        margin: 0% 2%;
+      }
+    }
   }
   &__menu {
     height: 92vh;
@@ -117,19 +132,19 @@
             width: 40px;
             border-radius: 50%;
             &.white {
-              background-color: whitesmoke;
+              background-color: #f3f3f3;
             }
             &.black {
-              background-color: black;
+              background-color: #050505;
             }
             &.grey {
-              background-color: grey;
+              background-color: #5d5f66;
             }
             &.blue {
-              background-color: blue;
+              background-color: #033475;
             }
             &.red {
-              background-color: red;
+              background-color: #92000c;
             }
           }
         }

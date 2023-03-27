@@ -7,7 +7,9 @@ import { modelS } from "../../data/Order";
 import "./order.scss";
 
 const Order = () => {
-  const [selector, setSelector] = useState(0);
+  const { models, modelsplaid } = modelS;
+  const [imageSelector, setImageSelector] = useState(0);
+  const [modelSelector, setModelSelector] = useState(models);
 
   return (
     <section className="order">
@@ -16,7 +18,25 @@ const Order = () => {
       </CustomHeader>
       <div className="order__container">
         <aside className="order__images">
-          <img src={modelS[selector].img} alt="car" />
+          <img src={modelS.images[imageSelector].img} alt="car" />
+          <span className="price-resume">
+            <p>
+              <strong>
+                $
+                {modelSelector.price +
+                  modelS.images[imageSelector].aditional_price}{" "}
+                Vehicle Price
+              </strong>
+            </p>
+            <p>{` | `}</p>
+            <p>
+              $
+              {modelSelector.price +
+                modelS.images[imageSelector].aditional_price -
+                6000}{" "}
+              After Potential Savings
+            </p>
+          </span>
         </aside>
         <aside className="order__menu">
           <h3>Model S</h3>
@@ -24,33 +44,43 @@ const Order = () => {
           <span className="info">
             <div>
               <h4>
-                <span>405</span> mi
+                <span>{modelSelector.range}</span> mi
               </h4>
               <p>Range {`(EPA est.)`}</p>
             </div>
             <div>
               <h4>
-                <span>149</span> mph
+                <span>{modelSelector.speed}</span> mph
               </h4>
               <p>Top Speed</p>
             </div>
             <div>
               <h4>
-                <span>3.1</span> Sec
+                <span>{modelSelector.time}</span> Sec
               </h4>
               <p>0-60 mph</p>
             </div>
           </span>
           <span className="model">
             <p>Dual Motor All-Wheel Drive</p>
-            <button>
-              <p>Model S</p>
-              <p>$80.000</p>
+            <button
+              onClick={() => {
+                setModelSelector(models);
+                console.log("Model S", modelSelector);
+              }}
+            >
+              <p>{modelS.models.title}</p>
+              <p>${modelS.models.price}</p>
             </button>
             <p>Tri-Motor All-Wheel Drive</p>
-            <button>
-              <p>Model S Plaid</p>
-              <p>$90.000</p>
+            <button
+              onClick={() => {
+                setModelSelector(modelsplaid);
+                console.log("Model S plaid", modelSelector);
+              }}
+            >
+              <p>{modelS.modelsplaid.title}</p>
+              <p>${modelS.modelsplaid.price}</p>
             </button>
             <p className="footer">
               All prices are shown without potential incentives or gas savings
@@ -64,7 +94,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setSelector(0);
+                  setImageSelector(0);
                 }}
               >
                 <span className="white"></span>
@@ -72,7 +102,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setSelector(1);
+                  setImageSelector(1);
                 }}
               >
                 <span className="black"></span>
@@ -80,7 +110,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setSelector(2);
+                  setImageSelector(2);
                 }}
               >
                 <span className="grey"></span>
@@ -88,7 +118,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setSelector(3);
+                  setImageSelector(3);
                 }}
               >
                 <span className="blue"></span>
@@ -96,14 +126,14 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setSelector(4);
+                  setImageSelector(4);
                 }}
               >
                 <span className="red"></span>
               </button>
             </div>
             <br />
-            <p>Pearl white multi coat included</p>
+            <p>{modelS.images[imageSelector].title}</p>
           </span>
           <span className="order">
             <h4>Order your Model S</h4>
