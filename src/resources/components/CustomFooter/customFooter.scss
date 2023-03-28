@@ -1,4 +1,4 @@
-footer {
+.custom-footer {
   min-height: 10vh;
   width: 100vw;
   background-color: white;
@@ -12,5 +12,11 @@ footer {
     border: none;
     width: auto;
     margin: 0% 1%;
+  }
+  &.black {
+    background-color: black;
+    button {
+      color: white;
+    }
   }
 }

@@ -13,6 +13,8 @@ export const teslaArticleData = [
     source: model_3_image,
     button1: "Custom Order",
     button2: "Demo Drive",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 2,
@@ -21,6 +23,8 @@ export const teslaArticleData = [
     source: model_y_image,
     button1: "Custom Order",
     button2: "Demo Drive",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 3,
@@ -29,6 +33,8 @@ export const teslaArticleData = [
     source: model_s_image,
     button1: "Custom Order",
     button2: "Demo Drive",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 4,
@@ -37,6 +43,8 @@ export const teslaArticleData = [
     source: model_x_image,
     button1: "Custom Order",
     button2: "Demo Drive",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 5,
@@ -45,6 +53,8 @@ export const teslaArticleData = [
     source: solar_panels_image,
     button1: "Order Now",
     button2: "Learn More",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 6,
@@ -53,6 +63,8 @@ export const teslaArticleData = [
     source: solar_roof_image,
     button1: "Order Now",
     button2: "Learn More",
+    link1: "/Order",
+    link2: "/notFound",
   },
   {
     key: 7,
@@ -61,5 +73,7 @@ export const teslaArticleData = [
     source: accessories_image,
     button1: "Shop Now",
     button2: "",
+    link1: "/Shop",
+    link2: "/notFound",
   },
 ];

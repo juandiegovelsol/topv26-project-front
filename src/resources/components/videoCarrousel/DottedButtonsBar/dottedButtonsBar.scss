@@ -17,4 +17,13 @@
       background-color: white;
     }
   }
+  &.white {
+    button {
+      background-color: #bdc1ca;
+      &:hover,
+      &:focus {
+        background-color: black;
+      }
+    }
+  }
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 import "./dottedButtonsBar.scss";
 
-const DottedButtonsBar = ({ videoArticles, setSelector }) => {
+const DottedButtonsBar = ({ videoArticles, setSelector, isWhite = false }) => {
   return (
-    <article className="dottedVideoNavBar">
+    <article className={`dottedVideoNavBar ${isWhite && "white"}`}>
       {videoArticles.map(({ key }) => (
         <button
           key={key}

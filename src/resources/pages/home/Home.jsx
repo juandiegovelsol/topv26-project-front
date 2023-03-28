@@ -28,16 +28,20 @@ const Home = () => {
       </CustomHeader>
       <main className="mainWrapper">
         <section className="articleContentWrapper">
-          {teslaArticleData.map((item) => {
+          {teslaArticleData.map((item, index) => {
             return (
-              <TeslaArticle
-                keys={item.key}
-                titleText={item.articleTitle}
-                additionalText={item.text}
-                source={item.source}
-                button1={item.button1}
-                button2={item.button2}
-              />
+              <div key={index}>
+                <TeslaArticle
+                  keys={index}
+                  titleText={item.articleTitle}
+                  additionalText={item.text}
+                  source={item.source}
+                  button1={item.button1}
+                  button2={item.button2}
+                  link1={item.link1}
+                  link2={item.link2}
+                />
+              </div>
             );
           })}
         </section>

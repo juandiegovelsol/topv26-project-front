@@ -1,12 +1,15 @@
 import React from "react";
 import "./SingleItemFirstView.scss";
 
-const SingleItemFirstView = (props) => {
-  const { ItemFirstData } = props;
+const SingleItemFirstView = ({ ItemFirstData, children }) => {
   const setHeigth = (heigth) => {
     return heigth ? "singleItem" : "singleItem halfSize";
   };
 
+  const img = ItemFirstData.imageSrc || "";
+  const vid = ItemFirstData.videoSrc || "";
+  /* const title = ItemFirstData.moreInfo.title || ""; */
+  /* console.log("Title", title, "Image...", img, "Video...", vid); */
   return (
     <section className={setHeigth(ItemFirstData.fullHeigth)}>
       {ItemFirstData.title && (
@@ -17,12 +20,14 @@ const SingleItemFirstView = (props) => {
       )}
 
       <span className="backgroundImageWrapper">
-        <img
-          src={ItemFirstData.imageSrc}
-          className="mainBackgroundImage"
-          alt="Model3"
-        />
+        {img && <img src={img} className="mainBackgroundImage" alt="Model3" />}
+        {vid && (
+          <video autoPlay muted loop>
+            <source src={vid} type="video/mp4" />
+          </video>
+        )}
       </span>
+      {children}
     </section>
   );
 };

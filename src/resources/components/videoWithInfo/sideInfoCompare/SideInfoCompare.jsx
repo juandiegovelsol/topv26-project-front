@@ -16,20 +16,24 @@ const SideInfoCompare = ({
         <strong>{titleStrong}</strong> {title}
       </h3>
       <span className="side-info-compare__buttons">
-        <button
-          onClick={() => {
-            setSelector(0);
-          }}
-        >
-          {button1}
-        </button>
-        <button
-          onClick={() => {
-            setSelector(1);
-          }}
-        >
-          {button2}
-        </button>
+        {button1 && (
+          <button
+            onClick={() => {
+              setSelector(0);
+            }}
+          >
+            {button1}
+          </button>
+        )}
+        {button2 && (
+          <button
+            onClick={() => {
+              setSelector(1);
+            }}
+          >
+            {button2}
+          </button>
+        )}
       </span>
       <span className="side-info-compare__info">
         {info[selector].map((item, index) => (
