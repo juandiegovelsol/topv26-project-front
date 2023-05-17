@@ -1,19 +1,16 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 .tesla-login-container {
   display: flex;
   position: relative;
   top: 10%;
-  font-family: "TeslaFont";
+  /* font-family: "TeslaFont"; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  border-style:groove;
-  border-color:#fff;
+  border-style: groove;
+  border-color: #fff;
   background-image: url("../../images/fondo.jfif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -96,8 +93,8 @@
   color: #ccc;
 }
 
-.tesla-signin{
-  font-family:'Dancing Script', cursive;
+.tesla-signin {
+  font-family: "Dancing Script", cursive;
 }
 
 /* 
