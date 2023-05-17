@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { selecOrder, setOrderInfo } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
@@ -39,9 +42,15 @@ import {
 import "./ModelS.scss";
 
 const ModelS = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+  const handleOrder = () => {
+    dispatch(setOrderInfo({ title: "Model SS" }));
+    navigate("/order");
+  };
   return (
     <div className="modelS">
       <CustomHeader heightt={false}>
@@ -53,7 +62,11 @@ const ModelS = () => {
           setMenuCoverClasss={setMenuCoverClass}
         />
         <SingleItemFirstView ItemFirstData={ModelSData} />
-        <ArticleInfo info={ModelSData.info} heigth={true} />
+        <ArticleInfo
+          info={ModelSData.info}
+          heigth={true}
+          handleOrder={handleOrder}
+        />
         <ArticleInterior
           h4Text={ModelSInterior.title}
           imgSrc={ModelSInterior.imgSrc}

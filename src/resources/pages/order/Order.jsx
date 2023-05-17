@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { selecOrder } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { NavBar } from "../../components/navBar";
 
@@ -7,6 +10,7 @@ import { modelS } from "../../data/Order";
 import "./order.scss";
 
 const Order = () => {
+  const { title } = useSelector(selecOrder);
   const { models, modelsplaid } = modelS;
   const [imageSelector, setImageSelector] = useState(0);
   const [modelSelector, setModelSelector] = useState(models);
@@ -39,7 +43,7 @@ const Order = () => {
           </span>
         </aside>
         <aside className="order__menu">
-          <h3>Model S</h3>
+          <h3>{title}</h3>
           <p>Est. Delivery: April 2023</p>
           <span className="info">
             <div>

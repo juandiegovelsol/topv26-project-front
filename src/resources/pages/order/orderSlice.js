@@ -9,8 +9,8 @@ const orderSlice = createSlice({
   initialState,
   reducers: {
     setOrderInfo: (state, action) => {
-      console.log(action.payload);
-      state.title = "Model SS";
+      console.log(action);
+      state.title = action.payload.title;
     },
   },
 });
