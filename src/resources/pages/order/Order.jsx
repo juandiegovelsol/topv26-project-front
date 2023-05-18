@@ -5,15 +5,13 @@ import { selecOrder } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { NavBar } from "../../components/navBar";
 
-import { modelS } from "../../data/Order";
-
 import "./order.scss";
 
 const Order = () => {
-  const { title } = useSelector(selecOrder);
-  const { models, modelsplaid } = modelS;
+  const { orderData } = useSelector(selecOrder);
+  const { model, modelplaid } = orderData;
   const [imageSelector, setImageSelector] = useState(0);
-  const [modelSelector, setModelSelector] = useState(models);
+  const [modelSelector, setModelSelector] = useState(model);
 
   return (
     <section className="order">
@@ -22,13 +20,13 @@ const Order = () => {
       </CustomHeader>
       <div className="order__container">
         <aside className="order__images">
-          <img src={modelS.images[imageSelector].img} alt="car" />
+          <img src={orderData.images[imageSelector].img} alt="car" />
           <span className="price-resume">
             <p>
               <strong>
                 $
                 {modelSelector.price +
-                  modelS.images[imageSelector].aditional_price}{" "}
+                  orderData.images[imageSelector].aditional_price}{" "}
                 Vehicle Price
               </strong>
             </p>
@@ -36,15 +34,15 @@ const Order = () => {
             <p>
               $
               {modelSelector.price +
-                modelS.images[imageSelector].aditional_price -
+                orderData.images[imageSelector].aditional_price -
                 6000}{" "}
               After Potential Savings
             </p>
           </span>
         </aside>
         <aside className="order__menu">
-          <h3>{title}</h3>
-          <p>Est. Delivery: April 2023</p>
+          <h3>{model.title}</h3>
+          <p>Est. Delivery: June 2023</p>
           <span className="info">
             <div>
               <h4>
@@ -69,22 +67,22 @@ const Order = () => {
             <p>Dual Motor All-Wheel Drive</p>
             <button
               onClick={() => {
-                setModelSelector(models);
+                setModelSelector(model);
                 console.log("Model S", modelSelector);
               }}
             >
-              <p>{modelS.models.title}</p>
-              <p>${modelS.models.price}</p>
+              <p>{orderData.model.title}</p>
+              <p>${orderData.model.price}</p>
             </button>
             <p>Tri-Motor All-Wheel Drive</p>
             <button
               onClick={() => {
-                setModelSelector(modelsplaid);
+                setModelSelector(modelplaid);
                 console.log("Model S plaid", modelSelector);
               }}
             >
-              <p>{modelS.modelsplaid.title}</p>
-              <p>${modelS.modelsplaid.price}</p>
+              <p>{orderData.modelplaid.title}</p>
+              <p>${orderData.modelplaid.price}</p>
             </button>
             <p className="footer">
               All prices are shown without potential incentives or gas savings
@@ -137,11 +135,14 @@ const Order = () => {
               </button>
             </div>
             <br />
-            <p>{modelS.images[imageSelector].title}</p>
+            <p>
+              <strong>{orderData.images[imageSelector].title}</strong>{" "}
+              {orderData.images[imageSelector].title2}
+            </p>
           </span>
           <span className="order">
-            <h4>Order your Model S</h4>
-            <p>Est. delivery: April 2023</p>
+            <h4>Order your {model.title}</h4>
+            <p>Est. delivery: June 2023</p>
             <button>Continue To Payment</button>
           </span>
         </aside>

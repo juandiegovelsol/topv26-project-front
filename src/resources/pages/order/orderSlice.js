@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-  title: "Model S",
+  orderData: {},
 };
 
 const orderSlice = createSlice({
@@ -10,7 +10,7 @@ const orderSlice = createSlice({
   reducers: {
     setOrderInfo: (state, action) => {
       console.log(action);
-      state.title = action.payload.title;
+      state.orderData = action.payload;
     },
   },
 });

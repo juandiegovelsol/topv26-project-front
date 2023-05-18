@@ -8,6 +8,7 @@ const TransparentButton = ({
   link = "/",
   isWhite = false,
   isGrey = false,
+  handleOrder = () => {},
 }) => {
   const navigate = useNavigate();
   const handleColor = (white, grey) => {
@@ -20,12 +21,7 @@ const TransparentButton = ({
 
   return (
     /* must modify onclick callback */
-    <button
-      className={handleColor(isWhite, isGrey)}
-      onClick={() => {
-        navigate(`${link}`);
-      }}
-    >
+    <button className={handleColor(isWhite, isGrey)} onClick={handleOrder}>
       {text}
     </button>
   );

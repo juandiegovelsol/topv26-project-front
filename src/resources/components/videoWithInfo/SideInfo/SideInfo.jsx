@@ -12,6 +12,7 @@ const SideInfo = ({
   button2 = "",
   isWhite = true,
   isHalf = false,
+  handleOrder = () => {},
   children,
 }) => {
   const handleWidth = (IsHalf) => {
@@ -27,7 +28,12 @@ const SideInfo = ({
       </span>
       <span className="side-info__children">{children}</span>
       <span className="side-info__bottom">
-        <TransparentButton text={button1} isWhite={isWhite} link={"/Order"} />
+        <TransparentButton
+          text={button1}
+          isWhite={isWhite}
+          link={"/Order"}
+          handleOrder={handleOrder}
+        />
         <TransparentButton text={button2} isGrey={true} link={"/notFound"} />
       </span>
     </article>

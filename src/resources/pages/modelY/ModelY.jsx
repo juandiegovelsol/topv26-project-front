@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 
-import {
-  ModelYData,
-  ModelYImageInfo,
-  ModelYMoreInfoSolo,
-  ModelYImageCarrousel,
-  ModelYMoreInfo,
-  ModelYVideoInfo,
-  ModelYMoreInfo2,
-  ModelYMoreInfo3,
-  ModelYSpecsData,
-  ModelYLateralData,
-} from "../../data/ModelYData";
-
-import "./ModelY.scss";
-
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setOrderInfo } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { HeaderFederalTaxInfo } from "../../components/headerFederalTaxInfo";
 import { Menu } from "../../components/menu";
@@ -31,11 +19,33 @@ import { SideTitleWithButtons } from "../../components/videoWithInfo/SideTitleWi
 import { CustomFooter } from "../../components/CustomFooter";
 import VideoCarrousel from "../../components/videoCarrousel/VideoCarrousel";
 
+import {
+  ModelYData,
+  ModelYImageInfo,
+  ModelYMoreInfoSolo,
+  ModelYImageCarrousel,
+  ModelYMoreInfo,
+  ModelYVideoInfo,
+  ModelYMoreInfo2,
+  ModelYMoreInfo3,
+  ModelYSpecsData,
+  ModelYLateralData,
+} from "../../data/ModelYData";
+import { modelY } from "../../data/Order";
+
+import "./ModelY.scss";
+
 const ModelY = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
   const [isWhite, setIsWhite] = useState(true);
+  const handleOrder = () => {
+    dispatch(setOrderInfo(modelY));
+    navigate("/order");
+  };
   return (
     <div className="modelY">
       <CustomHeader heightt={true}>
@@ -49,7 +59,11 @@ const ModelY = () => {
       </CustomHeader>
       <main className="modelYMain">
         <SingleItemFirstView ItemFirstData={ModelYData} />
-        <ArticleInfo info={ModelYData.info} heigth={true} />
+        <ArticleInfo
+          info={ModelYData.info}
+          heigth={true}
+          handleOrder={handleOrder}
+        />
         <Menu
           menuCoverClasss={menuCoverClass}
           setMenuCoverClasss={setMenuCoverClass}
@@ -66,20 +80,25 @@ const ModelY = () => {
             button1={ModelYImageInfo.button1}
             button2={ModelYImageInfo.button2}
             isWhite={false}
+            handleOrder={handleOrder}
           />
         </VideoWithInfo>
 
-        {/* falta el componente de selector de video pero con imagen */}
         <MoreInfo
           moreInfo={ModelYMoreInfoSolo.moreInfo}
           backgroundBlack={false}
+          handleOrder={handleOrder}
         />
         <VideoCarrousel imageArticles={ModelYImageCarrousel} />
 
         <SingleItemFirstView ItemFirstData={ModelYMoreInfo}>
           <ArticleInfo info={ModelYMoreInfo.info} />
         </SingleItemFirstView>
-        <MoreInfo moreInfo={ModelYMoreInfo.moreInfo} backgroundBlack={false} />
+        <MoreInfo
+          moreInfo={ModelYMoreInfo.moreInfo}
+          backgroundBlack={false}
+          handleOrder={handleOrder}
+        />
 
         <VideoWithInfo>
           <VideoFullHeigth videoSrc={ModelYVideoInfo.videoSrc}>
@@ -92,6 +111,7 @@ const ModelY = () => {
             button1={ModelYVideoInfo.button1}
             button2={ModelYVideoInfo.button2}
             isWhite={false}
+            handleOrder={handleOrder}
           />
         </VideoWithInfo>
 
@@ -102,7 +122,11 @@ const ModelY = () => {
             isRigth={true}
           />
         </SingleItemFirstView>
-        <MoreInfo moreInfo={ModelYMoreInfo2.moreInfo} backgroundBlack={false} />
+        <MoreInfo
+          moreInfo={ModelYMoreInfo2.moreInfo}
+          backgroundBlack={false}
+          handleOrder={handleOrder}
+        />
 
         <SingleItemFirstView ItemFirstData={ModelYMoreInfo3}>
           <ArticleInfo
@@ -111,7 +135,11 @@ const ModelY = () => {
             isLeft={true}
           />
         </SingleItemFirstView>
-        <MoreInfo moreInfo={ModelYMoreInfo3.moreInfo} backgroundBlack={false} />
+        <MoreInfo
+          moreInfo={ModelYMoreInfo3.moreInfo}
+          backgroundBlack={false}
+          handleOrder={handleOrder}
+        />
 
         <VideoWithInfo isInverted={false} isBlack={true}>
           <ImageFullHeigth imgSrc={ModelYSpecsData.imgSrc} isHalf={true} />
@@ -126,7 +154,10 @@ const ModelY = () => {
 
         <VideoWithInfo isInverted={true} isBlack={false}>
           <ImageFullHeigth imgSrc={ModelYLateralData.imgSrc} isHalf={true} />
-          <SideTitleWithButtons title={ModelYLateralData.title} />
+          <SideTitleWithButtons
+            title={ModelYLateralData.title}
+            handleOrder={handleOrder}
+          />
         </VideoWithInfo>
 
         <CustomFooter />
