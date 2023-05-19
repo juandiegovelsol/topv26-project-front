@@ -109,7 +109,7 @@ export const model3 = {
     time: 5.8,
   },
   modelplaid: {
-    title: "Model Long Range",
+    title: "Model 3 Long Range",
     price: 47240,
     range: 325,
     speed: 145,

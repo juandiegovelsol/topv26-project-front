@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selecOrder } from "../order/orderSlice";
+import { selecOrder, setCheckout } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { NavBar } from "../../components/navBar";
 
 import "./order.scss";
 
 const Order = () => {
+  const dispatch = useDispatch();
   const { orderData } = useSelector(selecOrder);
   const { model, modelplaid } = orderData;
-  const [imageSelector, setImageSelector] = useState(0);
+  const { images } = orderData || [];
+  const [imageSelector, setImageSelector] = useState(images[0]);
   const [modelSelector, setModelSelector] = useState(model);
+
+  const handleCheckout = () => {
+    dispatch(setCheckout({ modelSelector, imageSelector }));
+  };
 
   return (
     <section className="order">
@@ -20,22 +26,17 @@ const Order = () => {
       </CustomHeader>
       <div className="order__container">
         <aside className="order__images">
-          <img src={orderData.images[imageSelector].img} alt="car" />
+          <img src={imageSelector.img} alt="car" />
           <span className="price-resume">
             <p>
               <strong>
-                $
-                {modelSelector.price +
-                  orderData.images[imageSelector].aditional_price}{" "}
-                Vehicle Price
+                ${modelSelector.price + imageSelector.aditional_price} Vehicle
+                Price
               </strong>
             </p>
             <p>{` | `}</p>
             <p>
-              $
-              {modelSelector.price +
-                orderData.images[imageSelector].aditional_price -
-                6000}{" "}
+              ${modelSelector.price + imageSelector.aditional_price - 6000}{" "}
               After Potential Savings
             </p>
           </span>
@@ -68,7 +69,7 @@ const Order = () => {
             <button
               onClick={() => {
                 setModelSelector(model);
-                console.log("Model S", modelSelector);
+                /* console.log("Model S", modelSelector); */
               }}
             >
               <p>{orderData.model.title}</p>
@@ -78,7 +79,7 @@ const Order = () => {
             <button
               onClick={() => {
                 setModelSelector(modelplaid);
-                console.log("Model S plaid", modelSelector);
+                /* console.log("Model S plaid", modelSelector); */
               }}
             >
               <p>{orderData.modelplaid.title}</p>
@@ -96,7 +97,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(0);
+                  setImageSelector(images[0]);
                 }}
               >
                 <span className="white"></span>
@@ -104,7 +105,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(1);
+                  setImageSelector(images[1]);
                 }}
               >
                 <span className="black"></span>
@@ -112,7 +113,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(2);
+                  setImageSelector(images[2]);
                 }}
               >
                 <span className="grey"></span>
@@ -120,7 +121,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(3);
+                  setImageSelector(images[3]);
                 }}
               >
                 <span className="blue"></span>
@@ -128,7 +129,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(4);
+                  setImageSelector(images[4]);
                 }}
               >
                 <span className="red"></span>
@@ -136,14 +137,13 @@ const Order = () => {
             </div>
             <br />
             <p>
-              <strong>{orderData.images[imageSelector].title}</strong>{" "}
-              {orderData.images[imageSelector].title2}
+              <strong>{imageSelector.title}</strong> {imageSelector.title2}
             </p>
           </span>
           <span className="order">
-            <h4>Order your {model.title}</h4>
+            <h4>Order your {modelSelector.title}</h4>
             <p>Est. delivery: June 2023</p>
-            <button>Continue To Payment</button>
+            <button onClick={handleCheckout}>Continue To Payment</button>
           </span>
         </aside>
       </div>
