@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import "./TeslaLogin.css";
 import logo from "../../images/logo2.jfif";
 
-
-const TeslaLogin = () => {
+const TeslaLogin = ({ handleSubmit }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  /* const handleSubmit = (e) => {
     e.preventDefault();
     console.log(`Username: ${username}, Password: ${password}`);
-  };
+  }; */
 
   return (
     <div className="tesla-login-container">
@@ -54,6 +53,4 @@ const TeslaLogin = () => {
 
 export default TeslaLogin;
 
-
 // Este componente incluye un div tesla-login-container que contiene una imagen del logotipo de Tesla y un formulario con dos campos de entrada para el nombre de usuario y la contraseña, así como un botón tesla-login-button para enviar el formulario. El componente también incluye dos enlaces en la parte inferior para "¿Olvidó su correo electrónico?" y "¿Olvidó su contraseña?".
-
