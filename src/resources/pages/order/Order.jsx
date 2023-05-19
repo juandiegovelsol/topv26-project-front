@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { selecOrder, setCheckout } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { NavBar } from "../../components/navBar";
-
-import { modelS } from "../../data/Order";
 
 import "./order.scss";
 
 const Order = () => {
-  const { models, modelsplaid } = modelS;
-  const [imageSelector, setImageSelector] = useState(0);
-  const [modelSelector, setModelSelector] = useState(models);
+  const dispatch = useDispatch();
+  const { orderData } = useSelector(selecOrder);
+  const { model, modelplaid } = orderData;
+  const { images } = orderData || [];
+  const [imageSelector, setImageSelector] = useState(images[0]);
+  const [modelSelector, setModelSelector] = useState(model);
+
+  const handleCheckout = () => {
+    dispatch(setCheckout({ modelSelector, imageSelector }));
+  };
 
   return (
     <section className="order">
@@ -18,29 +26,24 @@ const Order = () => {
       </CustomHeader>
       <div className="order__container">
         <aside className="order__images">
-          <img src={modelS.images[imageSelector].img} alt="car" />
+          <img src={imageSelector.img} alt="car" />
           <span className="price-resume">
             <p>
               <strong>
-                $
-                {modelSelector.price +
-                  modelS.images[imageSelector].aditional_price}{" "}
-                Vehicle Price
+                ${modelSelector.price + imageSelector.aditional_price} Vehicle
+                Price
               </strong>
             </p>
             <p>{` | `}</p>
             <p>
-              $
-              {modelSelector.price +
-                modelS.images[imageSelector].aditional_price -
-                6000}{" "}
+              ${modelSelector.price + imageSelector.aditional_price - 6000}{" "}
               After Potential Savings
             </p>
           </span>
         </aside>
         <aside className="order__menu">
-          <h3>Model S</h3>
-          <p>Est. Delivery: April 2023</p>
+          <h3>{model.title}</h3>
+          <p>Est. Delivery: June 2023</p>
           <span className="info">
             <div>
               <h4>
@@ -65,22 +68,22 @@ const Order = () => {
             <p>Dual Motor All-Wheel Drive</p>
             <button
               onClick={() => {
-                setModelSelector(models);
-                console.log("Model S", modelSelector);
+                setModelSelector(model);
+                /* console.log("Model S", modelSelector); */
               }}
             >
-              <p>{modelS.models.title}</p>
-              <p>${modelS.models.price}</p>
+              <p>{orderData.model.title}</p>
+              <p>${orderData.model.price}</p>
             </button>
             <p>Tri-Motor All-Wheel Drive</p>
             <button
               onClick={() => {
-                setModelSelector(modelsplaid);
-                console.log("Model S plaid", modelSelector);
+                setModelSelector(modelplaid);
+                /* console.log("Model S plaid", modelSelector); */
               }}
             >
-              <p>{modelS.modelsplaid.title}</p>
-              <p>${modelS.modelsplaid.price}</p>
+              <p>{orderData.modelplaid.title}</p>
+              <p>${orderData.modelplaid.price}</p>
             </button>
             <p className="footer">
               All prices are shown without potential incentives or gas savings
@@ -94,7 +97,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(0);
+                  setImageSelector(images[0]);
                 }}
               >
                 <span className="white"></span>
@@ -102,7 +105,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(1);
+                  setImageSelector(images[1]);
                 }}
               >
                 <span className="black"></span>
@@ -110,7 +113,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(2);
+                  setImageSelector(images[2]);
                 }}
               >
                 <span className="grey"></span>
@@ -118,7 +121,7 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(3);
+                  setImageSelector(images[3]);
                 }}
               >
                 <span className="blue"></span>
@@ -126,19 +129,21 @@ const Order = () => {
               <button
                 className="button"
                 onClick={() => {
-                  setImageSelector(4);
+                  setImageSelector(images[4]);
                 }}
               >
                 <span className="red"></span>
               </button>
             </div>
             <br />
-            <p>{modelS.images[imageSelector].title}</p>
+            <p>
+              <strong>{imageSelector.title}</strong> {imageSelector.title2}
+            </p>
           </span>
           <span className="order">
-            <h4>Order your Model S</h4>
-            <p>Est. delivery: April 2023</p>
-            <button>Continue To Payment</button>
+            <h4>Order your {modelSelector.title}</h4>
+            <p>Est. delivery: June 2023</p>
+            <button onClick={handleCheckout}>Continue To Payment</button>
           </span>
         </aside>
       </div>

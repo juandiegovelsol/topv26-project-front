@@ -3,11 +3,14 @@ import { TransparentButton } from "../transparentButton";
 
 import "./moreInfo.scss";
 
-const MoreInfo = ({ moreInfo, backgroundBlack = false }) => {
+const MoreInfo = ({
+  moreInfo,
+  backgroundBlack = false,
+  handleOrder = () => {},
+}) => {
   const handleBackground = (black) => {
     return black ? "moreInfo" : "moreInfo white";
   };
-  /* const { moreInfo } = props; */
   return (
     <section className={handleBackground(backgroundBlack)}>
       <article className="moreInfo__left">
@@ -19,6 +22,7 @@ const MoreInfo = ({ moreInfo, backgroundBlack = false }) => {
               text={"Order Now"}
               link={"/Order"}
               isWhite={backgroundBlack}
+              handleOrder={handleOrder}
             />
           )}
           {moreInfo.viewInventoryButton && (

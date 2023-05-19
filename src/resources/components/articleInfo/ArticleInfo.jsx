@@ -7,11 +7,12 @@ const ArticleInfo = ({
   isLeft = false,
   heigth = false,
   textBlack = false,
+  handleOrder = () => {},
 }) => {
   const navigate = useNavigate();
-  const redirect = (route) => {
+  /* const redirect = (route) => {
     navigate(`${route}`);
-  };
+  }; */
 
   const handleClass = (isRigth, isLeft, heigth, classname) => {
     const heigthReturn = heigth ? "heigth" : "";
@@ -39,12 +40,7 @@ const ArticleInfo = ({
               {item.p1 && <p className="articleInfoP1">{item.p1}</p>}
               {item.p2 && <p className="articleInfoP2">{item.p2}</p>}
               {item.button && (
-                <button
-                  className="articleInfoButton"
-                  onClick={() => {
-                    redirect("/Order");
-                  }}
-                >
+                <button className="articleInfoButton" onClick={handleOrder}>
                   {item.button}
                 </button>
               )}
