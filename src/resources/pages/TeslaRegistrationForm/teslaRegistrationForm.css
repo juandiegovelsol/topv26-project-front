@@ -3,9 +3,8 @@
   src: url("../../fonts/TESLA.ttf");
 }
 
-
-
 form {
+  max-height: 600px;
   max-width: 400px;
   margin: 0 auto;
   padding: 40px;
@@ -15,6 +14,7 @@ form {
   flex-direction: column;
   align-items: center;
   background-image: none;
+  overflow-y: scroll;
 }
 
 h2 {
@@ -78,10 +78,18 @@ button[type="submit"]:hover {
   background-color: #1d8308;
 }
 
-
-.pre_form{
+.pre_form {
+  height: 100vh;
   background-image: url("../../images/fondo.jfif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.select-label {
+  height: 50px;
+}
+.select {
+  min-height: 50px;
+  border: none;
+  border-radius: 10px;
 }
