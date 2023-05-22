@@ -123,7 +123,7 @@ function TeslaRegistrationForm() {
           />
         </label>
         <label className="select-label">
-          Choose your role:
+          Select your role:
           <select className="select">
             <option value="costumer">Costumer</option>
             <option value="admin">Admin</option>
