@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TransparentButton } from "../../components/transparentButton";
 import { UserInfo } from "../../components/UserInfo";
+import { InfoCar } from "../../components/InfoCar";
 
 import "./account.scss";
 
@@ -92,11 +93,7 @@ const Account = () => {
                       <p>Order</p>
                     </div>
                   )}
-                  {carSelect && (
-                    <div>
-                      <p>Car</p>
-                    </div>
-                  )}
+                  {carSelect && <InfoCar />}
                 </span>
               </article>
 
