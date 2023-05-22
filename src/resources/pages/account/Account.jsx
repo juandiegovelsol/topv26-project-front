@@ -6,6 +6,7 @@ import { postLoginAsync, selecAccount, clearLogin } from "./accountSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TransparentButton } from "../../components/transparentButton";
+import { UserInfo } from "../../components/UserInfo";
 
 import "./account.scss";
 
@@ -35,16 +36,19 @@ const Account = () => {
     setUserSelect(true);
     setOrderSelect(false);
     setCarSelect(false);
+    /* Dispatch users fetch */
   };
   const handleOrderClick = () => {
     setUserSelect(false);
     setOrderSelect(true);
     setCarSelect(false);
+    /* Dispatch orders fetch */
   };
   const handleCarClick = () => {
     setUserSelect(false);
     setOrderSelect(false);
     setCarSelect(true);
+    /* Dispatch cars fetch */
   };
 
   if (token) {
@@ -82,11 +86,7 @@ const Account = () => {
                   </button>
                 </span>
                 <span className="user__info">
-                  {userSelect && (
-                    <div>
-                      <p>User</p>
-                    </div>
-                  )}
+                  {userSelect && <UserInfo />}
                   {orderSelect && (
                     <div>
                       <p>Order</p>
