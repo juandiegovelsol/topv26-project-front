@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { TransparentButton } from "../../components/transparentButton";
 import { UserInfo } from "../../components/UserInfo";
 import { InfoCar } from "../../components/InfoCar";
+import { InfoOrder } from "../../components/InfoOrder";
+import { clearAllCars } from "../../components/InfoCar/infoCarSlice";
+import { clearAllOrders } from "../../components/InfoOrder/infoOrderSlice";
+import { clearAllUsers } from "../../components/UserInfo/userInfoSlice";
 
 import "./account.scss";
 
@@ -30,6 +34,9 @@ const Account = () => {
     dispatch(postLoginAsync({ email, password }));
   };
   const handleLogout = () => {
+    dispatch(clearAllCars());
+    dispatch(clearAllOrders());
+    dispatch(clearAllUsers());
     dispatch(clearLogin());
   };
 
@@ -88,11 +95,7 @@ const Account = () => {
                 </span>
                 <span className="user__info">
                   {userSelect && <UserInfo />}
-                  {orderSelect && (
-                    <div>
-                      <p>Order</p>
-                    </div>
-                  )}
+                  {orderSelect && <InfoOrder />}
                   {carSelect && <InfoCar />}
                 </span>
               </article>

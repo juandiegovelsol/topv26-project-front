@@ -17,6 +17,11 @@ export const getAllCarsAsync = createAsyncThunk(
 const infoCarSlice = createSlice({
   name: "infoCar",
   initialState,
+  reducers: {
+    clearAllCars: (state, action) => {
+      state.allCars = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllCarsAsync.pending, (state) => {
@@ -28,6 +33,8 @@ const infoCarSlice = createSlice({
       });
   },
 });
+
+export const { clearAllCars } = infoCarSlice.actions;
 
 export const selectInfoCar = (state) => state.infoCar;
 
