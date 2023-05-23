@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./teslaRegistrationForm.css";
+import "./teslaRegistrationForm.scss";
 import {
   postRegisterAsync,
   selecAccount,
@@ -66,7 +66,7 @@ function TeslaRegistrationForm() {
 
   useEffect(() => {
     if (Object.keys(user).length) {
-      navigate("/");
+      navigate("/Account");
     }
   }, [user]);
 
