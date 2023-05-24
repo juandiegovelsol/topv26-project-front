@@ -49,7 +49,6 @@ const infoOrderSlice = createSlice({
       .addCase(getAllOrdersAsync.fulfilled, (state, action) => {
         state.loading = false;
         state.allOrders = action.payload;
-        console.log("all Orders", action.payload.length);
         state.handlerUpdate = new Array(action.payload.length).fill(false);
       })
       .addCase(updateOrderAsync.fulfilled, (state, action) => {

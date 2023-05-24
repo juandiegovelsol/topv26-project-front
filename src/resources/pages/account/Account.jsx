@@ -113,12 +113,38 @@ const Account = () => {
           <header>
             <NavBar setMenuCoverClasss={setMenuCoverClass} />
           </header>
-          <main>
-            <h2>Costumer account</h2>
+          <main className="user__main">
+            <section className="user__container">
+              <article className="user__title">
+                <h3>User Account</h3>
+              </article>
+              <article className="user__info-container">
+                <span className="user__menu">
+                  <h4 className="user__menu-title">Menu</h4>
+                  <button
+                    className="user__selector-button"
+                    onClick={handleUserClick}
+                  >
+                    User
+                  </button>
+                  <button
+                    className="user__selector-button"
+                    onClick={handleOrderClick}
+                  >
+                    Orders
+                  </button>
+                </span>
+                <span className="user__info">
+                  {userSelect && <UserInfo />}
+                  {orderSelect && <p>Order</p>}
+                </span>
+              </article>
+
+              <article className="user__logout">
+                <TransparentButton text={"Logout"} handleOrder={handleLogout} />
+              </article>
+            </section>
           </main>
-          <footer>
-            <TransparentButton text={"Logout"} handleOrder={handleLogout} />
-          </footer>
         </div>
       );
     }

@@ -1,5 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { changeUserRole, getAllUsers, updateUser } from "./userInfoAPI";
+import {
+  changeUserRole,
+  getAllUsers,
+  updateUser,
+  getOneUser,
+} from "./userInfoAPI";
 
 const initialState = {
   loading: false,

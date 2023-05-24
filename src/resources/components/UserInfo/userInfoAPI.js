@@ -40,6 +40,7 @@ export const updateUser = async ({
   name,
   lastname,
 }) => {
+  console.log(id, token, email, password, name, lastname);
   const url = `http://localhost:4002/auth/local/${id}`;
   try {
     const response = await fetch(url, {
@@ -61,3 +62,20 @@ export const updateUser = async ({
     console.log(error);
   }
 };
+
+/* export const getOneUser = async ({ id, token }) => {
+  const url = `http://localhost:4002/auth/local/${id}`;
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}; */
