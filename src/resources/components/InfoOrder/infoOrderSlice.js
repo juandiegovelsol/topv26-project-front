@@ -4,7 +4,7 @@ import { getAllOrders, updateOrder } from "./infoOrderAPI";
 const initialState = {
   loading: false,
   allOrders: [],
-  handlerUpdate: false,
+  handlerUpdate: [],
   updatedOrder: {},
 };
 
@@ -32,11 +32,13 @@ const infoOrderSlice = createSlice({
       state.allOrders = [];
     },
     clearUpdatedOrder: (state, action) => {
-      state.handlerUpdate = false;
       state.updatedOrder = {};
     },
     openHandlerUpdate: (state, action) => {
-      state.handlerUpdate = true;
+      state.handlerUpdate[action.payload] = true;
+    },
+    closeHandlerUpdate: (state, action) => {
+      state.handlerUpdate[action.payload] = false;
     },
   },
   extraReducers: (builder) => {
@@ -47,6 +49,8 @@ const infoOrderSlice = createSlice({
       .addCase(getAllOrdersAsync.fulfilled, (state, action) => {
         state.loading = false;
         state.allOrders = action.payload;
+        console.log("all Orders", action.payload.length);
+        state.handlerUpdate = new Array(action.payload.length).fill(false);
       })
       .addCase(updateOrderAsync.fulfilled, (state, action) => {
         state.updatedOrder = action.payload;
@@ -54,8 +58,12 @@ const infoOrderSlice = createSlice({
   },
 });
 
-export const { clearAllOrders, clearUpdatedOrder, openHandlerUpdate } =
-  infoOrderSlice.actions;
+export const {
+  clearAllOrders,
+  clearUpdatedOrder,
+  openHandlerUpdate,
+  closeHandlerUpdate,
+} = infoOrderSlice.actions;
 
 export const selectInfoOrder = (state) => state.infoOrder;
 

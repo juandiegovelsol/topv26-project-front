@@ -1,38 +1,47 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { updateOrderAsync } from "../infoOrderSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  updateOrderAsync,
+  selectInfoOrder,
+  openHandlerUpdate,
+  closeHandlerUpdate,
+} from "../infoOrderSlice";
 import "./order-card.scss";
 
-const OrderCard = ({
-  item,
-  index,
-  isForm = false,
-  iduser = 0,
-  token = "",
-  setIsForm = () => {},
-}) => {
+const OrderCard = ({ item, index, iduser = 0, token = "" }) => {
   const dispatch = useDispatch();
+  const { handlerUpdate } = useSelector(selectInfoOrder);
 
-  const handleSubmit = (item) => (e) => {
+  const handleSubmit = (item, index) => (e) => {
     e.preventDefault();
     const state = e.target.elements[0].value;
     const { idorder } = item;
     dispatch(updateOrderAsync({ iduser, idorder, token, state }));
-    setIsForm(false);
+    dispatch(closeHandlerUpdate(index));
   };
 
   return (
     <div key={index} className="order-card">
       <span className="order-card__info">
         <strong>Order Id: </strong>
-        {!isForm && (
+        {!handlerUpdate[index] && (
           <>
             {` ${item.idorder}, Status: ${item.state}`}
-            <button onClick={() => setIsForm(true)}>Edit</button>
+            <button
+              className="order-card__action-button"
+              onClick={() => {
+                dispatch(openHandlerUpdate(index));
+              }}
+            >
+              Edit
+            </button>
           </>
         )}
-        {isForm && (
-          <form className="order-card__form" onSubmit={handleSubmit(item)}>
+        {handlerUpdate[index] && (
+          <form
+            className="order-card__form"
+            onSubmit={handleSubmit(item, index)}
+          >
             <label>{` ${item.idorder}, Status:`}</label>
             <select className="order-card__state-selector">
               <option value={"pending"}>Pending</option>
@@ -41,7 +50,9 @@ const OrderCard = ({
               <option value={"delivered"}>Delivered</option>
               <option value={"canceled"}>Canceled</option>
             </select>
-            <button type="submit">Save</button>
+            <button className="order-card__action-button" type="submit">
+              Save
+            </button>
           </form>
         )}
       </span>

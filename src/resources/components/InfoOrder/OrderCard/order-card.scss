@@ -14,4 +14,27 @@
     justify-content: flex-start;
     align-items: center;
   }
+  &__state-selector {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(236, 236, 236);
+    margin: 0px 5px;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+  &__action-button {
+    height: 20px;
+    width: 50px;
+    margin: 0px 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(236, 236, 236);
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: rgb(161, 161, 161);
+    }
+  }
 }
