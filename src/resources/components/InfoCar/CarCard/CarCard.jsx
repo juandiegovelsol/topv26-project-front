@@ -2,7 +2,12 @@ import React from "react";
 
 import "./car-card.scss";
 
-const CarCard = ({ item, index }) => {
+const CarCard = ({
+  item,
+  index,
+  handleAdd = () => {},
+  handleSubstract = () => {},
+}) => {
   return (
     <div key={index} className="car-card">
       <span>
@@ -19,7 +24,13 @@ const CarCard = ({ item, index }) => {
       </span>
       <span>
         <strong>Quantity: </strong>
+        <button className="car-card__quantity-button" onClick={handleSubstract}>
+          -
+        </button>
         {item.quantity}
+        <button className="car-card__quantity-button" onClick={handleAdd}>
+          +
+        </button>
       </span>
     </div>
   );

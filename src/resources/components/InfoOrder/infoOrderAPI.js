@@ -14,3 +14,21 @@ export const getAllOrders = async ({ id, token }) => {
     console.log(error);
   }
 };
+
+export const updateOrder = async ({ iduser, idorder, token, state }) => {
+  const url = `http://localhost:4002/order/${iduser}/${idorder}`;
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        state,
+      }),
+    });
+    const data = response.json();
+    return data;
+  } catch (error) {}
+};

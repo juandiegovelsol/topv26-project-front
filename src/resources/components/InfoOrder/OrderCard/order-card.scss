@@ -9,4 +9,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
