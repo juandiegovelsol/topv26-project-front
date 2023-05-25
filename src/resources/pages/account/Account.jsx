@@ -136,7 +136,7 @@ const Account = () => {
                 </span>
                 <span className="user__info">
                   {userSelect && <UserInfo />}
-                  {orderSelect && <p>Order</p>}
+                  {orderSelect && <InfoOrder />}
                 </span>
               </article>
 

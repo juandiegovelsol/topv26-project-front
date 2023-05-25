@@ -1,11 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getAllOrders, updateOrder } from "./infoOrderAPI";
+import {
+  cancelOrder,
+  getAllOrders,
+  getUserOrders,
+  updateOrder,
+} from "./infoOrderAPI";
 
 const initialState = {
   loading: false,
   allOrders: [],
   handlerUpdate: [],
   updatedOrder: {},
+  canceledOrder: {},
 };
 
 export const getAllOrdersAsync = createAsyncThunk(
@@ -20,6 +26,22 @@ export const updateOrderAsync = createAsyncThunk(
   "infoOrder/update",
   async ({ iduser, idorder, token, state }) => {
     const data = await updateOrder({ iduser, idorder, token, state });
+    return data;
+  }
+);
+
+export const getUserOrdersAsync = createAsyncThunk(
+  "infoOrder/getUserOrders",
+  async ({ id, token }) => {
+    const data = await getUserOrders({ id, token });
+    return data;
+  }
+);
+
+export const cancelOrderAsync = createAsyncThunk(
+  "infoOrder/cancel",
+  async ({ idorder, token }) => {
+    const data = await cancelOrder({ idorder, token });
     return data;
   }
 );
@@ -40,6 +62,9 @@ const infoOrderSlice = createSlice({
     closeHandlerUpdate: (state, action) => {
       state.handlerUpdate[action.payload] = false;
     },
+    clearCanceledOrder: (state, action) => {
+      state.canceledOrder = {};
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -53,6 +78,13 @@ const infoOrderSlice = createSlice({
       })
       .addCase(updateOrderAsync.fulfilled, (state, action) => {
         state.updatedOrder = action.payload;
+      })
+      .addCase(getUserOrdersAsync.fulfilled, (state, action) => {
+        state.allOrders = action.payload;
+        state.handlerUpdate = new Array(action.payload.length).fill(false);
+      })
+      .addCase(cancelOrderAsync.fulfilled, (state, action) => {
+        state.canceledOrder = action.payload;
       });
   },
 });
@@ -62,6 +94,7 @@ export const {
   clearUpdatedOrder,
   openHandlerUpdate,
   closeHandlerUpdate,
+  clearCanceledOrder,
 } = infoOrderSlice.actions;
 
 export const selectInfoOrder = (state) => state.infoOrder;
