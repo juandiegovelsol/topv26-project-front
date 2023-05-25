@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "TeslaFont";
+  src: url("../../fonts/TESLA.ttf");
+}
+.pre-form {
+  form {
+    max-height: 600px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: none;
+    overflow-y: scroll;
+  }
+
+  h2 {
+    font-family: "TeslaFont";
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    font-family: "TeslaFont";
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 8px;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    transform: scale(1.05);
+    outline: none;
+    border-color: #0d1772;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0d1772;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #1d8308;
+  }
+
+  .pre_form {
+    height: 100vh;
+    background-image: url("../../images/fondo.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .select-label {
+    height: 50px;
+  }
+  .select {
+    min-height: 50px;
+    border: none;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,82 @@
+.info-card {
+  margin: 10px 0px 0px 0px;
+  height: auto;
+  min-height: 20%;
+  min-width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  &__form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__container {
+    height: 100%;
+    min-width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__button-container {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__save-button {
+    height: 5vh;
+    flex: 1 1 0;
+    width: 100%;
+    margin: 1vh 0.5vw;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    border-radius: 3px;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+  }
+  &__info {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__input {
+    width: 70%;
+    margin: 1px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__input-text {
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(245, 245, 245);
+    &:hover,
+    &:focus {
+      background-color: rgb(198, 198, 198);
+    }
+  }
+  &__actions {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

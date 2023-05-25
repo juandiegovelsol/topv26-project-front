@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./teslaRegistrationForm.css";
+import "./teslaRegistrationForm.scss";
 import {
   postRegisterAsync,
   selecAccount,
@@ -66,7 +66,7 @@ function TeslaRegistrationForm() {
 
   useEffect(() => {
     if (Object.keys(user).length) {
-      navigate("/");
+      navigate("/Account");
     }
   }, [user]);
 
@@ -123,7 +123,7 @@ function TeslaRegistrationForm() {
           />
         </label>
         <label className="select-label">
-          Choose your role:
+          Select your role:
           <select className="select">
             <option value="costumer">Costumer</option>
             <option value="admin">Admin</option>
