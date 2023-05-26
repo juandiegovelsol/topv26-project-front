@@ -22,6 +22,7 @@ const Order = () => {
   const handleCheckout = () => {
     if (Object.keys(user).length) {
       dispatch(setCheckout({ modelSelector, imageSelector }));
+      console.log("env", process.env.REACT_APP_URL);
       navigate("/Checkout");
     } else {
       navigate("/Account");
