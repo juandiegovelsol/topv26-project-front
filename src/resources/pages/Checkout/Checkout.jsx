@@ -33,7 +33,7 @@ const Checkout = () => {
       setOrderData({
         name: `${title}`,
         description: `${title} color ${color}`,
-        invoice: "0", //modificar factura automatica
+        invoice: "0",
         currency: "cop",
         amount: `${price / 10}`,
         tax_base: "0",
@@ -63,7 +63,6 @@ const Checkout = () => {
 
   useEffect(() => {
     if (+orderData.invoice) {
-      console.log("Order Data", orderData);
       handler.open(orderData);
     }
   }, [orderData]);
@@ -79,8 +78,8 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const direction = e.target.elements[0];
-    const city = e.target.elements[1];
+    const direction = e.target.elements[0].value;
+    const city = e.target.elements[1].value;
     setAdress(`${direction}, ${city}`);
     setOrderData((prev) => {
       return { ...prev, address_billing: `${direction}, ${city}` };
@@ -136,7 +135,6 @@ const Checkout = () => {
           </span>
           <form className="checkout__adress-form" onSubmit={handleSubmit}>
             <label>Enter Delivery Adress</label>
-            {/* <div className="checkout__form-container"> */}
             <input
               className="checkout__form-input"
               type="text"
@@ -150,7 +148,6 @@ const Checkout = () => {
             <button className="checkout__save-button" type="submit">
               Save
             </button>
-            {/* </div> */}
           </form>
           <span className="checkout__order">
             <h4>Order your {title}</h4>
