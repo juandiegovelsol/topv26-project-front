@@ -66,3 +66,34 @@ export const cancelOrder = async ({ idorder, token }) => {
     console.log(error);
   }
 };
+
+export const createOrder = async ({
+  model,
+  color,
+  user_iduser,
+  adress,
+  state,
+  token,
+}) => {
+  const url = "http://localhost:4002/order";
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        model,
+        color,
+        user_iduser,
+        adress,
+        state,
+      }),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { selecOrder, setCheckout } from "../order/orderSlice";
+import { selecAccount } from "../account/accountSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { NavBar } from "../../components/navBar";
 
 import "./order.scss";
 
 const Order = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { orderData } = useSelector(selecOrder);
   const { model, modelplaid } = orderData;
@@ -15,8 +17,15 @@ const Order = () => {
   const [imageSelector, setImageSelector] = useState(images[0]);
   const [modelSelector, setModelSelector] = useState(model);
 
+  const { user } = useSelector(selecAccount) || {};
+
   const handleCheckout = () => {
-    dispatch(setCheckout({ modelSelector, imageSelector }));
+    if (Object.keys(user).length) {
+      dispatch(setCheckout({ modelSelector, imageSelector }));
+      navigate("/Checkout");
+    } else {
+      navigate("/Account");
+    }
   };
 
   return (
@@ -143,7 +152,7 @@ const Order = () => {
           <span className="order">
             <h4>Order your {modelSelector.title}</h4>
             <p>Est. delivery: June 2023</p>
-            <button onClick={handleCheckout}>Continue To Payment</button>
+            <button onClick={handleCheckout}>Continue To Checkout</button>
           </span>
         </aside>
       </div>

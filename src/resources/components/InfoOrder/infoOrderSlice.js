@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
   cancelOrder,
+  createOrder,
   getAllOrders,
   getUserOrders,
   updateOrder,
@@ -12,6 +13,7 @@ const initialState = {
   handlerUpdate: [],
   updatedOrder: {},
   canceledOrder: {},
+  createdOrder: {},
 };
 
 export const getAllOrdersAsync = createAsyncThunk(
@@ -45,6 +47,20 @@ export const cancelOrderAsync = createAsyncThunk(
     return data;
   }
 );
+export const createOrderAsync = createAsyncThunk(
+  "infoOrder/createOrder",
+  async ({ model, color, user_iduser, adress, state, token }) => {
+    const data = await createOrder({
+      model,
+      color,
+      user_iduser,
+      adress,
+      state,
+      token,
+    });
+    return data;
+  }
+);
 
 const infoOrderSlice = createSlice({
   name: "infoOrder",
@@ -64,6 +80,9 @@ const infoOrderSlice = createSlice({
     },
     clearCanceledOrder: (state, action) => {
       state.canceledOrder = {};
+    },
+    clearCreatedOrder: (state, action) => {
+      state.createdOrder = {};
     },
   },
   extraReducers: (builder) => {
@@ -85,6 +104,9 @@ const infoOrderSlice = createSlice({
       })
       .addCase(cancelOrderAsync.fulfilled, (state, action) => {
         state.canceledOrder = action.payload;
+      })
+      .addCase(createOrderAsync.fulfilled, (state, action) => {
+        state.createdOrder = action.payload;
       });
   },
 });
@@ -95,6 +117,7 @@ export const {
   openHandlerUpdate,
   closeHandlerUpdate,
   clearCanceledOrder,
+  clearCreatedOrder,
 } = infoOrderSlice.actions;
 
 export const selectInfoOrder = (state) => state.infoOrder;

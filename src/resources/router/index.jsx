@@ -11,6 +11,7 @@ import { Shop } from "../pages/shop";
 import { Account } from "../pages/account";
 import { TeslaRegistrationForm } from "../pages/TeslaRegistrationForm";
 import { Order } from "../pages/order";
+import { Checkout } from "../pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
   {
     path: "/Order",
     element: <Order />,
+  },
+  {
+    path: "/Checkout",
+    element: <Checkout />,
   },
   {
     path: "/notFound",
