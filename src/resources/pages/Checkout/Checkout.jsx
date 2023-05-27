@@ -26,6 +26,7 @@ const Checkout = () => {
   const { token } = user || "";
   const { createdOrder } = useSelector(selectInfoOrder) || {};
   const [orderData, setOrderData] = useState({});
+  const [adress, setAdress] = useState(``);
 
   useEffect(() => {
     if (Object.keys(user).length && Object.keys(checkout).length) {
@@ -41,7 +42,7 @@ const Checkout = () => {
         lang: "en",
         external: "false",
         name_billing: `${user.name} ${user.lastname}`,
-        address_billing: `${user.name}`,
+        address_billing: ``,
         type_doc_billing: "cc",
         mobilephone_billing: "3050000000",
         number_doc_billing: "100000000",
@@ -68,13 +69,22 @@ const Checkout = () => {
   }, [orderData]);
 
   const handlePayment = () => {
-    const adress = "Default adress";
     const state = "pending";
     const model = title;
     const user_iduser = iduser;
     dispatch(
       createOrderAsync({ model, color, user_iduser, adress, state, token })
     );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const direction = e.target.elements[0];
+    const city = e.target.elements[1];
+    setAdress(`${direction}, ${city}`);
+    setOrderData((prev) => {
+      return { ...prev, address_billing: `${direction}, ${city}` };
+    });
   };
 
   // eslint-disable-next-line
@@ -124,8 +134,25 @@ const Checkout = () => {
             <h4>Paint</h4>
             <p>{color}</p>
           </span>
+          <form className="checkout__adress-form" onSubmit={handleSubmit}>
+            <label>Enter Delivery Adress</label>
+            {/* <div className="checkout__form-container"> */}
+            <input
+              className="checkout__form-input"
+              type="text"
+              defaultValue="Cra 60#12-04"
+            ></input>
+            <input
+              className="checkout__form-input"
+              type="text"
+              defaultValue="Bogota"
+            ></input>
+            <button className="checkout__save-button" type="submit">
+              Save
+            </button>
+            {/* </div> */}
+          </form>
           <span className="checkout__order">
-            {/* Adress field */}
             <h4>Order your {title}</h4>
             <PayButton
               text="Continue To Payment"
