@@ -3,6 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { selecOrder } from "../order/orderSlice";
 import { selecAccount } from "../account/accountSlice";
+import {
+  createOrderAsync,
+  selectInfoOrder,
+  clearCreatedOrder,
+} from "../../components/InfoOrder/infoOrderSlice";
 import { PayButton } from "../../components/PayButton";
 
 import "./checkout.scss";
@@ -17,6 +22,9 @@ const Checkout = () => {
   const { img: carImg, title: color } = imageSelector || "";
   const { aditional_price } = imageSelector || 0;
   const { user } = useSelector(selecAccount);
+  const { iduser } = user || 0;
+  const { token } = user || "";
+  const { createdOrder } = useSelector(selectInfoOrder) || {};
   const [orderData, setOrderData] = useState({});
 
   useEffect(() => {
@@ -24,7 +32,7 @@ const Checkout = () => {
       setOrderData({
         name: `${title}`,
         description: `${title} color ${color}`,
-        invoice: "909103",
+        invoice: "0", //modificar factura automatica
         currency: "cop",
         amount: `${price / 10}`,
         tax_base: "0",
@@ -43,9 +51,30 @@ const Checkout = () => {
     }
   }, [user, checkout]);
 
+  useEffect(() => {
+    if (Object.keys(createdOrder).length) {
+      const { idorder } = createdOrder || 0;
+      setOrderData((prev) => {
+        return { ...prev, invoice: `${idorder}` };
+      });
+    }
+  }, [createdOrder]);
+
+  useEffect(() => {
+    if (+orderData.invoice) {
+      console.log("Order Data", orderData);
+      handler.open(orderData);
+    }
+  }, [orderData]);
+
   const handlePayment = () => {
-    handler.open(orderData);
-    //dispatch create order with pending
+    const adress = "Default adress";
+    const state = "pending";
+    const model = title;
+    const user_iduser = iduser;
+    dispatch(
+      createOrderAsync({ model, color, user_iduser, adress, state, token })
+    );
   };
 
   // eslint-disable-next-line
@@ -53,24 +82,6 @@ const Checkout = () => {
     key: "6a426cb9bd379e191bdf38dcdb805d87",
     test: true,
   });
-
-  /* const data = {
-    name: `${modelSelector.model}`,
-    description: `${modelSelector.model} color ${imageSelector.color}`,
-    invoice: "909101",
-    currency: "cop",
-    amount: "10000",
-    tax_base: "0",
-    tax: "0",
-    country: "co",
-    lang: "en",
-    external: "false",
-    name_billing: `${user.name} ${user.lastname}`,
-    address_billing: `${user.name}`,
-    type_doc_billing: "cc",
-    mobilephone_billing: "3050000000",
-    number_doc_billing: "100000000",
-  }; */
 
   return (
     <section className="checkout">
@@ -114,6 +125,7 @@ const Checkout = () => {
             <p>{color}</p>
           </span>
           <span className="checkout__order">
+            {/* Adress field */}
             <h4>Order your {title}</h4>
             <PayButton
               text="Continue To Payment"
