@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { uploadImageAsync, selectUserInfo } from "../UserInfo/userInfoSlice";
 import "./info-card.scss";
 
 const InfoCard = ({
@@ -9,10 +10,40 @@ const InfoCard = ({
   handleSubmit = () => {},
   children,
 }) => {
+  const dispatch = useDispatch();
+  const { imageURL } = useSelector(selectUserInfo);
+
+  const [imgPrev, setImgPrev] = useState(item.image);
+
+  const handleChange = (e) => {
+    console.log("Change");
+    console.log(e.target.files[0]);
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function load() {
+      const { result } = reader;
+      setImgPrev(result);
+    };
+    /* const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "g1jf4xky");
+    dispatch(uploadImageAsync(formData)); */
+  };
+
+  /* useEffect(() => {
+    if (imageURL) {
+      setImgPrev(imageURL);
+    }
+  }, [imageURL]); */
+
   return (
     <div key={index} className="info-card">
       {isForm && (
         <form className="info-card__form" onSubmit={handleSubmit}>
+          <div className="info-card__image">
+            <img src={imgPrev} alt="user" />
+          </div>
           <div className="info-card__container">
             <div className="info-card__input">
               <label>
@@ -54,6 +85,17 @@ const InfoCard = ({
                 defaultValue={""}
               ></input>
             </div>
+            <div className="info-card__input">
+              <label>
+                <strong>Image: </strong>
+              </label>
+              <input
+                className="info-card__input-text"
+                type="file"
+                size="lg"
+                onChange={handleChange}
+              ></input>
+            </div>
           </div>
           <div className="info-card__button-container">
             <button className="info-card__save-button" type="submit">
@@ -64,6 +106,9 @@ const InfoCard = ({
       )}
       {!isForm && (
         <>
+          <div className="info-card__image">
+            <img src={item.image} alt="user" />
+          </div>
           <div className="info-card__info">
             <span>
               <strong>Name: </strong>

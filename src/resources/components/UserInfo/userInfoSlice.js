@@ -3,7 +3,7 @@ import {
   changeUserRole,
   getAllUsers,
   updateUser,
-  getOneUser,
+  uploadImage,
 } from "./userInfoAPI";
 
 const initialState = {
@@ -11,6 +11,7 @@ const initialState = {
   allUsers: [],
   changedRole: {},
   updatedUser: {},
+  imageURL: "",
 };
 
 export const getAllUsersAsync = createAsyncThunk(
@@ -31,7 +32,7 @@ export const changeUserRoleAsync = createAsyncThunk(
 
 export const updateUserAsync = createAsyncThunk(
   "userInfo/update",
-  async ({ id, token, email, password, name, lastname }) => {
+  async ({ id, token, email, password, name, lastname, image }) => {
     const data = await updateUser({
       id,
       token,
@@ -39,7 +40,16 @@ export const updateUserAsync = createAsyncThunk(
       password,
       name,
       lastname,
+      image,
     });
+    return data;
+  }
+);
+
+export const uploadImageAsync = createAsyncThunk(
+  "userInfo/uploadImage",
+  async ({ formData }) => {
+    const data = await uploadImage({ formData });
     return data;
   }
 );
@@ -57,6 +67,9 @@ const userInfoSlice = createSlice({
     clearUpdatedUser: (state, action) => {
       state.updatedUser = {};
     },
+    clearImageUrl: (state, action) => {
+      state.imageURL = "";
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -72,12 +85,19 @@ const userInfoSlice = createSlice({
       })
       .addCase(updateUserAsync.fulfilled, (state, action) => {
         state.updatedUser = action.payload;
+      })
+      .addCase(uploadImageAsync.fulfilled, (state, action) => {
+        state.imageURL = action.payload;
       });
   },
 });
 
-export const { clearAllUsers, clearChangedRole, clearUpdatedUser } =
-  userInfoSlice.actions;
+export const {
+  clearAllUsers,
+  clearChangedRole,
+  clearUpdatedUser,
+  clearImageUrl,
+} = userInfoSlice.actions;
 
 export const selectUserInfo = (state) => state.userInfo;
 

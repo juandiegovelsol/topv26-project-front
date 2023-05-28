@@ -7,6 +7,8 @@ import {
   updateUserAsync,
   clearUpdatedUser,
   selectUserInfo,
+  uploadImageAsync,
+  clearImageUrl,
 } from "./userInfoSlice";
 import { postLoginAsync } from "../../pages/account/accountSlice";
 import { selecAccount } from "../../pages/account/accountSlice";
@@ -23,16 +25,27 @@ const UserInfo = () => {
   const { role } = user || "";
   const { token } = user || "";
   const { iduser: id } = user || 0;
+  const { imageURL } = useSelector(selectUserInfo);
   const [isForm, setIsForm] = useState(false);
+  const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSaveUserEdit = (e) => {
     e.preventDefault();
-    const name = e.target.elements[0].value;
-    const lastname = e.target.elements[1].value;
-    const email = e.target.elements[2].value;
-    const password = e.target.elements[3].value;
+    setName(e.target.elements[0].value);
+    setLastname(e.target.elements[1].value);
+    setEmail(e.target.elements[2].value);
+    setPassword(e.target.elements[3].value);
+    const file = e.target.elements[4].files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "g1jf4xky");
+    dispatch(uploadImageAsync({ formData }));
+    /* console.log(name, lastname, email, password);
     dispatch(updateUserAsync({ id, token, email, password, name, lastname }));
-    setIsForm(false);
+    setIsForm(false); */
   };
 
   const handleUserEdit = (item) => {
@@ -66,6 +79,18 @@ const UserInfo = () => {
       }
     }
   }, [updatedUser]);
+
+  useEffect(() => {
+    if (imageURL) {
+      console.log(name, lastname, email, password);
+      const image = imageURL;
+      dispatch(
+        updateUserAsync({ id, token, email, password, name, lastname, image })
+      );
+      setIsForm(false);
+      dispatch(clearImageUrl());
+    }
+  }, [imageURL]);
 
   useEffect(() => {
     if (user.role === "admin") {

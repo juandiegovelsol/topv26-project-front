@@ -11,7 +11,9 @@
   }
   &__container {
     min-height: 85vh;
+    max-height: 85vh;
     min-width: 60%;
+    max-width: 60%;
     border: none;
     border-radius: 20px;
     background-color: rgb(245, 245, 245);
@@ -29,7 +31,8 @@
   }
   &__info-container {
     min-height: 70vh;
-    min-width: 90%;
+    width: 90%;
+    max-width: 90%;
     display: flex;
     justify-content: center;
     align-items: flex-start;

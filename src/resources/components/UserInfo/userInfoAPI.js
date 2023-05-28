@@ -39,8 +39,9 @@ export const updateUser = async ({
   password,
   name,
   lastname,
+  image,
 }) => {
-  console.log(id, token, email, password, name, lastname);
+  console.log(id, token, email, password, name, lastname, image);
   const url = `http://localhost:4002/auth/local/${id}`;
   try {
     const response = await fetch(url, {
@@ -54,6 +55,7 @@ export const updateUser = async ({
         password,
         name,
         lastname,
+        image,
       }),
     });
     const data = await response.json();
@@ -63,19 +65,17 @@ export const updateUser = async ({
   }
 };
 
-/* export const getOneUser = async ({ id, token }) => {
-  const url = `http://localhost:4002/auth/local/${id}`;
+export const uploadImage = async ({ formData }) => {
+  const cloudName = "dprkaqz8q"; //must go on .env
+  const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
+    const response = await fetch(cloudinaryUrl, {
+      method: "POST",
+      body: formData,
     });
     const data = await response.json();
-    return data;
+    return data.secure_url;
   } catch (error) {
     console.log(error);
   }
-}; */
+};
