@@ -8,6 +8,7 @@ import {
   selectInfoOrder,
   clearCreatedOrder,
 } from "../../components/InfoOrder/infoOrderSlice";
+import { sendOrderEmailAsync } from "../../email/emailSlice";
 import { PayButton } from "../../components/PayButton";
 
 import "./checkout.scss";
@@ -58,6 +59,20 @@ const Checkout = () => {
       setOrderData((prev) => {
         return { ...prev, invoice: `${idorder}` };
       });
+      const { email, name, lastname } = user;
+      const model = title;
+      dispatch(
+        sendOrderEmailAsync({
+          email,
+          name,
+          lastname,
+          model,
+          color,
+          price,
+          idorder,
+          adress,
+        })
+      );
     }
   }, [createdOrder]);
 
@@ -71,6 +86,7 @@ const Checkout = () => {
     const state = "pending";
     const model = title;
     const user_iduser = iduser;
+
     dispatch(
       createOrderAsync({ model, color, user_iduser, adress, state, token })
     );

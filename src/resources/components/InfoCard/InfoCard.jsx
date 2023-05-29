@@ -25,17 +25,7 @@ const InfoCard = ({
       const { result } = reader;
       setImgPrev(result);
     };
-    /* const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "g1jf4xky");
-    dispatch(uploadImageAsync(formData)); */
   };
-
-  /* useEffect(() => {
-    if (imageURL) {
-      setImgPrev(imageURL);
-    }
-  }, [imageURL]); */
 
   return (
     <div key={index} className="info-card">
