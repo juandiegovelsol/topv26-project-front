@@ -62,8 +62,9 @@ function TeslaRegistrationForm() {
   useEffect(() => {
     if (Object.keys(register).length) {
       const name = firstName;
+      const lastname = lastName;
       dispatch(postLoginAsync({ email, password }));
-      dispatch(sendSigninEmailAsync({ email, name, lastName }));
+      dispatch(sendSigninEmailAsync({ email, name, lastname }));
     }
   }, [register]);
 

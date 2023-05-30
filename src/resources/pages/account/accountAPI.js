@@ -1,5 +1,5 @@
 export const postLogin = async ({ email, password }) => {
-  const url = "http://localhost:4002/auth/local/login";
+  const url = `${process.env.REACT_APP_URL}/auth/local/login`;
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -25,7 +25,7 @@ export const postRegister = async ({
   lastname,
   role,
 }) => {
-  const url = "http://localhost:4002/auth/local";
+  const url = `${process.env.REACT_APP_URL}/auth/local`;
   try {
     const response = await fetch(url, {
       method: "POST",

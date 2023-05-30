@@ -38,7 +38,6 @@ const InfoCar = () => {
 
   useEffect(() => {
     if (Object.keys(updatedQuantity).length) {
-      console.log(id, token);
       dispatch(getAllCarsAsync({ id, token }));
       dispatch(clearUpdatedQuantity());
     }

@@ -82,7 +82,6 @@ const UserInfo = () => {
 
   useEffect(() => {
     if (imageURL) {
-      console.log(name, lastname, email, password);
       const image = imageURL;
       dispatch(
         updateUserAsync({ id, token, email, password, name, lastname, image })

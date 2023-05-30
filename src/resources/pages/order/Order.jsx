@@ -78,7 +78,6 @@ const Order = () => {
             <button
               onClick={() => {
                 setModelSelector(model);
-                /* console.log("Model S", modelSelector); */
               }}
             >
               <p>{orderData.model.title}</p>
@@ -88,7 +87,6 @@ const Order = () => {
             <button
               onClick={() => {
                 setModelSelector(modelplaid);
-                /* console.log("Model S plaid", modelSelector); */
               }}
             >
               <p>{orderData.modelplaid.title}</p>

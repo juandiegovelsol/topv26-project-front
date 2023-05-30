@@ -1,5 +1,5 @@
 export const getAllCars = async ({ id, token }) => {
-  const url = `http://localhost:4002/car/${id}`;
+  const url = `${process.env.REACT_APP_URL}/car/${id}`;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -16,7 +16,7 @@ export const getAllCars = async ({ id, token }) => {
 };
 
 export const updateCarQuantity = async ({ iduser, idcar, token, quantity }) => {
-  const url = `http://localhost:4002/car/${iduser}/${idcar}`;
+  const url = `${process.env.REACT_APP_URL}/car/${iduser}/${idcar}`;
   try {
     const response = await fetch(url, {
       method: "PUT",

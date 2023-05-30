@@ -16,8 +16,6 @@ const InfoCard = ({
   const [imgPrev, setImgPrev] = useState(item.image);
 
   const handleChange = (e) => {
-    console.log("Change");
-    console.log(e.target.files[0]);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);

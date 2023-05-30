@@ -19,7 +19,7 @@ const Checkout = () => {
   const { checkout } = useSelector(selecOrder);
   const { modelSelector, imageSelector } = checkout || {};
   const { title, range, speed, time } = modelSelector || "";
-  const { price } = modelSelector || 0;
+  const { price: modelPrice } = modelSelector || 0;
   const { img: carImg, title: color } = imageSelector || "";
   const { aditional_price } = imageSelector || 0;
   const { user } = useSelector(selecAccount);
@@ -36,7 +36,7 @@ const Checkout = () => {
         description: `${title} color ${color}`,
         invoice: "0",
         currency: "cop",
-        amount: `${price / 10}`,
+        amount: `${(modelPrice + aditional_price) / 10}`,
         tax_base: "0",
         tax: "0",
         country: "co",
@@ -61,6 +61,7 @@ const Checkout = () => {
       });
       const { email, name, lastname } = user;
       const model = title;
+      const price = modelPrice + aditional_price;
       dispatch(
         sendOrderEmailAsync({
           email,
@@ -115,10 +116,12 @@ const Checkout = () => {
           <img src={carImg} alt="car" />
           <span className="checkout__price-resume">
             <p>
-              <strong>${price + aditional_price} Vehicle Price</strong>
+              <strong>${modelPrice + aditional_price} Vehicle Price</strong>
             </p>
             <p>{` | `}</p>
-            <p>${price + aditional_price - 6000} After Potential Savings</p>
+            <p>
+              ${modelPrice + aditional_price - 6000} After Potential Savings
+            </p>
           </span>
         </aside>
         <aside className="checkout__resume">
