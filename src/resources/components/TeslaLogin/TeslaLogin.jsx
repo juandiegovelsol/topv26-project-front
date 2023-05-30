@@ -6,11 +6,6 @@ const TeslaLogin = ({ handleSubmit }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  /* const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}`);
-  }; */
-
   return (
     <div className="tesla-login-container">
       <img className="tesla-logo" src={logo} alt="Tesla Logo" />

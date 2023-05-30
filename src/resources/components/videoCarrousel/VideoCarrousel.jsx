@@ -13,7 +13,6 @@ const VideoCarrousel = ({ videoArticles = "", imageArticles = "" }) => {
     <>
       {videoArticles && (
         <section className="videoCarrousel">
-          {console.log("Video articles...", videoArticles[selector].title)}
           <Video videoArticles={videoArticles} selector={selector} />
           <DottedButtonsBar
             videoArticles={videoArticles}
@@ -31,7 +30,6 @@ const VideoCarrousel = ({ videoArticles = "", imageArticles = "" }) => {
       )}
       {imageArticles && (
         <section className="image-carrousel">
-          {console.log("imageArticles....", imageArticles)}
           <article className="image-carrousel__container">
             <img src={imageArticles[selector].src} alt="carrousel" />
           </article>

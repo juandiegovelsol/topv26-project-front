@@ -1,5 +1,5 @@
 export const getAllUsers = async ({ id, token }) => {
-  const url = `http://localhost:4002/auth/local/users/${id}`;
+  const url = `${process.env.REACT_APP_URL}/auth/local/users/${id}`;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -16,7 +16,7 @@ export const getAllUsers = async ({ id, token }) => {
 };
 
 export const changeUserRole = async ({ id, id2, token }) => {
-  const url = `http://localhost:4002/auth/local/${id}/${id2}`;
+  const url = `${process.env.REACT_APP_URL}/auth/local/${id}/${id2}`;
   try {
     const response = await fetch(url, {
       method: "PUT",
@@ -41,8 +41,7 @@ export const updateUser = async ({
   lastname,
   image,
 }) => {
-  console.log(id, token, email, password, name, lastname, image);
-  const url = `http://localhost:4002/auth/local/${id}`;
+  const url = `${process.env.REACT_APP_URL}/auth/local/${id}`;
   try {
     const response = await fetch(url, {
       method: "PUT",
@@ -66,8 +65,7 @@ export const updateUser = async ({
 };
 
 export const uploadImage = async ({ formData }) => {
-  const cloudName = "dprkaqz8q"; //must go on .env
-  const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
+  const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDNAME}/image/upload`;
   try {
     const response = await fetch(cloudinaryUrl, {
       method: "POST",

@@ -16,8 +16,6 @@ const InfoCard = ({
   const [imgPrev, setImgPrev] = useState(item.image);
 
   const handleChange = (e) => {
-    console.log("Change");
-    console.log(e.target.files[0]);
     const file = e.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
@@ -25,17 +23,7 @@ const InfoCard = ({
       const { result } = reader;
       setImgPrev(result);
     };
-    /* const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "g1jf4xky");
-    dispatch(uploadImageAsync(formData)); */
   };
-
-  /* useEffect(() => {
-    if (imageURL) {
-      setImgPrev(imageURL);
-    }
-  }, [imageURL]); */
 
   return (
     <div key={index} className="info-card">

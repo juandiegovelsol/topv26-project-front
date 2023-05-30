@@ -6,6 +6,7 @@ import {
   clearRegister,
   postLoginAsync,
 } from "../account/accountSlice";
+import { sendSigninEmailAsync } from "../../email/emailSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../../components/navBar";
@@ -60,7 +61,10 @@ function TeslaRegistrationForm() {
 
   useEffect(() => {
     if (Object.keys(register).length) {
+      const name = firstName;
+      const lastname = lastName;
       dispatch(postLoginAsync({ email, password }));
+      dispatch(sendSigninEmailAsync({ email, name, lastname }));
     }
   }, [register]);
 

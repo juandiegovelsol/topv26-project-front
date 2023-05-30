@@ -1,5 +1,5 @@
 export const getAllOrders = async ({ id, token }) => {
-  const url = `http://localhost:4002/order/auth/${id}`;
+  const url = `${process.env.REACT_APP_URL}/order/auth/${id}`;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -16,7 +16,7 @@ export const getAllOrders = async ({ id, token }) => {
 };
 
 export const updateOrder = async ({ iduser, idorder, token, state }) => {
-  const url = `http://localhost:4002/order/${iduser}/${idorder}`;
+  const url = `${process.env.REACT_APP_URL}/order/${iduser}/${idorder}`;
   try {
     const response = await fetch(url, {
       method: "PUT",
@@ -34,7 +34,7 @@ export const updateOrder = async ({ iduser, idorder, token, state }) => {
 };
 
 export const getUserOrders = async ({ id, token }) => {
-  const url = `http://localhost:4002/order/${id}`;
+  const url = `${process.env.REACT_APP_URL}/order/${id}`;
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -51,7 +51,7 @@ export const getUserOrders = async ({ id, token }) => {
 };
 
 export const cancelOrder = async ({ idorder, token }) => {
-  const url = `http://localhost:4002/order/${idorder}`;
+  const url = `${process.env.REACT_APP_URL}/order/${idorder}`;
   try {
     const response = await fetch(url, {
       method: "PUT",
@@ -75,7 +75,7 @@ export const createOrder = async ({
   state,
   token,
 }) => {
-  const url = "http://localhost:4002/order";
+  const url = `${process.env.REACT_APP_URL}/order`;
   try {
     const response = await fetch(url, {
       method: "POST",

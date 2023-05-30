@@ -78,14 +78,14 @@ const NavBar = (props) => {
         </button>
       </article>
       <article className="optionsIndex">
-        <button
+        {/* <button
           className={setWhite(colorWhitee)}
           onClick={() => {
             navigate("/Shop");
           }}
         >
           Shop
-        </button>
+        </button> */}
         <button
           className={setWhite(colorWhitee)}
           onClick={() => {
