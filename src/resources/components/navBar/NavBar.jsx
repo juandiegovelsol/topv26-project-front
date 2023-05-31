@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selecAccount } from "../../pages/account/accountSlice";
 
 import "./NavBar.scss";
 
 const NavBar = (props) => {
+  const { user } = useSelector(selecAccount);
   const { colorWhitee = false, setMenuCoverClasss } = props;
   /* console.log(props); */
   const navigate = useNavigate();
@@ -92,7 +95,7 @@ const NavBar = (props) => {
             navigate("/Account");
           }}
         >
-          Account
+          {user.name ? `${user.name.split(" ")[0]}` : "Account"}
         </button>
         <button
           className={setWhite(colorWhitee)}
