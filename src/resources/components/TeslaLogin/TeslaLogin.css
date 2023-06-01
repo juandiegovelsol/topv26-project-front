@@ -85,6 +85,7 @@
 }
 
 .tesla-login-link:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 

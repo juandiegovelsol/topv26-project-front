@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TeslaLogin.css";
 import logo from "../../images/logo2.jfif";
 
 const TeslaLogin = ({ handleSubmit }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,17 +32,22 @@ const TeslaLogin = ({ handleSubmit }) => {
         </button>
       </form>
       <div className="tesla-login-links">
-        <a className="tesla-login-link" href="/TeslaRegistrationForm">
-          Create a count
-        </a>
-        <span className="tesla-login-link-divider">|</span>
+        <p
+          className="tesla-login-link"
+          onClick={() => {
+            navigate("/TeslaRegistrationForm");
+          }}
+        >
+          Create account
+        </p>
+        {/* <span className="tesla-login-link-divider">|</span>
         <a className="tesla-login-link" href="#">
           Forgot Email?
         </a>
         <span className="tesla-login-link-divider">|</span>
         <a className="tesla-login-link" href="#">
           Forgot Password?
-        </a>
+        </a> */}
       </div>
     </div>
   );
