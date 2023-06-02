@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
 import { TeslaLogin } from "../../components/TeslaLogin";
-import { postLoginAsync, selecAccount, clearLogin } from "./accountSlice";
+import {
+  postLoginAsync,
+  selecAccount,
+  clearLogin,
+  clearRegister,
+} from "./accountSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TransparentButton } from "../../components/transparentButton";
@@ -38,6 +43,7 @@ const Account = () => {
     dispatch(clearAllOrders());
     dispatch(clearAllUsers());
     dispatch(clearLogin());
+    dispatch(clearRegister());
   };
 
   const handleUserClick = () => {
