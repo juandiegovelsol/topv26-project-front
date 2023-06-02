@@ -30,6 +30,12 @@ const Checkout = () => {
   const [adress, setAdress] = useState(``);
 
   useEffect(() => {
+    if (Object.keys(checkout).length === 0) {
+      navigate("/");
+    }
+  }, []);
+
+  useEffect(() => {
     if (Object.keys(user).length && Object.keys(checkout).length) {
       setOrderData({
         name: `${title}`,
