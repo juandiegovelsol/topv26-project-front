@@ -14,7 +14,6 @@ const Home = () => {
     "menuCoverPage displayNone"
   );
   const [isWhite, setIsWhite] = useState(true);
-  console.log(isWhite);
   return (
     <div className="App">
       <CustomHeader heightt={true}>

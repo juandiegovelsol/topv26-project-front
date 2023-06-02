@@ -1,16 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TeslaLogin.css";
 import logo from "../../images/logo2.jfif";
 
-
-const TeslaLogin = () => {
+const TeslaLogin = ({ handleSubmit }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}`);
-  };
 
   return (
     <div className="tesla-login-container">
@@ -36,17 +32,22 @@ const TeslaLogin = () => {
         </button>
       </form>
       <div className="tesla-login-links">
-        <a className="tesla-login-link" href="/TeslaRegistrationForm">
-          Create a count
-        </a>
-        <span className="tesla-login-link-divider">|</span>
+        <p
+          className="tesla-login-link"
+          onClick={() => {
+            navigate("/TeslaRegistrationForm");
+          }}
+        >
+          Create account
+        </p>
+        {/* <span className="tesla-login-link-divider">|</span>
         <a className="tesla-login-link" href="#">
           Forgot Email?
         </a>
         <span className="tesla-login-link-divider">|</span>
         <a className="tesla-login-link" href="#">
           Forgot Password?
-        </a>
+        </a> */}
       </div>
     </div>
   );
@@ -54,6 +55,4 @@ const TeslaLogin = () => {
 
 export default TeslaLogin;
 
-
 // Este componente incluye un div tesla-login-container que contiene una imagen del logotipo de Tesla y un formulario con dos campos de entrada para el nombre de usuario y la contraseña, así como un botón tesla-login-button para enviar el formulario. El componente también incluye dos enlaces en la parte inferior para "¿Olvidó su correo electrónico?" y "¿Olvidó su contraseña?".
-

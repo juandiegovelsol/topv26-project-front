@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setOrderInfo } from "../order/orderSlice";
 import { CustomHeader } from "../../components/customHeader";
 import { Menu } from "../../components/menu";
 import { NavBar } from "../../components/navBar";
@@ -35,13 +38,20 @@ import {
   ModelSSpecsData,
   ModelSLateralData,
 } from "../../data/ModelSData";
+import { modelS } from "../../data/Order";
 
 import "./ModelS.scss";
 
 const ModelS = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [menuCoverClass, setMenuCoverClass] = useState(
     "menuCoverPage displayNone"
   );
+  const handleOrder = () => {
+    dispatch(setOrderInfo(modelS));
+    navigate("/order");
+  };
   return (
     <div className="modelS">
       <CustomHeader heightt={false}>
@@ -53,7 +63,11 @@ const ModelS = () => {
           setMenuCoverClasss={setMenuCoverClass}
         />
         <SingleItemFirstView ItemFirstData={ModelSData} />
-        <ArticleInfo info={ModelSData.info} heigth={true} />
+        <ArticleInfo
+          info={ModelSData.info}
+          heigth={true}
+          handleOrder={handleOrder}
+        />
         <ArticleInterior
           h4Text={ModelSInterior.title}
           imgSrc={ModelSInterior.imgSrc}
@@ -65,7 +79,11 @@ const ModelS = () => {
         <SingleItemFirstView ItemFirstData={ModelSMoreInfo}>
           <ArticleInfo info={ModelSMoreInfo.info} />
         </SingleItemFirstView>
-        <MoreInfo moreInfo={ModelSMoreInfo.moreInfo} backgroundBlack={false} />
+        <MoreInfo
+          moreInfo={ModelSMoreInfo.moreInfo}
+          backgroundBlack={false}
+          handleOrder={handleOrder}
+        />
 
         <SelectorWithImage
           title={SelectorWithImageData.title}
@@ -76,7 +94,11 @@ const ModelS = () => {
         />
 
         <SingleItemFirstView ItemFirstData={ModelSMoreInfo2} />
-        <MoreInfo moreInfo={ModelSMoreInfo2.moreInfo} backgroundBlack={true} />
+        <MoreInfo
+          moreInfo={ModelSMoreInfo2.moreInfo}
+          backgroundBlack={true}
+          handleOrder={handleOrder}
+        />
 
         <AlternateImages
           alternateImages={AlternateImagesData2}
@@ -94,6 +116,7 @@ const ModelS = () => {
             button1={VideoWithInfoData.button1}
             button2={VideoWithInfoData.button2}
             isWhite={false}
+            handleOrder={handleOrder}
           />
         </VideoWithInfo>
 
@@ -114,6 +137,7 @@ const ModelS = () => {
             button1={ImageWithInfoData.button1}
             button2={ImageWithInfoData.button2}
             isWhite={false}
+            handleOrder={handleOrder}
           />
         </VideoWithInfo>
 
@@ -124,7 +148,11 @@ const ModelS = () => {
             isRigth={true}
           />
         </SingleItemFirstView>
-        <MoreInfo moreInfo={ModelSMoreInfo3.moreInfo} backgroundBlack={false} />
+        <MoreInfo
+          moreInfo={ModelSMoreInfo3.moreInfo}
+          backgroundBlack={false}
+          handleOrder={handleOrder}
+        />
 
         <SelectorWithImage
           title={SelectorWithVideoData.title}
@@ -147,7 +175,7 @@ const ModelS = () => {
 
         <VideoWithInfo isInverted={true} isBlack={false}>
           <ImageFullHeigth imgSrc={ModelSLateralData.imgSrc} isHalf={true} />
-          <SideTitleWithButtons />
+          <SideTitleWithButtons handleOrder={handleOrder} />
         </VideoWithInfo>
         <CustomFooter />
       </main>

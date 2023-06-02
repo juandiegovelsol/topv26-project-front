@@ -284,7 +284,7 @@ export const VideoWithInfoData = {
 export const SelectorWithImage2Data = {
   title: "Freedom to Travel",
   text: "Enter a destination on your touchscreen and Trip Planner will automatically calculate your route with Superchargers along the way.",
-  footer: "Learn More button",
+  footer: "",
   options: [
     {
       key: 0,
