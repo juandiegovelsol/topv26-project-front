@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: "TeslaFont";
   src: url("../../fonts/TESLA.ttf");
-}
+} */
 .pre_form {
   form {
     max-height: 600px;
@@ -18,7 +18,7 @@
   }
 
   h2 {
-    font-family: "TeslaFont";
+    /* font-family: "TeslaFont"; */
     text-align: center;
     margin-bottom: 24px;
     color: #333;
@@ -35,7 +35,7 @@
     font-weight: bold;
     text-align: left;
     width: 100%;
-    font-family: "TeslaFont";
+    /* font-family: "TeslaFont"; */
   }
 
   input[type="text"],

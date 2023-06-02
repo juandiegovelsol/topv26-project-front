@@ -109,7 +109,7 @@ function TeslaRegistrationForm() {
           />
         </label>
         <label>
-          Password:
+          {`Password: (Must have A-Z, a-z, 0-9, one of @$!%*?& and 8 characters mininimum)`}
           <input
             type="password"
             value={password}
